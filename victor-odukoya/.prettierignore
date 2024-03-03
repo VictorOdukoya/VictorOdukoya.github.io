@@ -1,0 +1,31 @@
+# Ignore artifacts:
+.angular
+.idea
+.vscode
+@carbon
+@orbis-u
+node_modules
+
+.editorconfig
+.eslintrc.json
+.gitignore
+.npmrc
+.prettierignore
+.prettierrc
+angular.json
+docker-compose.yaml
+Dockerfile
+karma.conf.js
+Makefile
+package.json
+README.md
+tsconfig.app.json
+tsconfig.json
+tsconfig.spec.json
+yarn.lock
+
+build
+coverage
+
+**/.git **/.svn **/.hg
+
