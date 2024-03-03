@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  links$: Observable<ScullyRoute[]> = this.scully.available$;
+  links$: Observable<ScullyRoute[]> = this.scullyRoutesService.available$;
 
-  constructor(private scully: ScullyRoutesService) {}
+  constructor(private scullyRoutesService: ScullyRoutesService) {}
 
   ngOnInit() {
     // debug current pages
