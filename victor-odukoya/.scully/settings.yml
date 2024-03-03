@@ -1,0 +1,13 @@
+identifier: l5tda8r9lfl1r13d
+appPort: 1864
+staticPort: 1668
+reloadPort: 2667
+hostName: localhost
+projectName: victor-odukoya
+homeFolder: >-
+  C:\Users\Victo\OneDrive\Dokumente\GitHub\VictorOdukoya.github.io\victor-odukoya
+distFolder: ./dist/victor-odukoya
+outDir: >-
+  C:\Users\Victo\OneDrive\Dokumente\GitHub\VictorOdukoya.github.io\victor-odukoya\dist\static
+handle404: ''
+allowErrorCollect: false
