@@ -1,4 +1,4 @@
-import { ScullyConfig } from '@scullyio/scully';
+import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
 import '@scullyio/scully-plugin-puppeteer';
 
 export const config: ScullyConfig = {
@@ -16,3 +16,5 @@ export const config: ScullyConfig = {
     },
   },
 };
+
+setPluginConfig('md', { enableSyntaxHighlighting: true });
