@@ -1,5 +1,9 @@
 <p>home works!</p>
 
 <ul>
-  <li *ngFor="let page of links$ | async">{{ page.route }}</li>
+  <li *ngFor="let scullyRoute of publishedScullyRoutes | async">
+    <a [routerLink]="scullyRoute.route">
+      {{ scullyRoute.title }}
+    </a>
+  </li>
 </ul>

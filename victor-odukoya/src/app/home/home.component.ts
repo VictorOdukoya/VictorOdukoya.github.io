@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +8,15 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  links$: Observable<ScullyRoute[]> = this.scullyRoutesService.available$;
+  publishedScullyRoutes: Observable<ScullyRoute[]> = this.scullyRoutesService.available$.pipe(
+    map((routes: ScullyRoute[]) => routes.filter((r) => r.published))
+  );
 
   constructor(private scullyRoutesService: ScullyRoutesService) {}
 
   ngOnInit() {
     // debug current pages
-    this.links$.subscribe((links) => {
+    this.publishedScullyRoutes.subscribe((links) => {
       console.log(links);
     });
   }
