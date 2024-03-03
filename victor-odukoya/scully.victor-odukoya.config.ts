@@ -4,6 +4,8 @@ import '@scullyio/scully-plugin-puppeteer';
 export const config: ScullyConfig = {
   projectRoot: './src',
   projectName: 'victor-odukoya',
+  staticPort: 30008,
+  appPort: 30007,
   distFolder: './dist/victor-odukoya', // output directory of your Angular build artifacts
   outDir: './dist/static', // directory for scully build artifacts
   defaultPostRenderers: [],

@@ -1,1 +1,1 @@
-[{"route":"/"}]
+[{"route":"/blog/2024-03-03-blog","title":"2024-03-03-blog","description":"blog description","published":true,"sourceFile":"2024-03-03-blog.md"},{"route":"/blog/2024-03-03-hellow-world","title":"blog title","description":"blog description","published":true,"arbitraryValue":"single value","arbitraryArray":["first item","second item"],"sourceFile":"2024-03-03-hellow-world.md"},{"route":"/blog/this-is-my-post","title":"This is my post","description":"blog description","published":true,"sourceFile":"this-is-my-post.md"},{"route":"/"}]

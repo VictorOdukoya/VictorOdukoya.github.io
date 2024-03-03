@@ -47,3 +47,77 @@
 
 
 
+ Deprecation Notice:
+       ======================================================================
+         From now on, the plugin that is being used to render a route is
+         able to be changed by the user. You can do this by adding or
+         enabling the plugin your scully.victor-odukoya.config.ts
+         file. For your convenience, we loaded the Puppeteer plugin for you.
+
+         To disable this warning enable the plugin of your choice.
+         for Puppeteer please add:
+             import '@scullyio/scully-plugin-puppeteer';
+          to your scully.victor-odukoya.config.ts file.
+
+          When you get this warning while not using scully-plugin-puppeteer
+          you need to set the defaultRouteRenderer to the name of your plugin.
+          The defaultRouteRenderer is now set to 'routeRenderer'.
+       ======================================================================
+
+We encountered a problem while reading the routes from your applications source.
+This might happen when there are lazy-loaded routes, that are not loaded,
+Or when there are paths we can not resolve statically.
+Check the routes in your app, rebuild and retry.
+(You can inspect the error by passing the --showGuessError flag
+
+When there are extraRoutes in your config, we will still try to render those.
+
+
+----------------------------------Using stored unhandled routes!.   To discover new routes in the angular app use "npx scully --scanRoutes"----------------------------------
+
+
+
+----------------------------------Using stored unhandled routes!.----------------------------------   To discover new routes in the angular app use "npx scully --scanRoutes"
+
+
+
+
+We encountered a problem while reading the routes from your applications source.
+This might happen when there are lazy-loaded routes, that are not loaded,
+Or when there are paths we can not resolve statically.
+Check the routes in your app, rebuild and retry.
+(You can inspect the error by passing the --showGuessError flag
+
+When there are extraRoutes in your config, we will still try to render those.
+
+
+
+We encountered a problem while reading the routes from your applications source.
+This might happen when there are lazy-loaded routes, that are not loaded,
+Or when there are paths we can not resolve statically.
+Check the routes in your app, rebuild and retry.
+(You can inspect the error by passing the --showGuessError flag
+
+When there are extraRoutes in your config, we will still try to render those.
+
+
+----------------------------------Using stored unhandled routes!.   To discover new routes in the angular app use "npx scully --scanRoutes"----------------------------------
+
+
+
+handleUnknownRoute: "/blog/___unpublished___ltaymp0v_azbmrgg1zepdplf22iplsi0ydemwapcm", 404:""
+handleUnknownRoute: "/blog/___unpublished___ltaymp0m_yi02mlsafjuskyfzkqjpvz6s61ymxrbv", 404:""handleUnknownRoute: "/blog/___unpublished___ltaymp0v_azbmrgg1zepdplf22iplsi0ydemwapcm", 404:""
+
+handleUnknownRoute: "/blog/___unpublished___ltaymp0m_yi02mlsafjuskyfzkqjpvz6s61ymxrbv", 404:""
+----------------------------------Using stored unhandled routes!.   To discover new routes in the angular app use "npx scully --scanRoutes"----------------------------------
+
+
+
+handleUnknownRoute: "/blog/___unpublished___ltaymp0m_yi02mlsafjuskyfzkqjpvz6s61ymxrbv", 404:""
+handleUnknownRoute: "/blog/___unpublished___ltaymp0m_yi02mlsafjuskyfzkqjpvz6s61ymxrbv", 404:""
+handleUnknownRoute: "/blog/___unpublished___ltaymp0v_azbmrgg1zepdplf22iplsi0ydemwapcm", 404:""
+handleUnknownRoute: "/blog/___unpublished___ltaymp0v_azbmrgg1zepdplf22iplsi0ydemwapcm", 404:""
+--------------------------------------------------------------------   To discover new routes in the angular app use "npx scully --scanRoutes"Using stored unhandled routes!.
+
+
+

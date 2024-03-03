@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && yarn scully && yarn moveDocs",
+    "build": "ng build && yarn npxscully && yarn moveDocs",
     "watch": "ng build --watch --configuration development",
-    "scully": "npx scully",
+    "npxscully": "npx scully",
+    "scully": "scully",
+    "scully:serve": "scully serve",
     "moveDocs": "if exist ..\\docs rmdir /s /q ..\\docs && move dist\\static ..\\docs",
     "test": "ng test"
   },

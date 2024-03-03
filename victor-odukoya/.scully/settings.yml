@@ -1,6 +1,6 @@
 identifier: l5tda8r9lfl1r13d
-appPort: 1864
-staticPort: 1668
+appPort: 30007
+staticPort: 30008
 reloadPort: 2667
 hostName: localhost
 projectName: victor-odukoya
