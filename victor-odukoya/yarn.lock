@@ -110,7 +110,7 @@
     "@angular-devkit/architect" "0.1502.10"
     rxjs "6.6.7"
 
-"@angular-devkit/core@15.1.6":
+"@angular-devkit/core@>12.0.0", "@angular-devkit/core@15.1.6":
   version "15.1.6"
   resolved "https://registry.npmjs.org/@angular-devkit/core/-/core-15.1.6.tgz"
   integrity sha512-jGgxyRjecVf6lEyqDxz7ltMEndNPxIg720pk6r40fgsu0dU8w9vjJSJe7k0XdJiXVRcN6wZa/J5nO/xcwWVIsA==
@@ -132,7 +132,7 @@
     rxjs "6.6.7"
     source-map "0.7.4"
 
-"@angular-devkit/schematics@15.1.6":
+"@angular-devkit/schematics@>12.0.0", "@angular-devkit/schematics@15.1.6":
   version "15.1.6"
   resolved "https://registry.npmjs.org/@angular-devkit/schematics/-/schematics-15.1.6.tgz"
   integrity sha512-cwmJFpS43zrdlmfwfHIxG/Nzg5rzFdtKrHx64ZXxNFm6JdyK2JTs/qrHUwv1FYWAcqhdiHn+00jYklMmvsvPOA==
@@ -289,6 +289,13 @@
   integrity sha512-LmuqEg0iIXSw7bli6HKJ19cbxP91v37GtRwbGKswyLihqzTgvjBYpvcfMnB5FRQ5LWkTwq5JclkX03dZw290Yg==
   dependencies:
     tslib "^2.3.0"
+
+"@angular/router@12.2.6":
+  version "12.2.6"
+  resolved "https://registry.npmjs.org/@angular/router/-/router-12.2.6.tgz"
+  integrity sha512-ao7Xqvopo14bVybOE3dUmIiVeJ3wJ33xauY4oqtoHw+KoBlhFbvwIV7MVUM95yFejc+2ZbUEar/bJUOkXuTCMg==
+  dependencies:
+    tslib "^2.2.0"
 
 "@asciidoctor/cli@3.5.0":
   version "3.5.0"
@@ -1508,7 +1515,7 @@
   resolved "https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
-"@schematics/angular@15.1.6":
+"@schematics/angular@>12.0.0", "@schematics/angular@15.1.6":
   version "15.1.6"
   resolved "https://registry.npmjs.org/@schematics/angular/-/angular-15.1.6.tgz"
   integrity sha512-y2kIQ1wJL0wR6v/LM5+PFJUivrYtdaIJVRdOXLLWl0AB5aLwObiWgLzAuBsbGm/9//WPPhw9PglS5EFFxTBDzg==
@@ -1517,7 +1524,37 @@
     "@angular-devkit/schematics" "15.1.6"
     jsonc-parser "3.2.0"
 
-"@scullyio/ng-lib@^2.1.41":
+"@scullyio/init@^2.1.41":
+  version "2.1.41"
+  resolved "https://registry.npmjs.org/@scullyio/init/-/init-2.1.41.tgz"
+  integrity sha512-e4nLuNAfOHHCFWgE/m4LAnaaKmhutWd8a8B//iWd9NE6u5S4KAwaR85JSz4kTciMMF00J/0ANzVMU+y5r6rHNw==
+  dependencies:
+    "@angular-devkit/core" ">12.0.0"
+    "@angular-devkit/schematics" ">12.0.0"
+    "@angular/common" "12.2.6"
+    "@angular/core" "12.2.6"
+    "@angular/platform-server" "12.2.6"
+    "@angular/router" "12.2.6"
+    "@schematics/angular" ">12.0.0"
+    "@scullyio/ng-lib" "2.1.41"
+    "@scullyio/scully" "2.1.41"
+    "@sentry/node" "^6.12.0"
+    asciidoctor "^2.2.5"
+    chalk "^4.1.2"
+    chokidar "^3.5.3"
+    compression "^1.7.4"
+    cors "^2.8.5"
+    express "4.17.3"
+    js-yaml "^4.1.0"
+    os "^0.1.2"
+    prismjs "^1.27.0"
+    puppeteer "^13.4.1"
+    rxjs "^7.5.4"
+    selfsigned "^2.0.0"
+    ws "^8.5.0"
+    zone.js "0.11.4"
+
+"@scullyio/ng-lib@^2.1.41", "@scullyio/ng-lib@2.1.41":
   version "2.1.41"
   resolved "https://registry.npmjs.org/@scullyio/ng-lib/-/ng-lib-2.1.41.tgz"
   integrity sha512-7tq3TKy5iLOhMwVJgqcI+ZaV1UzHVQohFhVzjV3oTmEJQVH6xZ6SIZwbOsLgFx3ABeK9wJQ2us700OV5/9kFlQ==
@@ -1549,7 +1586,7 @@
     ws "^8.5.0"
     zone.js "0.11.4"
 
-"@scullyio/scully@*", "@scullyio/scully@^2.1.41":
+"@scullyio/scully@*", "@scullyio/scully@^2.1.41", "@scullyio/scully@2.1.41":
   version "2.1.41"
   resolved "https://registry.npmjs.org/@scullyio/scully/-/scully-2.1.41.tgz"
   integrity sha512-kyvf8/J7KzcZK84bQV0G0tlrmqw9e7ycNUkmvJVXy4Ur0uLoV0GzjyVy8PFFvo3C9MZYakRiawtetnajmFdzGA==
@@ -6845,7 +6882,7 @@ typed-assert@^1.0.8:
   resolved "https://registry.npmjs.org/typed-assert/-/typed-assert-1.0.9.tgz"
   integrity sha512-KNNZtayBCtmnNmbo5mG47p1XsCyrx6iVqomjcZnec/1Y5GGARaxPs6r49RnSPeUP3YjNYiU9sQHAtY4BBvnZwg==
 
-"typescript@>=3.2.x || >= 4.x", typescript@>=3.7.5, typescript@>=4.3, "typescript@>=4.8.2 <5.0", typescript@~4.9.4:
+typescript@^4.2.4, "typescript@>=3.2.x || >= 4.x", typescript@>=3.7.5, typescript@>=4.3, "typescript@>=4.8.2 <5.0", typescript@~4.9.4:
   version "4.9.5"
   resolved "https://registry.npmjs.org/typescript/-/typescript-4.9.5.tgz"
   integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
