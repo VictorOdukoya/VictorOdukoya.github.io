@@ -145,3 +145,7 @@ Using stored unhandled routes!.----------------------------------   To discover 
 
 
 
+----------------------------------Using stored unhandled routes!.----------------------------------   To discover new routes in the angular app use "npx scully --scanRoutes"
+
+
+
