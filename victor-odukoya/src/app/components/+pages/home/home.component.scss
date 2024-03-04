@@ -7,4 +7,16 @@
   font-weight: bold;
   color: var(--text-color);
   letter-spacing: -0.32rem;
+  margin: 0;
+  line-height: 0.8;
+  padding-bottom: 1.875rem;
+}
+
+
+.role {
+    opacity: .64;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    letter-spacing: -0.0319rem;
+    margin-top: .25rem;
 }

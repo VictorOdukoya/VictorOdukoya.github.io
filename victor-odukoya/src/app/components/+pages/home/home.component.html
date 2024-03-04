@@ -1,10 +1,22 @@
 <div class="home">
-  <h1 class="author">Victor Odukoya</h1>
-  <ul>
-    <li *ngFor="let scullyRoute of publishedScullyRoutes | async">
-      <a [routerLink]="scullyRoute.route">
-        {{ scullyRoute.title }}
-      </a>
-    </li>
-  </ul>
+  <div class="grid grid-cols-[2fr_1fr] gap-x-0 gap-y-0">
+    <div class="text-container">
+      <h1 class="author">Victor Odukoya</h1>
+      <div class="role">
+        Passionate front-end developer with an eye for detail, dedicated to designing seamless user experiences.
+        Leveraging Angular and React to bring innovative ideas to life.
+      </div>
+    </div>
+    <div class="image-container"></div>
+  </div>
+  <section class="blog-posts">
+    <h2>Latest Blog Posts</h2>
+    <ul>
+      <li *ngFor="let scullyRoute of publishedScullyRoutes | async">
+        <a [routerLink]="scullyRoute.route">
+          {{ scullyRoute.title }}
+        </a>
+      </li>
+    </ul>
+  </section>
 </div>

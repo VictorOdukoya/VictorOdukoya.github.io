@@ -1,10 +1,12 @@
 @import url('./assets/fonts/fonts.scss');
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
   // global values
-  --main-font-size: 14px;
-  --text-color: #000000;
-
+  --main-font-size: 16px;
+  --text-color: #1d1d1d;
   --horizontal-padding: 0 20rem;
 }
 
