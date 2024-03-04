@@ -1,19 +1,24 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {ActivatedRoute, Router, ROUTES} from '@angular/router';
-
-declare var ng: any;
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss'],
-  preserveWhitespaces: true,
-  encapsulation: ViewEncapsulation.Emulated
-
+  styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-  ngOnInit() {}
+  publishedScullyRoutes: Observable<ScullyRoute[]> = this.scullyRoutesService.available$.pipe(
+    map((routes: ScullyRoute[]) => routes.filter((r) => r.published))
+  );
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private scullyRoutesService: ScullyRoutesService) {}
+
+  ngOnInit() {
+    // debug current pages
+    this.publishedScullyRoutes.subscribe((links) => {
+      console.log(links);
+    });
   }
 }
