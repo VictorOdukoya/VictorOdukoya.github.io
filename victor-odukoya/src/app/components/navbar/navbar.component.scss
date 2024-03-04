@@ -6,7 +6,11 @@
 }
 
 .navbar-logo {
-  height: 4rem;
+  height: 5.7rem;
+  padding: 1rem 0;
+  img {
+    height: 100%;
+  }
 }
 
 .navbar-links a {
