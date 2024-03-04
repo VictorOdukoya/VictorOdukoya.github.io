@@ -1,8 +1,11 @@
 @import url('./assets/fonts/fonts.scss');
 
 :root {
+  // global values
   --main-font-size: 14px;
+  --text-color: #000000;
 
+  --horizontal-padding: 0 20rem;
 }
 
 body {

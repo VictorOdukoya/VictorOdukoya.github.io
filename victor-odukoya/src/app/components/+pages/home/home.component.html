@@ -1,9 +1,10 @@
-<p>home works!</p>
-
-<ul>
-  <li *ngFor="let scullyRoute of publishedScullyRoutes | async">
-    <a [routerLink]="scullyRoute.route">
-      {{ scullyRoute.title }}
-    </a>
-  </li>
-</ul>
+<div class="home">
+  <h1 class="author">Victor Odukoya</h1>
+  <ul>
+    <li *ngFor="let scullyRoute of publishedScullyRoutes | async">
+      <a [routerLink]="scullyRoute.route">
+        {{ scullyRoute.title }}
+      </a>
+    </li>
+  </ul>
+</div>

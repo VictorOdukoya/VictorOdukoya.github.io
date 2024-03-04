@@ -1,9 +1,11 @@
-<h1>blog component works!</h1>
+<div class="blog">
+  <h1>blog component works!</h1>
 
-<ul>
-  <li *ngFor="let scullyRoute of publishedScullyRoutes | async">
-    <a [routerLink]="scullyRoute.route">
-      {{ scullyRoute.title }}
-    </a>
-  </li>
-</ul>
+  <ul>
+    <li *ngFor="let scullyRoute of publishedScullyRoutes | async">
+      <a [routerLink]="scullyRoute.route">
+        {{ scullyRoute.title }}
+      </a>
+    </li>
+  </ul>
+</div>
