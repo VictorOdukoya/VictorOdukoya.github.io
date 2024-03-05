@@ -11,7 +11,8 @@ declare var ng: any;
   encapsulation: ViewEncapsulation.Emulated
 })
 export class BlogPostComponent implements OnInit {
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 }
