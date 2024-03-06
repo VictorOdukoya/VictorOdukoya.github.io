@@ -1,0 +1,6 @@
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 18rem minmax(45rem, 75rem);
+  margin: 3.75rem auto 0 auto;
+  max-width: fit-content;
+}
