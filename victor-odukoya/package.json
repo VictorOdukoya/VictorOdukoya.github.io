@@ -26,6 +26,7 @@
     "@scullyio/ng-lib": "^2.1.41",
     "@scullyio/scully": "^2.1.41",
     "@scullyio/scully-plugin-puppeteer": "^2.1.41",
+    "@tsparticles/angular": "^3.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
