@@ -1,37 +1,45 @@
-.navbar-logo {
-  padding-bottom: 1.25em;
-  img {
-    height: 4.5rem;
-  }
+.navbar{
+  padding: 1.875rem 0 3.125rem 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.site-description {
-  padding: 1.25rem 0;
-  font-size: 1rem;
-  line-height: 1.2rem;
-  letter-spacing: -0.05rem;
-  font-weight: 400;
-  color: #484444;
+.navbar-logo {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+
 }
 
 .navbar-links {
-  padding-top: 1.25rem;
   display: flex;
+  gap: 0.875rem;
+  flex-direction: row;
+  font-size: 1.25rem;
+  font-weight: normal;
   ul {
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+    flex-direction: row;
     list-style: none;
     margin: 0;
     padding: 0;
     li {
-      padding-bottom: 0.625rem;
       a {
         text-decoration: none;
-        font-weight: bold;
-        color: #333;
         transition: color 0.5s ease;
         &:hover {
           color: #a8a8a8;
         }
       }
     }
+  }
+
+  .theme-switcher{
+
   }
 }
