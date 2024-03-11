@@ -1,83 +1,81 @@
+// TODO: Refactor this. nesting is kind of missing, use better class names... 
 .home {
   width: 100%;
   padding-bottom: 5rem;
 }
-// .author {
-//   font-size: 4rem;
-//   font-weight: bold;
-//   color: var(--text-color);
-//   letter-spacing: -0.32rem;
-//   line-height: 0.8;
-//   padding-bottom: 1.8754rem;
-// }
 
-// .text-container {
-//   padding-top: 1.25rem;
-//   padding-bottom: 4.25rem;
-//   border-bottom: 1px solid #cfcfcf;
-//   p {
-//     padding-top: 1.25rem;
-//     padding-bottom: 1.25rem;
-//     column-count: 3;
-//     column-gap: 1.25rem;
-//     font-size: 1.2rem;
-//     text-wrap: pretty;
-//     line-height: 1.8rem;
-//     letter-spacing: -0.01rem;
-//     &::first-letter {
-//       padding-right: 0.5rem;
-//       padding-left: 0.25rem;
-//       initial-letter: 2;
-//     }
-//   }
-// }
+.banner-container {
+  display: flex;
+  gap: 3.5rem;
+  width: 82.5rem;
+  padding-bottom: 1.5rem;
+  > * {
+    flex: 1;
+  }
 
-// .cover-image-container {
-//   width: 100%;
-//   padding-bottom: 1.25rem;
-//   img {
-//     width: 100%;
-//   }
-// }
+  .banner-text-container {
+    padding: 2rem 0;
+  }
 
-// h2 {
-//   font-size: 1.5em;
-//   margin-block-start: 0.83em;
-//   margin-block-end: 0.83em;
-//   margin-inline-start: 0px;
-//   margin-inline-end: 0px;
-//   font-weight: bold;
-// }
+  .name-container {
+    font-size: 3rem;
+    font-weight: bold;
+    padding-bottom: 0.75rem;
+  }
 
-// .blog-post-container {
-//   img {
-//     height: 27.6875rem;
-//     width: 23.5rem;
-//     background-color: #f9f9f9;
-//   }
-// }
+  .description-container {
+    text-wrap: pretty;
+    font-size: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 3rem;
+  }
 
-// .latest-blog-posts-container {
-//   display: flex;
-//   justify-content: space-between;
-// }
+  .banner-image {
+    // square the image. no idea how this works: https://stackoverflow.com/questions/15167545/how-to-crop-a-rectangular-image-into-a-square-with-css
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
 
-// .post-title {
-//   padding-top: 1.25rem;
-//   padding-bottom: 1.25rem;
-//   font-size: 1.3rem;
-//   font-weight: bold;
-//   text-wrap: pretty;
-// }
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
 
-// .post-summary {
-//   text-wrap: pretty;
-//   padding-right: 1rem;
-//   padding-bottom: 1.25rem;
-// }
+.skills-container {
+  background-color: #fff9ee;
+  border-radius: 1rem;
+  padding: 0 2rem;
 
-// .blog-posts {
-//   padding-top: 4.25rem;
-//   padding-bottom: 4.25rem;
-//   border-bottom: 1px solid #cfcfcf;
-// }
+  > *:not(:last-child) {
+    border-bottom: 1px solid rgba(6, 28, 61, 0.12);
+  }
+
+  .skill-card {
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .skill-card-icon {
+      font-size: 1.6rem;
+    }
+  }
+
+  .skill-card-text {
+    h2 {
+      font-weight: 500;
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 1rem;
+      color: #42526b;
+    }
+  }
+}

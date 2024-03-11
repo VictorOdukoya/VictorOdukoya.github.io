@@ -1,32 +1,43 @@
 <div class="home">
-  <!-- <div class="">
-    <div class="cover-image-container">
-      <img src="../../../../assets/images/mountains.jpg" alt="" class="cover-image" />
-    </div>
-    <div class="text-container">
-      <h1 class="author">Victor Odukoya</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-      </p>
-    </div>
-    <div class="image-container"></div>
-  </div>
-  <section class="blog-posts">
-    <h2>Latest Blog Posts</h2>
-    <div class="latest-blog-posts-container">
-      <div class="blog-post-container" *ngFor="let scullyRoute of (publishedScullyRoutes | async)?.slice(0,3)">
-        <a [routerLink]="scullyRoute.route">
-          <img alt="{{scullyRoute.title}}" />
-        </a>
-        <a [routerLink]="scullyRoute.route">
-          <h3 class="post-title">
-            {{ scullyRoute.title }}
-          </h3>
-          <div class="post-summary">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+  <div class="banner-container">
+    <div class="banner-text-container">
+      <div class="name-container">
+        <h1>
+          Victor Odukoya
+          <br />
+          Frontend Developer
+        </h1>
+      </div>
+      <div class="description-container">
+        Cras at pellentesque eros. Nullam vitae sapien et felis eleifend luctus. Nam ac dui cursus, efficitur ante sed,
+        tempor sapien. Praesent nec mattis enim. Mauris a laoreet purus.
+      </div>
+      <!-- TODO: Turn this into a component-->
+      <div class="skills-container">
+        <div class="skill-card">
+          <div class="skill-card-icon">
+            <fa-icon [icon]="faLayerGroup" ></fa-icon>
           </div>
-        </a>
+          <div class="skill-card-text">
+            <h2>Lorem ipsum dolor</h2>
+            <p>Etiam sed vulputate nisl, eu elementum arcu. Vivamus dignissim tortor in tellus dictum pellentesque.</p>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon">
+            <fa-icon [icon]="faLayerGroup" ></fa-icon>
+          </div>
+          <div class="skill-card-text">
+            <h2>Simple & Clean Line of Code</h2>
+            <p>Vivamus dignissim tortor in tellus dictum pellentesque. Praesent mauris metus, dictum quis velit non.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section> -->
+    <div>
+      <div class="banner-image">
+        <img src="../../../../assets/images/desk.jpg" />
+      </div>
+    </div>
+  </div>
 </div>

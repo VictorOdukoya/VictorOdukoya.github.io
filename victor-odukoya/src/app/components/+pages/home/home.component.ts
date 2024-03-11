@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
 import { Observable, map } from 'rxjs';
 
@@ -13,6 +15,7 @@ export class HomeComponent implements OnInit {
   );
 
   constructor(private scullyRoutesService: ScullyRoutesService) {}
+  public faLayerGroup: IconDefinition = faLayerGroup;
 
   ngOnInit() {
     // debug current pages
