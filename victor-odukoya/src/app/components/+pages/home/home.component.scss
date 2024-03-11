@@ -17,8 +17,17 @@
   }
 
   .name-container {
-    font-size: 3rem;
-    font-weight: bold;
+    h1{
+      line-height: 2rem;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    h2{
+      line-height: 4rem;
+      font-size: 3rem;
+      font-weight: bold;
+    }
     padding-bottom: 0.75rem;
   }
 
