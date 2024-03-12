@@ -1,4 +1,16 @@
 <div class="home">
+  <i class="devicon-angularjs-plain"></i>
+  <!--  for devicon plain version -->
+  <i class="devicon-devicon-plain"></i>
+
+  <!--  for devicon plain version with wordmark -->
+  <i class="devicon-devicon-plain-wordmark"></i>
+
+  <!--  for devicon plain version colored with devicon main color -->
+  <i class="devicon-devicon-plain colored"></i>
+
+  <!--  for devicon plain version with wordmark colored with devicon main color -->
+  <i class="devicon-devicon-plain-wordmark colored"></i>
   <div class="banner-container">
     <div class="banner-text-container">
       <div class="name-container">
@@ -9,27 +21,19 @@
         Cras at pellentesque eros. Nullam vitae sapien et felis eleifend luctus. Nam ac dui cursus, efficitur ante sed,
         tempor sapien. Praesent nec mattis enim. Mauris a laoreet purus.
       </div>
-      <!-- TODO: Turn this into a component-->
-      <div class="skills-container">
-        <div class="skill-card">
-          <div class="skill-card-icon">
-            <fa-icon [icon]="faLayerGroup"></fa-icon>
-          </div>
-          <div class="skill-card-text">
-            <h2>Lorem ipsum dolor</h2>
-            <p>Etiam sed vulputate nisl, eu elementum arcu. Vivamus dignissim tortor in tellus dictum pellentesque.</p>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card-icon">
-            <fa-icon [icon]="faLayerGroup"></fa-icon>
-          </div>
-          <div class="skill-card-text">
-            <h2>Simple & Clean Line of Code</h2>
-            <p>Vivamus dignissim tortor in tellus dictum pellentesque. Praesent mauris metus, dictum quis velit non.</p>
-          </div>
-        </div>
-      </div>
+
+      <app-skill-card-container>
+        <app-skill-card
+          [icon]="faLayerGroup"
+          title="Lorem ipsum dolor"
+          description="Etiam sed vulputate nisl, eu elementum arcu."
+        ></app-skill-card>
+        <app-skill-card
+          [icon]="faLayerGroup"
+          title="Simple & Clean Line of Code"
+          description="Vivamus dignissim tortor in tellus dictum pellentesque."
+        ></app-skill-card>
+      </app-skill-card-container>
     </div>
     <div>
       <div class="banner-image">

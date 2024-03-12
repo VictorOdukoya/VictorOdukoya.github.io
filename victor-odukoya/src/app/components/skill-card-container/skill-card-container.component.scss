@@ -1,0 +1,31 @@
+.skills-container {
+  background-color: #fff9ee;
+  border-radius: 1rem;
+  padding: 0 2rem;
+
+  ::ng-deep > *:not(:last-child) {
+    border-bottom: 1px solid rgba(6, 28, 61, 0.12);
+    display: block;
+  }
+}
+
+.skill-card {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  .skill-card-icon {
+    font-size: 1.6rem;
+  }
+}
+
+.skill-card-text {
+  h2 {
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+  p {
+    font-size: 1rem;
+    color: #42526b;
+  }
+}
