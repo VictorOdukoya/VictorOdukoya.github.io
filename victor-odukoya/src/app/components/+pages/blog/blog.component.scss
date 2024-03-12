@@ -1,10 +1,18 @@
 .large-banner {
-    display: block;
-    border-top: 1px solid rgba(0, 0, 0, 0.34);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.34);
-    font-size: 6.2375rem;
-    font-weight: bold;
-    text-align: center;
-    line-height: normal;
-    text-transform: uppercase;
+  display: block;
+  border-top: 1px solid rgba(0, 0, 0, 0.34);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.34);
+  font-size: 6.2375rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.blog-list-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2.8rem;
 }

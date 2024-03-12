@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
+import { ScullyRoutesService } from '@scullyio/ng-lib';
 import { Observable, map } from 'rxjs';
+import { CustomScullyRoute } from 'src/app/interfaces/custom-scully-route.interface';
 
 @Component({
   selector: 'app-blog',
@@ -8,8 +9,8 @@ import { Observable, map } from 'rxjs';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-  publishedScullyRoutes: Observable<ScullyRoute[]> = this.scullyRoutesService.available$.pipe(
-    map((routes: ScullyRoute[]) => routes.filter((r) => r.published))
+  publishedScullyRoutes: Observable<CustomScullyRoute[]> = this.scullyRoutesService.available$.pipe(
+    map((routes) => routes.filter((r) => r.published) as CustomScullyRoute[])
   );
 
   constructor(private scullyRoutesService: ScullyRoutesService) {}
