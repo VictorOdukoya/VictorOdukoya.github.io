@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { ScullyLibModule } from '@scullyio/ng-lib';
@@ -14,3 +14,5 @@ import { ThemeSwitcherComponent } from './components/theme-switcher/theme-switch
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+
+APP_INITIALIZER;
