@@ -1,0 +1,75 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHeader from '../../components/common/PageHeader.astro';
+import AppCard from '../../components/apps/AppCard.astro';
+
+const apps = [
+  {
+    name: 'Pairloom',
+    description:
+      'Master any topic through fun, engaging pair-matching games. AI-powered catalog creation, progress tracking, and multiple game modes.',
+    icon: '🎯',
+    href: '/apps/pairloom',
+    platforms: ['iOS', 'Android'],
+    comingSoon: false,
+  },
+  {
+    name: 'Your Next App',
+    description: 'More apps coming soon. I\'m always experimenting with new ideas.',
+    icon: '✨',
+    href: '#',
+    platforms: [],
+    comingSoon: true,
+  },
+];
+---
+
+<PageLayout
+  title="Apps — Victor Odukoya"
+  description="Apps by Victor Odukoya. Mobile apps for iOS and Android."
+>
+  <div class="section gradient-bg pt-32">
+    <div class="container-custom">
+      <PageHeader
+        title="My Apps"
+        subtitle="Apps I've built. More to come."
+        badge="Portfolio"
+      />
+
+      <!-- App Grid -->
+      <div class="max-w-2xl mx-auto space-y-6">
+        {
+          apps.map((app, index) => (
+            <div class={`reveal stagger-${index + 1}`}>
+              <AppCard
+                name={app.name}
+                description={app.description}
+                icon={app.icon}
+                href={app.href}
+                platforms={app.platforms}
+                comingSoon={app.comingSoon}
+                index={index}
+              />
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Future apps hint -->
+      <div class="mt-16 reveal stagger-3">
+        <div class="card-glass p-8 max-w-md mx-auto text-center">
+          <span class="text-3xl mb-4 block">💡</span>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            Have an idea for an app?
+          </p>
+          <a href="/support" class="btn-secondary inline-flex">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+            <span>Let me know</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</PageLayout>

@@ -1,0 +1,201 @@
+---
+import '../styles/global.css';
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title,
+  description = 'Victor Odukoya — Software developer building apps that make learning fun.',
+  ogImage = '/og-image.png',
+  canonicalUrl,
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString() || 'https://victorodukoya.dev';
+const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+const fullCanonicalUrl = canonicalUrl || Astro.url.toString();
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Theme Script - MUST run synchronously before anything renders to prevent flash -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={fullCanonicalUrl} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={fullCanonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullOgImage} />
+    <meta property="og:site_name" content="Victor Odukoya" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={fullCanonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullOgImage} />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#6366f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#4f46e5" media="(prefers-color-scheme: dark)" />
+
+    <!-- Preconnect to fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- View Transitions for SPA-like navigation -->
+    <ViewTransitions />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot />
+
+    <!-- Theme event listeners (can run after page loads) -->
+    <script>
+      function setupThemeListeners() {
+        const applyTheme = (theme: string) => {
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        };
+
+        // Listen for theme changes from toggle button
+        window.addEventListener('theme-change', ((e: CustomEvent) => {
+          const newTheme = e.detail.theme;
+          localStorage.setItem('theme', newTheme);
+          applyTheme(newTheme);
+        }) as EventListener);
+
+        // Listen for system preference changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+          }
+        });
+      }
+
+      // Run on initial load
+      setupThemeListeners();
+
+      // Re-run after View Transitions navigation
+      document.addEventListener('astro:after-swap', () => {
+        // Re-apply theme after page swap (View Transitions)
+        const theme = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      });
+    </script>
+
+    <!-- Scroll Reveal Animations -->
+    <script>
+      function setupRevealAnimations() {
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach((el) => observer.observe(el));
+      }
+
+      // Tilt effect for cards
+      function setupTiltEffect() {
+        const tiltElements = document.querySelectorAll('[data-tilt]');
+        
+        tiltElements.forEach((el) => {
+          const element = el as HTMLElement;
+          
+          element.addEventListener('mousemove', (e) => {
+            const rect = element.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            
+            element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+          });
+          
+          element.addEventListener('mouseleave', () => {
+            element.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+          });
+        });
+      }
+
+      // Cursor glow effect
+      function setupCursorGlow() {
+        const glow = document.querySelector('.cursor-glow') as HTMLElement | null;
+        if (!glow) return;
+        
+        document.addEventListener('mousemove', (e) => {
+          glow.style.left = e.clientX + 'px';
+          glow.style.top = e.clientY + 'px';
+          glow.style.opacity = '1';
+        });
+        
+        document.addEventListener('mouseleave', () => {
+          glow.style.opacity = '0';
+        });
+      }
+
+      // Run on initial load
+      setupRevealAnimations();
+      setupTiltEffect();
+      setupCursorGlow();
+
+      // Re-run after View Transitions navigation
+      document.addEventListener('astro:after-swap', () => {
+        setupRevealAnimations();
+        setupTiltEffect();
+        setupCursorGlow();
+      });
+    </script>
+  </body>
+</html>

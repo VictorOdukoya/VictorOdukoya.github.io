@@ -1,0 +1,201 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+---
+
+<LegalLayout
+  title="Pairloom Privacy Policy — Victor Odukoya"
+  description="Privacy Policy for Pairloom - Learn Anything with Pairs."
+  lastUpdated="January 16, 2026"
+>
+  <p class="lead">
+    This Privacy Policy specifically covers the Pairloom app. Please also review our
+    <a href="/privacy">General Privacy Policy</a> for information that applies to all our
+    apps and services.
+  </p>
+
+  <h2>1. About Pairloom</h2>
+  <p>
+    Pairloom is a learning app that helps you master any topic through pair-matching games.
+    You can create custom catalogs of word pairs, use AI to generate content, and track your
+    learning progress.
+  </p>
+
+  <h2>2. Data We Collect in Pairloom</h2>
+
+  <h3>2.1 User Content</h3>
+  <ul>
+    <li><strong>Catalogs:</strong> Custom catalogs you create, including names, descriptions, and pairs</li>
+    <li><strong>Progress Data:</strong> XP, levels, streaks, achievements, and mastery tracking</li>
+    <li><strong>Settings:</strong> App preferences, theme choices, and notification settings</li>
+    <li><strong>Groups:</strong> Organizational groups for your catalogs</li>
+  </ul>
+
+  <h3>2.2 Gameplay Data</h3>
+  <ul>
+    <li>Session statistics (pairs solved, time, accuracy)</li>
+    <li>Game mode preferences</li>
+    <li>Difficulty adaptation metrics</li>
+  </ul>
+
+  <h3>2.3 AI Generation Data</h3>
+  <p>When you use AI to generate catalogs:</p>
+  <ul>
+    <li>Your prompt/topic is sent to Google Gemini AI</li>
+    <li>We do not store your prompts on our servers</li>
+    <li>Generated content is stored locally and optionally in cloud sync</li>
+  </ul>
+
+  <h2>3. Data Storage</h2>
+
+  <h3>3.1 Local Storage (Default)</h3>
+  <p>
+    By default, all your data is stored locally on your device using SQLite. This includes
+    catalogs, progress, settings, and all gameplay data. This data never leaves your device
+    unless you enable cloud sync.
+  </p>
+
+  <h3>3.2 Cloud Sync (Pro Feature)</h3>
+  <p>If you enable cloud sync:</p>
+  <ul>
+    <li>Your data is encrypted and uploaded to Supabase (AWS infrastructure)</li>
+    <li>Data is associated with your account (Google Sign-In)</li>
+    <li>You can restore your data on any device</li>
+    <li>Data is retained for 30 days after subscription cancellation</li>
+  </ul>
+
+  <h2>4. Advertisements</h2>
+  <p>
+    Pairloom displays advertisements to free users via Google AdMob. These ads may use
+    device identifiers and cookies to serve personalized content.
+  </p>
+  <p>You can:</p>
+  <ul>
+    <li>Opt out of personalized ads in the app settings</li>
+    <li>Upgrade to Pro to remove all advertisements</li>
+    <li>Manage ad preferences through your device settings</li>
+  </ul>
+  <p>
+    We comply with GDPR and CCPA requirements for advertising consent.
+  </p>
+
+  <h2>5. In-App Purchases</h2>
+  <p>
+    Pairloom Pro subscriptions are processed through the App Store (iOS) or Google Play
+    (Android). We use RevenueCat to manage subscriptions.
+  </p>
+  <p>We receive:</p>
+  <ul>
+    <li>Subscription status (active, expired, trial)</li>
+    <li>Product purchased and pricing</li>
+    <li>Anonymous subscriber identifiers</li>
+  </ul>
+  <p>
+    We do NOT receive your payment details (credit card, etc.). These are handled securely
+    by Apple or Google.
+  </p>
+
+  <h2>6. Notifications</h2>
+  <p>Pairloom may send local notifications for:</p>
+  <ul>
+    <li>Daily streak reminders (if enabled)</li>
+    <li>Learning goal reminders (if configured)</li>
+    <li>Achievement celebrations</li>
+  </ul>
+  <p>
+    You can manage notification settings within the app or through your device settings.
+    Notifications are generated locally and do not require internet.
+  </p>
+
+  <h2>7. Offline Functionality</h2>
+  <p>
+    Pairloom is designed to work fully offline. All core features including gameplay,
+    progress tracking, and catalog management work without an internet connection.
+  </p>
+  <p>Features requiring internet:</p>
+  <ul>
+    <li>AI-powered catalog generation</li>
+    <li>Cloud backup and sync</li>
+    <li>Account sign-in/sign-out</li>
+    <li>Subscription verification</li>
+  </ul>
+
+  <h2>8. Data Export and Deletion</h2>
+
+  <h3>8.1 Export Your Data</h3>
+  <p>
+    You can export all your Pairloom data (catalogs, progress, settings) from the app
+    settings. Data is exported in JSON format.
+  </p>
+
+  <h3>8.2 Delete Your Data</h3>
+  <p>To delete your Pairloom data:</p>
+  <ul>
+    <li><strong>Local data:</strong> Uninstall the app or use "Clear Data" in settings</li>
+    <li><strong>Cloud data:</strong> Delete your account from the app settings</li>
+    <li><strong>Full deletion:</strong> Contact us at the email below</li>
+  </ul>
+
+  <h2>9. Age Restrictions</h2>
+  <p>
+    Pairloom is rated 4+ (Everyone) on app stores but is designed for users 13 and older.
+    We do not knowingly collect personal information from children under 13.
+  </p>
+
+  <h2>10. Third-Party Integrations</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Purpose</th>
+        <th>Data Shared</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Google Sign-In</td>
+        <td>Authentication</td>
+        <td>Email, name, profile photo</td>
+      </tr>
+      <tr>
+        <td>Supabase</td>
+        <td>Cloud sync, auth</td>
+        <td>Account data, synced content</td>
+      </tr>
+      <tr>
+        <td>RevenueCat</td>
+        <td>Subscriptions</td>
+        <td>Anonymous ID, subscription status</td>
+      </tr>
+      <tr>
+        <td>Google AdMob</td>
+        <td>Advertising</td>
+        <td>Device ID, ad interaction data</td>
+      </tr>
+      <tr>
+        <td>Google Gemini AI</td>
+        <td>Content generation</td>
+        <td>User prompts (not stored)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>11. Changes to This Policy</h2>
+  <p>
+    We may update this policy as Pairloom evolves. Significant changes will be communicated
+    through the app. The "Last updated" date indicates the most recent revision.
+  </p>
+
+  <h2>12. Contact</h2>
+  <p>For Pairloom-specific privacy questions:</p>
+  <p>
+    <strong>Email:</strong> privacy@victorodukoya.dev<br />
+    <strong>Subject:</strong> Pairloom Privacy Inquiry
+  </p>
+
+  <hr />
+
+  <p>
+    <a href="/privacy">← Back to General Privacy Policy</a>
+  </p>
+</LegalLayout>

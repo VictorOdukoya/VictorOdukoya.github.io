@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  centered?: boolean;
+  badge?: string;
+  gradient?: boolean;
+}
+
+const { title, subtitle, centered = true, badge, gradient = false } = Astro.props;
+---
+
+<div class:list={['mb-16 sm:mb-20 reveal', centered && 'text-center']}>
+  {badge && (
+    <span class="badge-primary mb-4 inline-block">{badge}</span>
+  )}
+  
+  <h1 class:list={[
+    "text-4xl sm:text-5xl lg:text-6xl font-bold mb-6",
+    gradient ? 'gradient-text' : 'text-gray-900 dark:text-white'
+  ]}>
+    {title}
+  </h1>
+  
+  {subtitle && (
+    <p class:list={[
+      "text-xl text-gray-600 dark:text-gray-400 leading-relaxed",
+      centered && "max-w-2xl mx-auto"
+    ]}>
+      {subtitle}
+    </p>
+  )}
+</div>

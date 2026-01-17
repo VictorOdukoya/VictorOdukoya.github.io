@@ -1,0 +1,31 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  index?: number;
+}
+
+const { icon, title, description, index = 0 } = Astro.props;
+---
+
+<div 
+  class={`reveal stagger-${Math.min(index + 1, 6)} group card-interactive p-6`}
+  data-tilt
+>
+  <!-- Icon -->
+  <div class="icon-box mb-5 group-hover:scale-110 transition-transform duration-300">
+    {icon}
+  </div>
+
+  <!-- Content -->
+  <h3 class="text-lg font-display font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+    {title}
+  </h3>
+  <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+    {description}
+  </p>
+
+  <!-- Decorative gradient on hover -->
+  <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-500/5 to-accent-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+</div>

@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Noise texture overlay for depth */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.015;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .dark body::before {
+    opacity: 0.03;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-primary-500/30;
+  }
+
+  /* Focus styles */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-500;
+  }
+
+  /* Headings with display font */
+  h1, h2, h3, .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    @apply tracking-tight;
+  }
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+@layer components {
+  .container-custom {
+    @apply max-w-6xl mx-auto px-5 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-20 sm:py-28 lg:py-32;
+  }
+
+  .section-sm {
+    @apply py-12 sm:py-16;
+  }
+}
+
+/* ============================================
+   ANIMATED GRADIENT BACKGROUND
+   ============================================ */
+.gradient-bg {
+  position: relative;
+  @apply bg-gray-50 dark:bg-gray-950;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(91, 107, 247, 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(217, 70, 239, 0.1), transparent),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(91, 107, 247, 0.1), transparent);
+}
+
+.dark .gradient-bg {
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(91, 107, 247, 0.25), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(217, 70, 239, 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(91, 107, 247, 0.15), transparent);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-medium rounded-xl transition-all duration-300;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply active:scale-[0.98];
+  }
+
+  .btn-primary {
+    @apply btn px-6 py-3 text-sm;
+    @apply bg-gray-900 text-white hover:bg-gray-800 hover:shadow-lg hover:shadow-gray-900/20;
+    @apply dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 dark:hover:shadow-white/10;
+  }
+
+  .btn-secondary {
+    @apply btn px-5 py-2.5 text-sm;
+    @apply bg-white/80 text-gray-900 border border-gray-200 backdrop-blur-sm;
+    @apply hover:bg-white hover:border-gray-300 hover:shadow-lg hover:shadow-gray-200/50;
+    @apply dark:bg-gray-800/80 dark:text-white dark:border-gray-700;
+    @apply dark:hover:bg-gray-800 dark:hover:border-gray-600 dark:hover:shadow-gray-900/50;
+  }
+
+  .btn-ghost {
+    @apply btn px-4 py-2 text-sm;
+    @apply text-gray-600 hover:text-gray-900 hover:bg-gray-100;
+    @apply dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-800;
+  }
+
+  /* Gradient button with shimmer */
+  .btn-gradient {
+    @apply btn px-6 py-3 text-sm text-white relative overflow-hidden;
+    background: linear-gradient(135deg, #5b6bf7 0%, #d946ef 100%);
+  }
+
+  .btn-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  .btn-gradient:hover::before {
+    transform: translateX(100%);
+  }
+
+  .btn-gradient:hover {
+    @apply shadow-lg shadow-primary-500/30;
+    transform: translateY(-2px);
+  }
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+@layer components {
+  .card {
+    @apply bg-white dark:bg-gray-900 rounded-2xl;
+    @apply border border-gray-200/60 dark:border-gray-800/60;
+    @apply shadow-sm;
+  }
+
+  .card-interactive {
+    @apply card transition-all duration-300 cursor-pointer;
+    @apply hover:shadow-xl hover:shadow-gray-200/50 dark:hover:shadow-gray-900/50;
+    @apply hover:border-gray-300 dark:hover:border-gray-700;
+    @apply hover:-translate-y-1;
+  }
+
+  /* Glass card */
+  .card-glass {
+    @apply rounded-2xl;
+    @apply bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl;
+    @apply border border-white/50 dark:border-gray-700/50;
+    @apply shadow-lg shadow-gray-200/30 dark:shadow-gray-900/30;
+  }
+}
+
+/* ============================================
+   INTERACTIVE TILT EFFECT
+   ============================================ */
+[data-tilt] {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+[data-tilt]:hover {
+  transition: transform 0.1s ease-out;
+}
+
+[data-tilt] > * {
+  transform: translateZ(30px);
+}
+
+/* ============================================
+   GRADIENT TEXT
+   ============================================ */
+.gradient-text {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, #5b6bf7 0%, #d946ef 50%, #5b6bf7 100%);
+  background-size: 200% auto;
+  animation: gradient 4s ease infinite;
+}
+
+/* ============================================
+   ANIMATED UNDERLINE LINKS
+   ============================================ */
+.link-underline {
+  @apply relative text-gray-600 dark:text-gray-400 transition-colors;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #5b6bf7, #d946ef);
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover {
+  @apply text-gray-900 dark:text-white;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   REVEAL ANIMATIONS (Scroll-triggered)
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delays */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* ============================================
+   CURSOR GLOW EFFECT
+   ============================================ */
+.cursor-glow {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(circle, rgba(91, 107, 247, 0.08) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+}
+
+.dark .cursor-glow {
+  background: radial-gradient(circle, rgba(91, 107, 247, 0.12) 0%, transparent 70%);
+}
+
+/* ============================================
+   FLOATING SHAPES
+   ============================================ */
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.floating-shape:nth-child(2) {
+  animation-delay: -2s;
+  animation-duration: 10s;
+}
+
+.floating-shape:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 12s;
+}
+
+/* ============================================
+   GLOW RING
+   ============================================ */
+.glow-ring {
+  @apply relative;
+}
+
+.glow-ring::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #5b6bf7, #d946ef, #5b6bf7);
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.glow-ring:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   BADGES
+   ============================================ */
+@layer components {
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-700 dark:bg-primary-900/50 dark:text-primary-300;
+  }
+
+  .badge-accent {
+    @apply badge bg-accent-100 text-accent-700 dark:bg-accent-900/50 dark:text-accent-300;
+  }
+
+  .badge-gradient {
+    @apply badge text-white;
+    background: linear-gradient(135deg, #5b6bf7 0%, #d946ef 100%);
+  }
+}
+
+/* ============================================
+   DIVIDERS
+   ============================================ */
+.divider-gradient {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(91, 107, 247, 0.3), rgba(217, 70, 239, 0.3), transparent);
+}
+
+/* ============================================
+   ICON CONTAINERS
+   ============================================ */
+.icon-box {
+  @apply w-12 h-12 rounded-xl flex items-center justify-center text-xl;
+  @apply bg-gradient-to-br from-primary-100 to-accent-100;
+  @apply dark:from-primary-900/50 dark:to-accent-900/50;
+}
+
+.icon-box-lg {
+  @apply w-16 h-16 rounded-2xl flex items-center justify-center text-2xl;
+  @apply bg-gradient-to-br from-primary-100 to-accent-100;
+  @apply dark:from-primary-900/50 dark:to-accent-900/50;
+}
+
+/* ============================================
+   LEGAL CONTENT
+   ============================================ */
+.prose-legal {
+  @apply prose prose-gray dark:prose-invert max-w-none;
+  @apply prose-headings:font-display prose-headings:font-semibold;
+  @apply prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4;
+  @apply prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3;
+  @apply prose-p:text-gray-600 dark:prose-p:text-gray-400;
+  @apply prose-li:text-gray-600 dark:prose-li:text-gray-400;
+  @apply prose-a:text-primary-600 dark:prose-a:text-primary-400;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-600;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}

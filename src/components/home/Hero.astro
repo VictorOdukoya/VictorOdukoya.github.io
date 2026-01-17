@@ -1,0 +1,181 @@
+---
+---
+
+<section class="relative min-h-[100vh] flex items-center gradient-bg pt-20">
+  <!-- Subtle grid pattern overlay -->
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#fff1_1px,transparent_1px),linear-gradient(to_bottom,#fff1_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none"></div>
+
+  <!-- Cursor glow effect -->
+  <div id="cursor-glow" class="cursor-glow hidden lg:block"></div>
+
+  <div class="container-custom relative z-10 py-20">
+    <div class="max-w-3xl">
+      <!-- Main headline -->
+      <h1 class="reveal stagger-1 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-bold text-gray-900 dark:text-white leading-[1.1] mb-8 text-balance">
+        I build<br>
+        <span class="gradient-text">mobile apps</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="reveal stagger-2 text-xl sm:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mb-12 leading-relaxed">
+        Software developer from Germany. I experiment with ideas and turn them into 
+        <span class="text-gray-900 dark:text-white font-medium">utility, productivity, and gamified apps</span>.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="reveal stagger-3 flex flex-col sm:flex-row gap-4">
+        <a href="/apps" class="btn-gradient group">
+          <span>Explore My Apps</span>
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a href="#featured" class="btn-secondary group">
+          <span>See Featured Project</span>
+          <svg class="w-4 h-4 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Trust indicators -->
+      <div class="reveal stagger-4 mt-16 pt-10 border-t border-gray-200/50 dark:border-gray-800/50">
+        <div class="flex flex-wrap gap-8 text-sm">
+          <div class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-gray-600 dark:text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+              </svg>
+            </div>
+            <span class="text-gray-600 dark:text-gray-400">iOS & Android</span>
+          </div>
+          <div class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <span class="text-gray-600 dark:text-gray-400">Mobile first</span>
+          </div>
+          <div class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="text-lg">🇩🇪</span>
+            </div>
+            <span class="text-gray-600 dark:text-gray-400">Made in Germany</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Floating cards preview - positioned in dedicated area -->
+  <div class="hidden xl:flex absolute right-12 2xl:right-24 top-1/2 -translate-y-1/2 flex-col gap-6 z-20">
+    <!-- Card 1: App preview -->
+    <div class="reveal-right stagger-2 card-glass p-5 w-64 transform rotate-2 hover:rotate-0 transition-transform duration-500" data-tilt>
+      <div class="flex items-center gap-4 mb-4">
+        <div class="icon-box">🎯</div>
+        <div>
+          <h4 class="font-display font-semibold text-gray-900 dark:text-white">Pairloom</h4>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Learn with pairs</p>
+        </div>
+      </div>
+      <div class="h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+        <div class="h-full w-3/4 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full"></div>
+      </div>
+    </div>
+
+    <!-- Card 2: Stats preview -->
+    <div class="reveal-right stagger-3 card-glass p-5 w-56 transform -rotate-2 hover:rotate-0 transition-transform duration-500 ml-8" data-tilt>
+      <div class="flex items-center gap-3 mb-2">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">+150 XP earned</span>
+      </div>
+      <p class="text-xs text-gray-500 dark:text-gray-400 pl-11">Daily streak: 7 days 🔥</p>
+    </div>
+
+    <!-- Glow effect behind cards -->
+    <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal stagger-5">
+    <span class="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest">Scroll</span>
+    <div class="w-6 h-10 rounded-full border-2 border-gray-300 dark:border-gray-700 flex justify-center">
+      <div class="w-1 h-3 bg-gray-400 dark:bg-gray-600 rounded-full mt-2 animate-bounce"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupHero() {
+    // Cursor glow effect
+    const cursorGlow = document.getElementById('cursor-glow');
+    if (cursorGlow && !cursorGlow.dataset.initialized) {
+      cursorGlow.dataset.initialized = 'true';
+      
+      document.addEventListener('mousemove', (e) => {
+        cursorGlow.style.left = e.clientX + 'px';
+        cursorGlow.style.top = e.clientY + 'px';
+        cursorGlow.style.opacity = '1';
+      });
+
+      document.addEventListener('mouseleave', () => {
+        cursorGlow.style.opacity = '0';
+      });
+    }
+
+    // Scroll reveal animations
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    
+    const revealOnScroll = () => {
+      reveals.forEach((el) => {
+        const elementTop = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+          el.classList.add('revealed');
+        }
+      });
+    };
+
+    // Initial check
+    revealOnScroll();
+
+    // Check on scroll
+    window.addEventListener('scroll', revealOnScroll, { passive: true });
+
+    // Tilt effect for cards
+    const tiltElements = document.querySelectorAll('[data-tilt]');
+    tiltElements.forEach((el) => {
+      if (el.dataset.tiltInitialized) return;
+      el.dataset.tiltInitialized = 'true';
+      
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        
+        el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+      });
+
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+      });
+    });
+  }
+
+  // Run on initial load
+  setupHero();
+
+  // Re-run after View Transitions
+  document.addEventListener('astro:page-load', setupHero);
+</script>

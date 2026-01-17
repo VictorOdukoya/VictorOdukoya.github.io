@@ -1,0 +1,336 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import FeatureCard from '../../components/apps/FeatureCard.astro';
+import PricingCard from '../../components/apps/PricingCard.astro';
+import FAQ from '../../components/apps/FAQ.astro';
+import StoreBadge from '../../components/apps/StoreBadge.astro';
+
+const features = [
+  {
+    icon: '🎮',
+    title: 'Four Game Modes',
+    description:
+      'Study at your own pace, race against the clock, keep up the tempo, or focus on mastery. Pick your play style.',
+  },
+  {
+    icon: '🤖',
+    title: 'AI-Powered Creation',
+    description:
+      'Describe what you want to learn, and let AI generate custom catalogs for you instantly. Any topic, any language.',
+  },
+  {
+    icon: '📊',
+    title: 'Progress Tracking',
+    description:
+      'Earn XP, maintain daily streaks, unlock achievements, and track your mastery level for each catalog.',
+  },
+  {
+    icon: '☁️',
+    title: 'Cloud Sync',
+    description:
+      'Backup your data to the cloud and access it from any device. Never lose your progress again. (Pro)',
+  },
+  {
+    icon: '🎨',
+    title: 'Customizable',
+    description:
+      'Choose your theme, pick audio styles, organize catalogs into groups, and personalize your learning experience.',
+  },
+  {
+    icon: '📱',
+    title: 'Offline Ready',
+    description:
+      'All your catalogs and progress are stored locally. Learn anywhere, anytime — no internet required.',
+  },
+];
+
+const freeFeatures = [
+  'All four game modes',
+  'Unlimited custom catalogs',
+  '3 AI generations per day',
+  'Full progress tracking',
+  'Local data storage',
+  'Ad-supported',
+];
+
+const proFeatures = [
+  'Everything in Free',
+  'Unlimited AI generations',
+  'Cloud backup & sync',
+  'No advertisements',
+  'Priority support',
+];
+
+const faqItems = [
+  {
+    question: 'What is Pairloom?',
+    answer:
+      'Pairloom is a learning app that helps you master any topic through pair-matching games. Create word pairs (like flashcards) and learn them by matching the left and right sides. Perfect for vocabulary, facts, definitions, and more.',
+  },
+  {
+    question: 'Is my data private and secure?',
+    answer:
+      'Yes! Your data is stored locally on your device by default. If you choose to use Cloud Sync (Pro feature), your data is encrypted and stored securely. We never sell your data to third parties. Read our Privacy Policy for details.',
+  },
+  {
+    question: 'Can I use Pairloom offline?',
+    answer:
+      'Absolutely! All your catalogs and progress are stored locally on your device. You can learn anytime, anywhere without an internet connection. Only AI generation and Cloud Sync require internet.',
+  },
+  {
+    question: 'How does AI catalog generation work?',
+    answer:
+      'Simply describe what you want to learn (e.g., "Spanish vocabulary for travel" or "World capitals"), and our AI will generate a complete catalog with pairs for you. Free users get 3 generations per day, Pro users have unlimited access.',
+  },
+  {
+    question: 'How do I cancel my subscription?',
+    answer:
+      'You can manage or cancel your subscription anytime through your device\'s app store (App Store for iOS, Google Play for Android). Go to your account settings, find Subscriptions, and manage Pairloom from there.',
+  },
+  {
+    question: 'What happens to my data if I cancel Pro?',
+    answer:
+      'Your local data remains intact. Cloud-synced data stays available for 30 days after cancellation. You can export your data at any time through the app settings.',
+  },
+];
+---
+
+<PageLayout
+  title="Pairloom — Learn Anything with Pairs"
+  description="Master any topic through fun, engaging pair-matching games. AI-powered catalog creation, progress tracking, and multiple game modes."
+>
+  <!-- Hero Section -->
+  <section class="gradient-bg relative overflow-hidden pt-32">
+    <!-- Decorative elements -->
+    <div class="absolute top-20 left-10 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-48 h-48 bg-accent-500/10 rounded-full blur-3xl"></div>
+    
+    <!-- Back link -->
+    <div class="container-custom pt-6 relative">
+      <a
+        href="/apps"
+        class="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-all group"
+      >
+        <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"></path>
+        </svg>
+        All Apps
+      </a>
+    </div>
+
+    <div class="container-custom py-12 sm:py-16 lg:py-20 relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <!-- App icon -->
+        <div class="reveal stagger-1">
+          <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-6 bg-gradient-to-br from-primary-100 to-accent-100 dark:from-primary-900/50 dark:to-accent-900/50 rounded-3xl flex items-center justify-center text-5xl sm:text-6xl shadow-xl glow-ring">
+            🎯
+          </div>
+        </div>
+
+        <!-- App name & tagline -->
+        <div class="reveal stagger-2">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-gray-900 dark:text-white mb-4">
+            Pairloom
+          </h1>
+          <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 mb-4">
+            Learn Anything with <span class="gradient-text font-semibold">Pairs</span>
+          </p>
+          <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-8">
+            Master any topic through fun pair-matching games. Create custom catalogs or let AI do it for you.
+          </p>
+        </div>
+
+        <!-- Store badges -->
+        <div class="reveal stagger-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <StoreBadge platform="ios" comingSoon />
+          <StoreBadge platform="android" comingSoon />
+        </div>
+        
+        <!-- Trust badges -->
+        <div class="reveal stagger-4 mt-10 flex flex-wrap justify-center gap-6 text-sm text-gray-500 dark:text-gray-400">
+          <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50">
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <span>Privacy-first</span>
+          </div>
+          <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50">
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span>Works offline</span>
+          </div>
+          <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50">
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <span>AI-powered</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Section -->
+  <section class="section bg-white dark:bg-gray-950 relative overflow-hidden">
+    <div class="container-custom relative">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-gray-900 dark:text-white mb-3">
+          See it in <span class="gradient-text">Action</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+          Clean, intuitive interface designed for effortless learning
+        </p>
+      </div>
+
+      <!-- Screenshot mockups -->
+      <div class="reveal stagger-1 flex justify-center gap-4 overflow-x-auto pb-4 px-4 -mx-4 scrollbar-hide">
+        {
+          [1, 2, 3, 4, 5].map((i) => (
+            <div class="flex-shrink-0 w-40 sm:w-48 transform hover:scale-105 transition-transform duration-300">
+              <div class="bg-gray-900 rounded-3xl overflow-hidden shadow-xl border border-gray-700">
+                <div class="aspect-[9/19] bg-gradient-to-b from-gray-800 to-gray-900 flex items-center justify-center">
+                  <div class="text-center text-gray-400 p-4">
+                    <span class="text-4xl block mb-3">🎯</span>
+                    <p class="text-sm font-medium">Screenshot {i}</p>
+                    <p class="text-xs mt-1 text-gray-500">Coming soon</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <p class="text-center text-gray-500 dark:text-gray-500 text-sm mt-8 reveal stagger-2">
+        Real screenshots will be added before launch
+      </p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section gradient-bg">
+    <div class="container-custom">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-gray-900 dark:text-white mb-3">
+          Powerful <span class="gradient-text">Features</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+          Everything you need to make learning effective and enjoyable
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {features.map((feature, index) => (
+          <div class={`reveal stagger-${(index % 3) + 1}`}>
+            <FeatureCard {...feature} index={index} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section bg-white dark:bg-gray-950 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary-50/30 to-transparent dark:via-primary-950/20"></div>
+    <div class="container-custom relative">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-gray-900 dark:text-white mb-3">
+          Simple, Fair <span class="gradient-text">Pricing</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Start for free with all core features. Upgrade for unlimited AI and cloud sync.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div class="reveal stagger-1">
+          <PricingCard
+            name="Free"
+            price="$0"
+            description="Perfect for getting started"
+            features={freeFeatures}
+          />
+        </div>
+        <div class="reveal stagger-2">
+          <PricingCard
+            name="Pro"
+            price="$4.99"
+            period="month"
+            description="For power learners"
+            features={proFeatures}
+            highlighted
+            badge="Recommended"
+          />
+        </div>
+      </div>
+
+      <p class="text-center text-gray-500 dark:text-gray-500 text-sm mt-8 reveal stagger-3">
+        Annual plan available at $29.99/year (save 50%)
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section gradient-bg">
+    <div class="container-custom">
+      <div class="reveal">
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-gray-900 dark:text-white text-center mb-4">
+          Frequently Asked <span class="gradient-text">Questions</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12">
+          Got questions? We've got answers.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto reveal stagger-1">
+        <FAQ items={faqItems} />
+      </div>
+
+      <div class="mt-12 reveal stagger-2">
+        <div class="card-glass p-8 max-w-md mx-auto text-center">
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            Still have questions?
+          </p>
+          <a href="/support" class="btn-secondary inline-flex">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+            <span>Contact support</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gray-900 dark:bg-gray-950 relative overflow-hidden">
+    <!-- Decorative gradient -->
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-600/20 via-transparent to-accent-600/20"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl"></div>
+    
+    <div class="container-custom text-center relative">
+      <div class="reveal">
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mb-3">Ready to Start Learning?</h2>
+        <p class="text-gray-400 max-w-xl mx-auto mb-8">
+          Download Pairloom today and discover a fun, effective way to master any topic.
+        </p>
+      </div>
+
+      <div class="reveal stagger-1 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <StoreBadge platform="ios" comingSoon />
+        <StoreBadge platform="android" comingSoon />
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Note -->
+  <section class="py-8 bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
+    <div class="container-custom text-center">
+      <p class="text-sm text-gray-500 dark:text-gray-500">
+        By using Pairloom, you agree to our
+        <a href="/privacy/pairloom" class="link-underline">Privacy Policy</a>
+        and
+        <a href="/terms" class="link-underline">Terms of Service</a>.
+      </p>
+    </div>
+  </section>
+</PageLayout>

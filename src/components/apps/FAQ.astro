@@ -1,0 +1,89 @@
+---
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FAQItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="space-y-4">
+  {
+    items.map((item, index) => (
+      <div class="card-interactive overflow-hidden group" data-faq-item>
+        <button
+          type="button"
+          class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50/50 dark:hover:bg-gray-800/50 transition-colors"
+          aria-expanded="false"
+          data-faq-trigger
+        >
+          <span class="font-display font-medium text-gray-900 dark:text-white pr-4">{item.question}</span>
+          <div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/50 transition-colors">
+            <svg
+              class="w-4 h-4 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-all duration-200"
+              data-faq-icon
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </button>
+        <div
+          class="hidden px-6 pb-5"
+          data-faq-content
+        >
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">{item.answer}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  function setupFaq() {
+    const faqItems = document.querySelectorAll('[data-faq-item]');
+
+    faqItems.forEach((item) => {
+      const trigger = item.querySelector('[data-faq-trigger]') as HTMLElement | null;
+      const content = item.querySelector('[data-faq-content]');
+      const icon = item.querySelector('[data-faq-icon]');
+
+      // Only add listener if not already initialized
+      if (trigger && !trigger.dataset.initialized) {
+        trigger.dataset.initialized = 'true';
+        trigger.addEventListener('click', () => {
+          const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+          // Close all other items
+          faqItems.forEach((otherItem) => {
+            if (otherItem !== item) {
+              const otherTrigger = otherItem.querySelector('[data-faq-trigger]');
+              const otherContent = otherItem.querySelector('[data-faq-content]');
+              const otherIcon = otherItem.querySelector('[data-faq-icon]');
+              otherTrigger?.setAttribute('aria-expanded', 'false');
+              otherContent?.classList.add('hidden');
+              otherIcon?.classList.remove('rotate-180');
+            }
+          });
+
+          // Toggle current item
+          trigger.setAttribute('aria-expanded', (!isExpanded).toString());
+          content?.classList.toggle('hidden', isExpanded);
+          icon?.classList.toggle('rotate-180', !isExpanded);
+        });
+      }
+    });
+  }
+
+  // Run on initial load
+  setupFaq();
+
+  // Re-run after View Transitions navigation
+  document.addEventListener('astro:page-load', setupFaq);
+</script>

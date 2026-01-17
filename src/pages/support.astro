@@ -1,0 +1,152 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import PageHeader from '../components/common/PageHeader.astro';
+import FAQ from '../components/apps/FAQ.astro';
+
+const faqItems = [
+  {
+    question: 'How do I reset my password?',
+    answer:
+      'Since we use Google Sign-In, there is no separate password for our apps. To secure your account, manage your Google account security at myaccount.google.com.',
+  },
+  {
+    question: 'How do I restore my purchases?',
+    answer:
+      'Open the app, go to Settings, and tap "Restore Purchases". Make sure you\'re signed in with the same Apple ID or Google account you used for the original purchase.',
+  },
+  {
+    question: 'How do I cancel my subscription?',
+    answer:
+      'Subscriptions are managed through your device\'s app store. On iOS, go to Settings → Your Name → Subscriptions. On Android, open Google Play Store → Menu → Subscriptions.',
+  },
+  {
+    question: 'Can I get a refund?',
+    answer:
+      'Refunds are handled by Apple (iOS) or Google (Android). Contact their support through the respective app store to request a refund according to their policies.',
+  },
+  {
+    question: 'How do I delete my account and data?',
+    answer:
+      'In the app, go to Settings → Account → Delete Account. This will remove all your data from our servers. Local data can be cleared by uninstalling the app.',
+  },
+  {
+    question: 'The app is crashing. What should I do?',
+    answer:
+      'Try these steps: 1) Make sure you have the latest app version, 2) Restart your device, 3) Reinstall the app. If the issue persists, contact us with details about your device and when the crash occurs.',
+  },
+];
+
+const supportInfo = [
+  { icon: '📱', text: 'Which app you\'re using' },
+  { icon: '📲', text: 'Device and OS version' },
+  { icon: '📝', text: 'Issue description' },
+  { icon: '📸', text: 'Screenshots if helpful' },
+];
+---
+
+<PageLayout
+  title="Support — Victor Odukoya"
+  description="Get help with Victor Odukoya's apps. Contact support or find answers to common questions."
+>
+  <div class="section gradient-bg pt-32">
+    <div class="container-custom">
+      <PageHeader
+        title="Get Help"
+        subtitle="Have a question or need assistance? I'm here for you."
+        badge="Support"
+      />
+
+      <!-- Contact Cards -->
+      <div class="max-w-3xl mx-auto mb-20">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <!-- Email Card -->
+          <div class="reveal stagger-1 card-interactive p-8 group" data-tilt>
+            <div class="icon-box-lg mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-display font-semibold text-gray-900 dark:text-white mb-3">Email Support</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">
+              Send me an email and I'll respond as soon as possible.
+            </p>
+            <a href="mailto:support@victorodukoya.dev" class="btn-gradient">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+              </svg>
+              <span>Send Email</span>
+            </a>
+          </div>
+
+          <!-- Response Time Card -->
+          <div class="reveal stagger-2 card-interactive p-8 group" data-tilt>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/50 dark:to-emerald-900/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-display font-semibold text-gray-900 dark:text-white mb-3">Response Time</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">
+              I typically respond within 24-48 hours during business days.
+            </p>
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-sm font-medium">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              Usually available
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Helpful Info -->
+      <div class="max-w-3xl mx-auto mb-20 reveal stagger-3">
+        <div class="card-glass p-8">
+          <h3 class="text-xl font-display font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+            <span class="text-2xl">💡</span>
+            When reaching out, please include:
+          </h3>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {supportInfo.map((item) => (
+              <div class="flex items-center gap-4 p-4 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-700/50">
+                <span class="text-2xl">{item.icon}</span>
+                <span class="text-gray-700 dark:text-gray-300">{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
+            Frequently Asked <span class="gradient-text">Questions</span>
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400">
+            Quick answers to common questions
+          </p>
+        </div>
+
+        <div class="reveal stagger-1">
+          <FAQ items={faqItems} />
+        </div>
+
+        <div class="mt-12 reveal stagger-2">
+          <div class="card-glass p-8 text-center">
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Didn't find what you're looking for?
+            </p>
+            <a href="mailto:support@victorodukoya.dev" class="btn-secondary inline-flex">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <span>Contact me directly</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</PageLayout>
