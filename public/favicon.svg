@@ -6,5 +6,5 @@
     </linearGradient>
   </defs>
   <rect width="100" height="100" rx="20" fill="url(#grad)"/>
-  <text x="50" y="65" font-size="50" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-weight="bold">✦</text>
+  <text x="50" y="68" font-size="42" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-weight="700" letter-spacing="-2">VO</text>
 </svg>
