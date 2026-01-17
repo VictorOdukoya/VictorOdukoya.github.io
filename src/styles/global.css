@@ -78,17 +78,17 @@
   background-image:
     radial-gradient(
       ellipse 80% 50% at 50% 0%,
-      rgba(91, 107, 247, 0.15),
+      rgba(99, 102, 241, 0.15),
       transparent
     ),
     radial-gradient(
       ellipse 60% 40% at 100% 50%,
-      rgba(217, 70, 239, 0.1),
+      rgba(20, 184, 166, 0.1),
       transparent
     ),
     radial-gradient(
       ellipse 60% 40% at 0% 100%,
-      rgba(91, 107, 247, 0.1),
+      rgba(99, 102, 241, 0.1),
       transparent
     );
 }
@@ -97,17 +97,17 @@
   background-image:
     radial-gradient(
       ellipse 80% 50% at 50% 0%,
-      rgba(91, 107, 247, 0.25),
+      rgba(99, 102, 241, 0.25),
       transparent
     ),
     radial-gradient(
       ellipse 60% 40% at 100% 50%,
-      rgba(217, 70, 239, 0.15),
+      rgba(20, 184, 166, 0.15),
       transparent
     ),
     radial-gradient(
       ellipse 60% 40% at 0% 100%,
-      rgba(91, 107, 247, 0.15),
+      rgba(99, 102, 241, 0.15),
       transparent
     );
 }
@@ -146,7 +146,7 @@
   /* Gradient button with shimmer */
   .btn-gradient {
     @apply btn px-6 py-3 text-sm text-white relative overflow-hidden;
-    background: linear-gradient(135deg, #5b6bf7 0%, #d946ef 100%);
+    background: linear-gradient(135deg, #6366f1 0%, #14b8a6 100%);
   }
 
   .btn-gradient::before {
@@ -222,9 +222,9 @@
   @apply bg-clip-text text-transparent;
   background-image: linear-gradient(
     135deg,
-    #5b6bf7 0%,
-    #d946ef 50%,
-    #5b6bf7 100%
+    #6366f1 0%,
+    #14b8a6 50%,
+    #6366f1 100%
   );
   background-size: 200% auto;
   animation: gradient 4s ease infinite;
@@ -244,7 +244,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #5b6bf7, #d946ef);
+  background: linear-gradient(90deg, #6366f1, #14b8a6);
   transition: width 0.3s ease;
 }
 
@@ -345,7 +345,7 @@
   transition: opacity 0.3s ease;
   background: radial-gradient(
     circle,
-    rgba(91, 107, 247, 0.08) 0%,
+    rgba(99, 102, 241, 0.08) 0%,
     transparent 70%
   );
   transform: translate(-50%, -50%);
@@ -354,7 +354,7 @@
 .dark .cursor-glow {
   background: radial-gradient(
     circle,
-    rgba(91, 107, 247, 0.12) 0%,
+    rgba(99, 102, 241, 0.12) 0%,
     transparent 70%
   );
 }
@@ -392,7 +392,7 @@
   position: absolute;
   inset: -2px;
   border-radius: inherit;
-  background: linear-gradient(135deg, #5b6bf7, #d946ef, #5b6bf7);
+  background: linear-gradient(135deg, #6366f1, #14b8a6, #6366f1);
   background-size: 200% 200%;
   animation: gradient 3s ease infinite;
   opacity: 0;
@@ -422,7 +422,7 @@
 
   .badge-gradient {
     @apply badge text-white;
-    background: linear-gradient(135deg, #5b6bf7 0%, #d946ef 100%);
+    background: linear-gradient(135deg, #6366f1 0%, #14b8a6 100%);
   }
 }
 
@@ -434,8 +434,8 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(91, 107, 247, 0.3),
-    rgba(217, 70, 239, 0.3),
+    rgba(99, 102, 241, 0.3),
+    rgba(20, 184, 166, 0.3),
     transparent
   );
 }
