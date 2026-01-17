@@ -5,9 +5,6 @@
   <!-- Subtle grid pattern overlay -->
   <div class="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#fff1_1px,transparent_1px),linear-gradient(to_bottom,#fff1_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none"></div>
 
-  <!-- Cursor glow effect -->
-  <div id="cursor-glow" class="cursor-glow hidden lg:block"></div>
-
   <div class="container-custom relative z-10 pt-10 pb-5">
     <div class="max-w-3xl">
       <!-- Main headline -->
@@ -99,28 +96,12 @@
     </div>
 
     <!-- Glow effect behind cards -->
-    <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-full blur-3xl"></div>
+    <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-br from-primary-500/20 to-accent-500/15 dark:from-primary-500/10 dark:to-accent-500/10 rounded-full blur-3xl"></div>
   </div>
 </section>
 
 <script>
   function setupHero() {
-    // Cursor glow effect
-    const cursorGlow = document.getElementById('cursor-glow');
-    if (cursorGlow && !cursorGlow.dataset.initialized) {
-      cursorGlow.dataset.initialized = 'true';
-      
-      document.addEventListener('mousemove', (e) => {
-        cursorGlow.style.left = e.clientX + 'px';
-        cursorGlow.style.top = e.clientY + 'px';
-        cursorGlow.style.opacity = '1';
-      });
-
-      document.addEventListener('mouseleave', () => {
-        cursorGlow.style.opacity = '0';
-      });
-    }
-
     // Scroll reveal animations
     const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
     

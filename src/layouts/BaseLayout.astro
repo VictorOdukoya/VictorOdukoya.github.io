@@ -79,6 +79,9 @@ const fullCanonicalUrl = canonicalUrl || Astro.url.toString();
     <ViewTransitions />
   </head>
   <body class="min-h-screen flex flex-col">
+    <!-- Cursor glow effect (desktop only) -->
+    <div class="cursor-glow hidden lg:block"></div>
+    
     <slot />
 
     <!-- Theme event listeners (can run after page loads) -->
