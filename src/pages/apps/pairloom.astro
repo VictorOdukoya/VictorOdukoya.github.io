@@ -106,7 +106,7 @@ const faqItems = [
     <div class="absolute bottom-20 right-10 w-48 h-48 bg-accent-500/10 rounded-full blur-3xl"></div>
     
     <!-- Back link -->
-    <div class="container-custom pt-6 relative">
+    <div class="container-custom relative">
       <a
         href="/apps"
         class="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-all group"
@@ -182,10 +182,11 @@ const faqItems = [
       </div>
 
       <!-- Screenshot mockups -->
-      <div class="reveal stagger-1 flex justify-center gap-4 overflow-x-auto pb-4 px-4 -mx-4 scrollbar-hide">
+      <div id="screenshot-carousel" class="reveal stagger-1 flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+        <div class="flex-shrink-0 w-4 sm:w-8"></div>
         {
           [1, 2, 3, 4, 5].map((i) => (
-            <div class="flex-shrink-0 w-40 sm:w-48 transform hover:scale-105 transition-transform duration-300">
+            <div class="flex-shrink-0 w-40 sm:w-48 transform hover:scale-105 transition-transform duration-300 snap-center">
               <div class="bg-gray-900 rounded-3xl overflow-hidden shadow-xl border border-gray-700">
                 <div class="aspect-[9/19] bg-gradient-to-b from-gray-800 to-gray-900 flex items-center justify-center">
                   <div class="text-center text-gray-400 p-4">
@@ -198,7 +199,21 @@ const faqItems = [
             </div>
           ))
         }
+        <div class="flex-shrink-0 w-4 sm:w-8"></div>
       </div>
+
+      <script>
+        function centerCarousel() {
+          const carousel = document.getElementById('screenshot-carousel');
+          if (carousel) {
+            const scrollWidth = carousel.scrollWidth;
+            const clientWidth = carousel.clientWidth;
+            carousel.scrollLeft = (scrollWidth - clientWidth) / 2;
+          }
+        }
+        centerCarousel();
+        document.addEventListener('astro:page-load', centerCarousel);
+      </script>
 
       <p class="text-center text-gray-500 dark:text-gray-500 text-sm mt-8 reveal stagger-2">
         Real screenshots will be added before launch
@@ -270,7 +285,7 @@ const faqItems = [
   </section>
 
   <!-- FAQ Section -->
-  <section class="section gradient-bg">
+  <section id="faq" class="section gradient-bg scroll-mt-24">
     <div class="container-custom">
       <div class="reveal">
         <h2 class="text-2xl sm:text-3xl font-display font-bold text-gray-900 dark:text-white text-center mb-4">
