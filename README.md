@@ -43,6 +43,7 @@ website/
 | Home | `/` | Landing page with featured app |
 | Apps | `/apps` | App directory |
 | Pairloom | `/apps/pairloom` | Pairloom app detail page |
+| Clup Prototype | `/apps/clup/app/home` | Embedded static tennis club app prototype |
 | Privacy | `/privacy` | General privacy policy |
 | Privacy (Pairloom) | `/privacy/pairloom` | Pairloom-specific privacy |
 | Terms | `/terms` | Terms of service |
@@ -61,6 +62,13 @@ website/
 ## 🚢 Deployment
 
 The site automatically deploys to GitHub Pages when pushing to the `main` branch.
+
+### Embedded Clup Prototype
+
+1. Open the `clup-app` repository next to this website repo.
+2. Run `npm run publish:github-pages-local` there.
+3. Run `npm run build` in this repo.
+4. Push this repo to `main` to publish the updated prototype under `/apps/clup/app/home`.
 
 ### Manual Setup
 
