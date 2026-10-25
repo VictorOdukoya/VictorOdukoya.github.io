@@ -27,7 +27,7 @@ const faqItems = [
   {
     question: 'How do I delete my account and data?',
     answer:
-      'In the app, go to Settings → Account → Delete Account. This will remove all your data from our servers. Local data can be cleared by uninstalling the app.',
+      'In Pairloom, go to Settings → Account → Delete Account. If you no longer have access to the app, use the public account deletion request page.',
   },
   {
     question: 'The app is crashing. What should I do?',
@@ -70,7 +70,7 @@ const supportInfo = [
             <p class="text-gray-600 dark:text-gray-400 mb-6">
               Send me an email and I'll respond as soon as possible.
             </p>
-            <a href="mailto:support@victorodukoya.dev" class="btn-gradient">
+            <a href="mailto:support@victorodukoya.com" class="btn-gradient">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
               </svg>
@@ -132,12 +132,16 @@ const supportInfo = [
           <FAQ items={faqItems} />
         </div>
 
+        <p class="text-center mt-6">
+          <a href="/delete-account" class="link-underline">Request deletion of your Pairloom account without the app</a>
+        </p>
+
         <div class="mt-12 reveal stagger-2">
           <div class="card-glass p-8 text-center">
             <p class="text-gray-600 dark:text-gray-400 mb-4">
               Didn't find what you're looking for?
             </p>
-            <a href="mailto:support@victorodukoya.dev" class="btn-secondary inline-flex">
+            <a href="mailto:support@victorodukoya.com" class="btn-secondary inline-flex">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
               </svg>

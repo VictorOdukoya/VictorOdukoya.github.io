@@ -5,12 +5,11 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
 <LegalLayout
   title="Pairloom Privacy Policy — Victor Odukoya"
   description="Privacy Policy for Pairloom - Learn Anything with Pairs."
-  lastUpdated="January 16, 2026"
+  lastUpdated="October 25, 2026"
 >
   <p class="lead">
     This Privacy Policy specifically covers the Pairloom app. Please also review our
-    <a href="/privacy">General Privacy Policy</a> for information that applies to all our
-    apps and services.
+    <a href="/privacy">Website Privacy Policy</a> for information about this website and contact requests.
   </p>
 
   <h2>1. About Pairloom</h2>
@@ -40,8 +39,8 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
   <h3>2.3 AI Generation Data</h3>
   <p>When you use AI to generate catalogs:</p>
   <ul>
-    <li>Your prompt/topic is sent to Google Gemini AI</li>
-    <li>We do not store your prompts on our servers</li>
+    <li>Your topic, instructions and any catalog content needed for the requested operation are sent through our Supabase function to Google Gemini AI.</li>
+    <li>Technical request information and usage counters are processed to verify Pro access, enforce quotas and diagnose errors. Do not include sensitive personal data in your prompts.</li>
     <li>Generated content is stored locally and optionally in cloud sync</li>
   </ul>
 
@@ -50,8 +49,8 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
   <h3>3.1 Local Storage (Default)</h3>
   <p>
     By default, all your data is stored locally on your device using SQLite. This includes
-    catalogs, progress, settings, and all gameplay data. This data never leaves your device
-    unless you enable cloud sync.
+    catalogs, progress, settings, and gameplay data. Online features such as AI generation,
+    account sign-in, subscriptions and cloud backup process the data described in this policy.
   </p>
 
   <h3>3.2 Cloud Sync (Pro Feature)</h3>
@@ -60,7 +59,7 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
     <li>Your data is encrypted and uploaded to Supabase (AWS infrastructure)</li>
     <li>Data is associated with your account (Google Sign-In)</li>
     <li>You can restore your data on any device</li>
-    <li>Data is retained for 30 days after subscription cancellation</li>
+    <li>You can request deletion of your cloud account and associated data as described below. Cancelling a subscription does not itself delete your account.</li>
   </ul>
 
   <h2>4. Advertisements</h2>
@@ -74,9 +73,6 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
     <li>Upgrade to Pro to remove all advertisements</li>
     <li>Manage ad preferences through your device settings</li>
   </ul>
-  <p>
-    We comply with GDPR and CCPA requirements for advertising consent.
-  </p>
 
   <h2>5. In-App Purchases</h2>
   <p>
@@ -127,17 +123,17 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
     settings. Data is exported in JSON format.
   </p>
 
-  <h3>8.2 Delete Your Data</h3>
+  <h3 id="data-deletion">8.2 Delete Your Data</h3>
   <p>To delete your Pairloom data:</p>
   <ul>
     <li><strong>Local data:</strong> Uninstall the app or use "Clear Data" in settings</li>
-    <li><strong>Cloud data:</strong> Delete your account from the app settings</li>
-    <li><strong>Full deletion:</strong> Contact us at the email below</li>
+    <li><strong>Cloud account and data:</strong> Use Settings → Account → Delete Account in Pairloom, or <a href="/delete-account">request deletion on the web</a> if you no longer have access to the app.</li>
   </ul>
+  <p>Deleting your account does not cancel an App Store or Google Play subscription; cancel it separately through the store where you subscribed. Data that must be retained for legal or security reasons is limited and handled as described in this policy.</p>
 
   <h2>9. Age Restrictions</h2>
   <p>
-    Pairloom is rated 4+ (Everyone) on app stores but is designed for users 13 and older.
+    Pairloom is designed for users 13 and older.
     We do not knowingly collect personal information from children under 13.
   </p>
 
@@ -175,7 +171,7 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
       <tr>
         <td>Google Gemini AI</td>
         <td>Content generation</td>
-        <td>User prompts (not stored)</td>
+        <td>Topic, instructions and catalog content needed for the requested operation</td>
       </tr>
     </tbody>
   </table>
@@ -189,7 +185,7 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
   <h2>12. Contact</h2>
   <p>For Pairloom-specific privacy questions:</p>
   <p>
-    <strong>Email:</strong> privacy@victorodukoya.dev<br />
+    <strong>Email:</strong> <a href="mailto:privacy@victorodukoya.com">privacy@victorodukoya.com</a><br />
     <strong>Subject:</strong> Pairloom Privacy Inquiry
   </p>
 

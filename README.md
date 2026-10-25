@@ -2,11 +2,13 @@
 
 Personal website and app showcase built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com).
 
+Current domain and hosting preparation: [DOMAIN_SETUP.md](./DOMAIN_SETUP.md). Node 24, static output `dist/`.
+
 ## 🚀 Quick Start
 
 ```bash
 # Install dependencies
-npm install
+npm ci
 
 # Start development server
 npm run dev
@@ -43,10 +45,9 @@ website/
 | Home | `/` | Landing page with featured app |
 | Apps | `/apps` | App directory |
 | Pairloom | `/apps/pairloom` | Pairloom app detail page |
-| Clup Prototype | `/apps/clup/app/home` | Embedded static tennis club app prototype |
 | Privacy | `/privacy` | General privacy policy |
 | Privacy (Pairloom) | `/privacy/pairloom` | Pairloom-specific privacy |
-| Terms | `/terms` | Terms of service |
+| App information | `/terms` | Pre-release availability and purchase information |
 | Support | `/support` | Contact and FAQ |
 | Impressum | `/impressum` | German legal notice |
 
@@ -57,33 +58,13 @@ website/
 - ✅ SEO optimized with Open Graph tags
 - ✅ Accessible (WCAG 2.1 guidelines)
 - ✅ Fast (static site generation)
-- ✅ GitHub Pages deployment
+- Static build for Cloudflare Pages
 
 ## 🚢 Deployment
 
-The site automatically deploys to GitHub Pages when pushing to the `main` branch.
-
-### Embedded Clup Prototype
-
-1. Open the `clup-app` repository next to this website repo.
-2. Run `npm run publish:github-pages-local` there.
-3. Run `npm run build` in this repo.
-4. Push this repo to `main` to publish the updated prototype under `/apps/clup/app/home`.
-
-### Manual Setup
-
-1. Update `astro.config.mjs` with your site URL:
-   ```javascript
-   site: 'https://yourusername.github.io',
-   // or with custom domain:
-   site: 'https://victorodukoya.dev',
-   ```
-
-2. Enable GitHub Pages in repository settings:
-   - Go to Settings → Pages
-   - Source: GitHub Actions
-
-3. Push to `main` to trigger deployment
+Cloudflare Pages uses `codex/website-production`, build output `dist/`, and Node 24.
+The build command runs lint, tests, the static build and generated-page checks; see [DOMAIN_SETUP.md](./DOMAIN_SETUP.md).
+The retained GitHub Pages workflow is a separate legacy/manual deployment path, not the Cloudflare pipeline.
 
 ## ✏️ Customization
 
@@ -92,7 +73,7 @@ The site automatically deploys to GitHub Pages when pushing to the `main` branch
 1. **Footer links:** Edit `src/components/common/Footer.astro`
 2. **Header navigation:** Edit `src/components/common/Header.astro`
 3. **About section:** Edit `src/components/home/AboutSection.astro`
-4. **Impressum:** Edit `src/pages/impressum.astro` (add your real data)
+4. **Impressum:** Edit `src/pages/impressum.astro` (publish only explicitly approved contact details)
 
 ### Add New App
 
@@ -108,10 +89,10 @@ Edit `tailwind.config.mjs` to change the color palette.
 
 - [ ] Replace placeholder screenshots with real ones
 - [ ] Update store badge links when apps are published
-- [ ] Fill in Impressum with real business information
+- [x] Public business information approved; telephone number excluded at the owner's request
 - [ ] Add real profile photo (optional)
 - [ ] Update social media links in Footer
-- [ ] Configure custom domain (optional)
+- [ ] Connect the custom domain and validate HTTPS and business e-mail
 
 ## 📄 License
 

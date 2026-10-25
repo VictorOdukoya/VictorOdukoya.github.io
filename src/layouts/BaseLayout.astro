@@ -1,24 +1,27 @@
 ---
 import '../styles/global.css';
-import { ViewTransitions } from 'astro:transitions';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/space-grotesk';
+import { ClientRouter } from 'astro:transitions';
+import { metadataUrls } from '../lib/site.mjs';
 
 interface Props {
   title: string;
   description?: string;
   ogImage?: string;
   canonicalUrl?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
   description = 'Victor Odukoya — Software developer building apps that make learning fun.',
-  ogImage = '/og-image.png',
+  ogImage = '/favicon.svg',
   canonicalUrl,
+  noindex = false,
 } = Astro.props;
 
-const siteUrl = Astro.site?.toString() || 'https://victorodukoya.dev';
-const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
-const fullCanonicalUrl = canonicalUrl || Astro.url.toString();
+const { image: fullOgImage, canonical: fullCanonicalUrl } = metadataUrls(Astro.url.pathname, ogImage, canonicalUrl);
 ---
 
 <!doctype html>
@@ -43,14 +46,13 @@ const fullCanonicalUrl = canonicalUrl || Astro.url.toString();
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
 
     <!-- Canonical -->
     <link rel="canonical" href={fullCanonicalUrl} />
 
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -71,12 +73,8 @@ const fullCanonicalUrl = canonicalUrl || Astro.url.toString();
     <meta name="theme-color" content="#6366f1" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#4f46e5" media="(prefers-color-scheme: dark)" />
 
-    <!-- Preconnect to fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <!-- View Transitions for SPA-like navigation -->
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="min-h-screen flex flex-col">
     <!-- Cursor glow effect (desktop only) -->

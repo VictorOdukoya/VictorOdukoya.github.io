@@ -123,7 +123,7 @@
     window.addEventListener('scroll', revealOnScroll, { passive: true });
 
     // Tilt effect for cards
-    const tiltElements = document.querySelectorAll('[data-tilt]');
+    const tiltElements = document.querySelectorAll<HTMLElement>('[data-tilt]');
     tiltElements.forEach((el) => {
       if (el.dataset.tiltInitialized) return;
       el.dataset.tiltInitialized = 'true';

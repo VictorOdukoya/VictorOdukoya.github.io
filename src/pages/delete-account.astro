@@ -1,0 +1,210 @@
+---
+import PageHeader from '../components/common/PageHeader.astro';
+import PageLayout from '../layouts/PageLayout.astro';
+
+const deletionEmail = 'support@victorodukoya.com';
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL ?? '';
+const supabasePublishableKey = import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? '';
+const canDeleteOnline = Boolean(supabaseUrl && supabasePublishableKey);
+const mailSubject = encodeURIComponent('Pairloom account and data deletion request');
+const mailBody = encodeURIComponent(
+  'Please delete my Pairloom account and associated server-side data.\n\n' +
+    'Email address associated with my Pairloom account: \n' +
+    'Platform (Android or iOS): \n\n' +
+    'I understand that deleting my Pairloom account does not cancel an App Store or Google Play subscription.\n',
+);
+const requestHref = `mailto:${deletionEmail}?subject=${mailSubject}&body=${mailBody}`;
+---
+
+<PageLayout
+  title="Delete your Pairloom account — Victor Odukoya"
+  description="Delete your Pairloom account and request deletion of associated server-side data."
+>
+  <section class="section gradient-bg pt-32">
+    <div class="container-custom">
+      <PageHeader
+        title="Delete your Pairloom account"
+        subtitle="Delete your account here if you no longer have access to Pairloom."
+        badge="Account and data deletion"
+      />
+
+      <div class="max-w-3xl mx-auto grid gap-6">
+        <section class="card-glass p-6 sm:p-8" aria-labelledby="web-deletion-request">
+          <h2 id="web-deletion-request" class="text-xl font-display font-semibold text-gray-900 dark:text-white mb-3">
+            Delete your account online
+          </h2>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5">
+            Sign in with the same Google account you use for Pairloom. We use this sign-in only to verify that you own the
+            account being deleted. We never ask for your Google password.
+          </p>
+
+          <div id="delete-configured" class="grid gap-4" hidden={!canDeleteOnline}>
+            <button id="google-sign-in" class="btn-gradient justify-center" type="button">
+              Continue with Google
+            </button>
+
+            <div id="signed-in-panel" class="rounded-2xl border border-gray-200 dark:border-gray-700 p-5" hidden>
+              <p class="text-gray-700 dark:text-gray-200 mb-4">
+                Signed in as <strong id="account-email"></strong>. This permanently deletes your Pairloom cloud account,
+                cloud backup, and associated server-side quota data.
+              </p>
+              <label class="flex gap-3 items-start text-sm text-gray-700 dark:text-gray-300 mb-4">
+                <input id="confirm-deletion" type="checkbox" class="mt-1 accent-red-600" />
+                <span>I understand that this cannot be undone, local data on this device is not deleted, and this does not cancel a store subscription.</span>
+              </label>
+              <button id="delete-account" class="btn-secondary justify-center" type="button" disabled>
+                Permanently delete Pairloom account
+              </button>
+              <button id="sign-out" class="link-underline mt-4" type="button">Sign out without deleting</button>
+            </div>
+          </div>
+
+          <div id="delete-unconfigured" class="grid gap-4" hidden={canDeleteOnline}>
+            <p class="text-amber-800 dark:text-amber-200 rounded-xl bg-amber-100/70 dark:bg-amber-900/30 p-4">
+              Online sign-in is not configured yet. You can still email a deletion request below.
+            </p>
+          </div>
+
+          <p id="delete-status" class="text-sm text-gray-600 dark:text-gray-300 mt-4" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="card-glass p-6 sm:p-8" aria-labelledby="email-deletion-request">
+          <h2 id="email-deletion-request" class="text-xl font-display font-semibold text-gray-900 dark:text-white mb-3">
+            Need help signing in?
+          </h2>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+            If you cannot use Google sign-in, email us from the address associated with your Pairloom account. Include
+            “delete my Pairloom account” and whether you use Android or iOS. We may ask you to verify account ownership.
+            Do not send passwords, sign-in codes, or payment details.
+          </p>
+          <a class="btn-secondary inline-flex" href={requestHref}>Email a deletion request</a>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">
+            Or email <a class="link-underline" href={`mailto:${deletionEmail}`}>{deletionEmail}</a>.
+          </p>
+        </section>
+
+        <section class="card-glass p-6 sm:p-8" aria-labelledby="deletion-details">
+          <h2 id="deletion-details" class="text-xl font-display font-semibold text-gray-900 dark:text-white mb-3">
+            What deletion means
+          </h2>
+          <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-2">
+            <li>Your Pairloom sign-in account, cloud backup, and associated server-side quota data are deleted.</li>
+            <li>Catalogs and progress stored only on your device are not deleted by removing the cloud account.</li>
+            <li>Deleting your Pairloom account does not cancel an Apple App Store or Google Play subscription. Cancel it separately in the store where you subscribed.</li>
+          </ul>
+          <p class="text-gray-600 dark:text-gray-300 mt-5">
+            See the <a class="link-underline" href="/privacy/pairloom#data-deletion">Pairloom Privacy Policy</a>
+            or <a class="link-underline" href="/support">contact support</a> if you need help.
+          </p>
+        </section>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script>
+    import { createClient, type Session } from '@supabase/supabase-js';
+
+    function setupAccountDeletion() {
+    const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+    const supabasePublishableKey = import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+    const signInButton = document.querySelector<HTMLButtonElement>('#google-sign-in');
+    const signedInPanel = document.querySelector<HTMLElement>('#signed-in-panel');
+    const emailLabel = document.querySelector<HTMLElement>('#account-email');
+    const confirmCheckbox = document.querySelector<HTMLInputElement>('#confirm-deletion');
+    const deleteButton = document.querySelector<HTMLButtonElement>('#delete-account');
+    const signOutButton = document.querySelector<HTMLButtonElement>('#sign-out');
+    const status = document.querySelector<HTMLElement>('#delete-status');
+
+    if (!signInButton || !signedInPanel || !emailLabel || !confirmCheckbox || !deleteButton || !signOutButton || !status || signInButton.dataset.initialized) return;
+    signInButton.dataset.initialized = 'true';
+
+    if (supabaseUrl && supabasePublishableKey) {
+      const client = createClient(supabaseUrl, supabasePublishableKey, {
+        auth: { storage: window.sessionStorage },
+      });
+
+      const setStatus = (message: string, isError = false) => {
+        status.textContent = message;
+        status.classList.toggle('text-red-600', isError);
+        status.classList.toggle('dark:text-red-400', isError);
+      };
+
+      const showSession = (session: Session | null) => {
+        const email = session?.user?.email;
+        signedInPanel.hidden = !email;
+        signInButton.hidden = Boolean(email);
+        emailLabel.textContent = email ?? '';
+        confirmCheckbox.checked = false;
+        deleteButton.disabled = true;
+      };
+
+      signInButton.addEventListener('click', async () => {
+        signInButton.disabled = true;
+        setStatus('Opening Google sign-in…');
+        try {
+          const { error } = await client.auth.signInWithOAuth({
+            provider: 'google',
+            options: { redirectTo: `${window.location.origin}/delete-account` },
+          });
+          if (!error) return;
+          setStatus('Could not start sign-in. Please use the email request option below.', true);
+          signInButton.disabled = false;
+        } catch {
+          setStatus('Could not start sign-in. Please use the email request option below.', true);
+          signInButton.disabled = false;
+        }
+      });
+
+      confirmCheckbox.addEventListener('change', () => {
+        deleteButton.disabled = !confirmCheckbox.checked;
+      });
+
+      signOutButton.addEventListener('click', async () => {
+        await client.auth.signOut({ scope: 'local' }).catch(() => undefined);
+        showSession(null);
+        confirmCheckbox.checked = false;
+        deleteButton.disabled = true;
+        setStatus('You have signed out. Your Pairloom account was not deleted.');
+      });
+
+      deleteButton.addEventListener('click', async () => {
+        if (!confirmCheckbox.checked) return;
+        deleteButton.disabled = true;
+        setStatus('Deleting your Pairloom account and cloud data…');
+        let deletionError;
+        try {
+          const { error } = await client.functions.invoke('delete-account', { body: {} });
+          deletionError = error;
+        } catch {
+          deletionError = true;
+        }
+        if (deletionError) {
+          setStatus('Deletion failed. Your account has not been confirmed as deleted. Please try again or contact support.', true);
+          deleteButton.disabled = false;
+          return;
+        }
+
+        await client.auth.signOut({ scope: 'local' }).catch(() => undefined);
+        signedInPanel.hidden = true;
+        setStatus('Your Pairloom account and associated server-side data have been deleted. Local data remains on your device; cancel any store subscription separately.');
+      });
+
+      client.auth.getSession().then(({ data, error }) => {
+        if (error) {
+          setStatus('Could not verify your sign-in. Please try again or contact support.', true);
+          return;
+        }
+        showSession(data.session);
+      }).catch(() => setStatus('Could not verify your sign-in. Please try again or contact support.', true));
+
+      const { data: { subscription } } = client.auth.onAuthStateChange((_event, session) => showSession(session));
+      document.addEventListener('astro:before-swap', () => {
+        subscription.unsubscribe();
+        client.auth.stopAutoRefresh();
+      }, { once: true });
+    }
+    }
+    setupAccountDeletion();
+    document.addEventListener('astro:page-load', setupAccountDeletion);
+</script>

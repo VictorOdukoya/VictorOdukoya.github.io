@@ -47,7 +47,6 @@ const features = [
 const freeFeatures = [
   'All four game modes',
   'Unlimited custom catalogs',
-  '3 AI generations per day',
   'Full progress tracking',
   'Local data storage',
   'Ad-supported',
@@ -55,10 +54,9 @@ const freeFeatures = [
 
 const proFeatures = [
   'Everything in Free',
-  'Unlimited AI generations',
+  'AI catalog creation (up to 300 operations per month)',
   'Cloud backup & sync',
   'No advertisements',
-  'Priority support',
 ];
 
 const faqItems = [
@@ -80,7 +78,7 @@ const faqItems = [
   {
     question: 'How does AI catalog generation work?',
     answer:
-      'Simply describe what you want to learn (e.g., "Spanish vocabulary for travel" or "World capitals"), and our AI will generate a complete catalog with pairs for you. Free users get 3 generations per day, Pro users have unlimited access.',
+      'With Pairloom Pro, describe what you want to learn, such as Spanish travel vocabulary or world capitals. AI creates matching pairs for you. Pro includes up to 300 AI operations per month; review generated content before learning it.',
   },
   {
     question: 'How do I cancel my subscription?',
@@ -90,7 +88,7 @@ const faqItems = [
   {
     question: 'What happens to my data if I cancel Pro?',
     answer:
-      'Your local data remains intact. Cloud-synced data stays available for 30 days after cancellation. You can export your data at any time through the app settings.',
+      'Your local catalogs and progress remain on your device. Pro features require an active subscription. Export your data from the app settings before changing devices.',
   },
 ];
 ---
@@ -252,7 +250,7 @@ const faqItems = [
           Simple, Fair <span class="gradient-text">Pricing</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Start for free with all core features. Upgrade for unlimited AI and cloud sync.
+          Start for free. Pro adds AI catalog creation and cloud backup.
         </p>
       </div>
 
@@ -260,7 +258,7 @@ const faqItems = [
         <div class="reveal stagger-1">
           <PricingCard
             name="Free"
-            price="$0"
+            price="Free"
             description="Perfect for getting started"
             features={freeFeatures}
           />
@@ -268,9 +266,8 @@ const faqItems = [
         <div class="reveal stagger-2">
           <PricingCard
             name="Pro"
-            price="$4.99"
-            period="month"
-            description="For power learners"
+            price="In-app"
+            description="Price and billing period shown before purchase"
             features={proFeatures}
             highlighted
             badge="Recommended"
@@ -279,7 +276,7 @@ const faqItems = [
       </div>
 
       <p class="text-center text-gray-500 dark:text-gray-500 text-sm mt-8 reveal stagger-3">
-        Annual plan available at $29.99/year (save 50%)
+        Available plans, local prices and renewal terms are shown in the app before you subscribe.
       </p>
     </div>
   </section>

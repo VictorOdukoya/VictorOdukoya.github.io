@@ -35,8 +35,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Space Grotesk", "system-ui", "sans-serif"],
+        sans: ["Inter Variable", "system-ui", "sans-serif"],
+        display: ["Space Grotesk Variable", "system-ui", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.8s ease-out forwards",
