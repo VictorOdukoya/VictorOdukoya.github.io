@@ -1,7 +1,8 @@
 # Website für victorodukoya.com vorbereiten
 
 Stand: 25.10.2026. Website auf Cloudflare veröffentlicht; Telefonnummer auf Wunsch entfernt.
-Live: https://victorodukoya-website.pages.dev/ . Eigene Domain wartet noch auf die Nameserver-Verteilung.
+Live: https://victorodukoya.com/ . Cloudflare-Delegation, Hauptdomain mit HTTPS und Weiterleitungen sowie Mailtest nach der Umstellung bestätigt.
+`www` leitet erfolgreich auf die Hauptdomain um; sein zusätzlicher Pages-Domaineintrag zeigt noch „Verifying“.
 
 ## Lokal
 
@@ -80,14 +81,33 @@ geprüft; Werte stimmen mit STRATO überein. Beide DKIM-CNAMEs dort bestätigt. 
 Der STRATO-Hinweis zu Mail bei eigenen Nameservern wurde mit der offiziellen Anleitung für STRATO-Mail hinter externen
 Nameservern abgeglichen. Versand/Empfang nach tatsächlicher Delegation trotzdem erneut testen.
 
-## Nach ausstehender Domainaktivierung
+## Domainabschluss am 25. Oktober 2026
 
-1. Registry-Delegation und Cloudflare-Status kontrollieren; nicht nur die STRATO-Speicherbestätigung als Aktivierung werten.
-2. Hauptdomain in Pages zuordnen. Der Dialog verlangt aktuell noch aktive Cloudflare-Nameserver.
-3. Website-Ziel in Cloudflare-DNS auf Pages umstellen; alte STRATO-A-/AAAA-Platzhalter nicht neben dem Pages-CNAME behalten.
-4. Bereits hinterlegtes `www`-Domainsetup abschließen; gespeicherte 301-Regel mit Pfad und Querystring live prüfen.
-5. Zertifikatsausstellung und HTTPS für beide Namen sowie Weiterleitungen real prüfen. Kein zusätzliches STRATO-SSL kaufen.
-6. Mail-DNS und echten externen Empfang/Versand einschließlich SPF/DKIM/DMARC nach dem Wechsel erneut prüfen.
+Die vorherigen Abschnitte beschreiben den Einrichtungsverlauf. Folgende aktuelle Nachweise ersetzen deren offenen
+Aktivierungsstände:
+
+- Öffentliche NS-Abfrage und Cloudflare-Zonenübersicht bestätigen die aktive Cloudflare-Delegation.
+- Anfangs lieferte die Hauptdomain HTTPS-Fehler 525. Im Pages-Dialog bestätigt: alte STRATO-Webziele
+  A `217.160.0.125` und AAAA `2001:8d8:100f:f000::200`. Beim Zuordnen der Hauptdomain wurden beide durch den
+  CNAME auf `victorodukoya-website.pages.dev` ersetzt. Mail-Records blieben erhalten.
+- Pages bestätigt die Hauptdomain als **Active / SSL enabled**. Das kostenlose Universal-SSL-Zertifikat deckt
+  Hauptdomain und erste Subdomain-Ebene ab. Kein STRATO-SSL oder kostenpflichtiges Zertifikat gekauft.
+- **Always Use HTTPS** aktiviert. HTTP wird auf HTTPS umgeleitet. Die bestehende WWW-Regel leitet mit 301 auf die
+  Hauptdomain, Pfad und Querystring bleiben erhalten. `/.well-known/` ist nach Cloudflares DCV-Anleitung vom
+  WWW-Redirect ausgenommen. Die zusätzliche Slash-Normalisierung liefert ggf. 308.
+- Mit curl inklusive normaler Zertifikatsprüfung bestätigt: Hauptdomain, Impressum, Apps, Datenschutz und
+  Kontolösch-Anfrage liefern am endgültigen HTTPS-Ziel HTTP 200. Browser bestätigt Startseite und Impressum unter
+  eigener Domain; Telefonnummer und Clup-Link fehlen wie freigegeben. Python-HTTP-Anfragen erhielten 403 und
+  werden nicht als erfolgreiche Prüfungen gewertet.
+- MX, SPF, DMARC und beide STRATO-DKIM-CNAMEs öffentlich erneut abgeglichen. Anschließend eigener realer Test
+  Outlook → Support → Outlook: Empfang in Apple Mail und Rückantwort im normalen privaten Eingang bestätigt.
+  Microsoft-Header dieser neuen Antwort: **SPF pass, DKIM pass, DMARC pass, compauth pass; SCL 1**.
+  Dies ist der neue Nachweis nach tatsächlicher Delegation; eine generelle Inbox-Zusage folgt daraus nicht.
+- Der zusätzliche `www`-Domaineintrag in Pages zeigt zuletzt noch **Verifying**; DNS-Nachprüfung ausgelöst.
+  Die für Besucher verwendete HTTPS-Weiterleitung funktioniert bereits, unabhängig von diesem zusätzlichen
+  Pages-Status. Der zunächst umgeleitete ACME-Prüfpfad wird nach ergänzter Ausnahme nicht mehr umgeleitet
+  (zufälliger Testpfad: 404 statt 301); normale WWW-Umleitung bleibt 301. Verifizierung danach erneut ausgelöst;
+  Abschlussstatus später kontrollieren. Keine erneute Nameserver-Umstellung nötig.
 
 ## Mail – am 25.10.2026 geprüft
 
@@ -142,6 +162,8 @@ Ohne Konfiguration bietet die Seite eine E-Mail-Anfrage; sie behauptet keine erf
 
 - https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/
 - https://developers.cloudflare.com/pages/configuration/custom-domains/
+- https://developers.cloudflare.com/pages/configuration/debugging-pages/
+- https://developers.cloudflare.com/ssl/edge-certificates/changing-dcv-method/troubleshooting/
 - https://docs.astro.build/en/guides/upgrade-to/v7/
 - https://www.gesetze-im-internet.de/ddg/__5.html
 - https://consumer-redress.ec.europa.eu/site-relocation_en
