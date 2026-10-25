@@ -55,6 +55,11 @@ Die ursprüngliche Arbeitskopie bleibt unverändert.
 - Nach ausdrücklicher Freigabe bei STRATO die Nameserver `leonidas.ns.cloudflare.com` und
   `sarah.ns.cloudflare.com` gespeichert. STRATO bestätigt Übermittlung an die Registry. Cloudflare zeigt
   „Waiting for your registrar to propagate your new nameservers“. Aktivierung noch nicht bestätigt.
+- `www.victorodukoya.com` im Pages-Projekt hinterlegt, DNS-Setup noch ausstehend. Zugehöriger CNAME in Cloudflare
+  auf `victorodukoya-website.pages.dev` geändert (proxied).
+- Cloudflare Single Redirect „WWW to victorodukoya.com“ gespeichert und enabled: Hostfilter exakt
+  `www.victorodukoya.com`, dynamisches Ziel `concat("https://victorodukoya.com", http.request.uri.path)`,
+  Status 301, Querystring erhalten. Tatsächliche Weiterleitung erst nach Aktivierung/HTTPS prüfbar.
 
 Mail-DNS nach erfolgter SPF-Einrichtung am 25.10.2026:
 
@@ -80,7 +85,7 @@ Nameservern abgeglichen. Versand/Empfang nach tatsächlicher Delegation trotzdem
 1. Registry-Delegation und Cloudflare-Status kontrollieren; nicht nur die STRATO-Speicherbestätigung als Aktivierung werten.
 2. Hauptdomain in Pages zuordnen. Der Dialog verlangt aktuell noch aktive Cloudflare-Nameserver.
 3. Website-Ziel in Cloudflare-DNS auf Pages umstellen; alte STRATO-A-/AAAA-Platzhalter nicht neben dem Pages-CNAME behalten.
-4. `www` anbinden und per Cloudflare-Redirect auf die Hauptdomain weiterleiten; Pfad und Querystring erhalten.
+4. Bereits hinterlegtes `www`-Domainsetup abschließen; gespeicherte 301-Regel mit Pfad und Querystring live prüfen.
 5. Zertifikatsausstellung und HTTPS für beide Namen sowie Weiterleitungen real prüfen. Kein zusätzliches STRATO-SSL kaufen.
 6. Mail-DNS und echten externen Empfang/Versand einschließlich SPF/DKIM/DMARC nach dem Wechsel erneut prüfen.
 
@@ -101,6 +106,9 @@ Nameservern abgeglichen. Versand/Empfang nach tatsächlicher Delegation trotzdem
   abschwächen. Bei wiederholten Problemen weitere reale Antworten/Tests und STRATO-/Empfänger-Support einbeziehen.
 - Nicht alle Alias-Absender einzeln extern getestet. Während der Einrichtung entstand außerdem ein zusätzlicher
   ungesendeter Testentwurf; keine automatische Bereinigung anderer Entwürfe vornehmen.
+- Zusatztest nach STRATO-Speicherbestätigung des NS-Wechsels: Nachricht von der eigenen externen Outlookadresse
+  an `support@victorodukoya.com` gesendet und deren Eingang in Apple Mail bestätigt. Dies prüft noch nicht den Betrieb
+  nach tatsächlicher Registry-Delegation, da zu diesem Zeitpunkt öffentlich weiter STRATO-Nameserver aktiv waren.
 
 ## Pairloom-Kontolöschung
 
