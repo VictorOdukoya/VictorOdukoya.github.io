@@ -1,6 +1,7 @@
 # Website für victorodukoya.com vorbereiten
 
-Stand: 25.10.2026. Veröffentlichung nach Freigabe vorbereitet; Telefonnummer auf Wunsch entfernt.
+Stand: 25.10.2026. Website auf Cloudflare veröffentlicht; Telefonnummer auf Wunsch entfernt.
+Live: https://victorodukoya-website.pages.dev/ . Eigene Domain wartet noch auf die Nameserver-Verteilung.
 
 ## Lokal
 
@@ -31,23 +32,29 @@ Die ursprüngliche Arbeitskopie bleibt unverändert.
 - Lint/Typprüfung, Unit-Tests für die neue URL-Logik mit 85-%-Mindestgrenzen und Prüfung des statischen Builds.
   Die Coverage betrifft `src/lib/site.mjs`, nicht sämtliche Astro-Komponenten oder Pairloom.
 
-## Cloudflare Pages – vorbereitet, noch nicht veröffentlicht
+## Cloudflare Pages – veröffentlicht
 
 - Anmeldung am vorhandenen Cloudflare-Konto bestätigt. Die bestehende GitHub-Integration bietet das Website-Repository
   bereits an; keine neue Integration und keine zusätzlichen GitHub-Rechte erteilt.
-- Einrichtungsformular vorbereitet: Projektname `victorodukoya-website`, Ausgabe `dist`, `NODE_VERSION=24`,
+- Projekt erstellt und erfolgreich deployt: `victorodukoya-website`, Ausgabe `dist`, `NODE_VERSION=24`,
   Buildbefehl `npm run lint && npm test && npm run build && npm run check:site`. Expliziter Build funktioniert mit
-  Framework-Preset „None“. „Save and Deploy“ wurde **nicht** betätigt; noch kein neues Projekt angelegt.
-- Vorgesehener Produktionsbranch: `codex/website-production`. Die lokalen Vorbereitungscommits werden vor dem Push
+  Framework-Preset „None“. Cloudflare bestätigt erfolgreiches Deployment des Commits `fa15125`.
+- Produktionsbranch: `codex/website-production`. Die lokalen Vorbereitungscommits wurden vor dem Push
   zusammengefasst, damit auch über deren Historie keine entfernte Telefonnummer veröffentlicht wird.
-  Nicht den alten Remote-Stand mit Clup-Inhalten veröffentlichen.
+  Nur dieser bereinigte Branch wurde hochgeladen; die Vorbereitungsbranch-Historie bleibt lokal.
+- Live im Chrome-Browser geprüft: Impressum ohne Telefonnummer, Apps ohne Clup/Platzhalter, Support,
+  Kontolösch-Anfrage und App-Informationsseite. Bei diesen Besuchen keine Browser-Konsolenfehler/-warnungen.
+  Ein zusätzlicher Python-HTTP-Test erhielt 403 und wird nicht als erfolgreicher Live-Test gezählt.
 - Gewünschten Produktionsbranch bewusst auswählen. Die ursprüngliche lokale Arbeitskopie steht auf `master`,
   während der vorhandene GitHub-Pages-Workflow `main` beobachtet; nicht ungeprüft einen davon als Livebranch annehmen.
-- Erst eine Vorschau unter Pages erstellen, prüfen und anschließend Domain verbinden.
+- Pages-Adresse geprüft; anschließend eigene Domain verbinden.
 - Hauptdomain `victorodukoya.com` und `www.victorodukoya.com` gemeinsam einrichten; eine kanonische Adresse mit
   Weiterleitung der anderen festlegen. HTTPS anschließend von außen prüfen.
 - Für die Hauptdomain verlangt Cloudflare Pages Cloudflare-Nameserver. Vor dem Wechsel die gesamte DNS-Zone sichern,
-  importierte Einträge mit STRATO vergleichen und insbesondere den Mailbetrieb erhalten.
+  importierte Einträge mit STRATO vergleichen und insbesondere den Mailbetrieb erhalten. Bestand privat gesichert.
+- Nach ausdrücklicher Freigabe bei STRATO die Nameserver `leonidas.ns.cloudflare.com` und
+  `sarah.ns.cloudflare.com` gespeichert. STRATO bestätigt Übermittlung an die Registry. Cloudflare zeigt
+  „Waiting for your registrar to propagate your new nameservers“. Aktivierung noch nicht bestätigt.
 
 Mail-DNS nach erfolgter SPF-Einrichtung am 25.10.2026:
 
@@ -57,11 +64,25 @@ Mail-DNS nach erfolgter SPF-Einrichtung am 25.10.2026:
 | `@` | TXT | `v=spf1 redirect=_spf.strato.com` |
 | `_dmarc` | TXT | `v=DMARC1;p=reject;` |
 | `_autodiscover._tcp` | SRV | Priorität 0, Gewicht 100, Port 443, `autoconfigure.strato.de` |
+| `autoconfig` | CNAME | `autoconfigure.strato.de` – DNS only |
+| `strato-dkim-0002._domainkey` | CNAME | `strato-dkim-0002._domainkey.rzone.de` – DNS only |
+| `strato-dkim-0003._domainkey` | CNAME | `strato-dkim-0003._domainkey.rzone.de` – DNS only |
 
 Diese Liste ist **kein vollständiger Zonenexport**. Die Testmail wurde mit der eigenen Domain erfolgreich DKIM-signiert.
-Vor DNS-Umzug trotzdem die tatsächlichen DKIM-Einträge aus der STRATO-Konfiguration aufnehmen; keine Selektoren raten.
-Mailnamen bei Cloudflare nicht als HTTP-Proxy konfigurieren.
-Noch keine Nameserver geändert.
+Der Cloudflare-Import ließ beide DKIM-Selektoren aus; sie wurden gemäß aktueller STRATO-Anleitung als CNAMEs ergänzt.
+MX, SPF, DMARC, Autodiscover-SRV und Autoconfig vor dem Wechsel direkt gegen beide zugewiesenen Cloudflare-Nameserver
+geprüft; Werte stimmen mit STRATO überein. Beide DKIM-CNAMEs dort bestätigt. Mailnamen nicht als HTTP-Proxy konfigurieren.
+Der STRATO-Hinweis zu Mail bei eigenen Nameservern wurde mit der offiziellen Anleitung für STRATO-Mail hinter externen
+Nameservern abgeglichen. Versand/Empfang nach tatsächlicher Delegation trotzdem erneut testen.
+
+## Nach ausstehender Domainaktivierung
+
+1. Registry-Delegation und Cloudflare-Status kontrollieren; nicht nur die STRATO-Speicherbestätigung als Aktivierung werten.
+2. Hauptdomain in Pages zuordnen. Der Dialog verlangt aktuell noch aktive Cloudflare-Nameserver.
+3. Website-Ziel in Cloudflare-DNS auf Pages umstellen; alte STRATO-A-/AAAA-Platzhalter nicht neben dem Pages-CNAME behalten.
+4. `www` anbinden und per Cloudflare-Redirect auf die Hauptdomain weiterleiten; Pfad und Querystring erhalten.
+5. Zertifikatsausstellung und HTTPS für beide Namen sowie Weiterleitungen real prüfen. Kein zusätzliches STRATO-SSL kaufen.
+6. Mail-DNS und echten externen Empfang/Versand einschließlich SPF/DKIM/DMARC nach dem Wechsel erneut prüfen.
 
 ## Mail – am 25.10.2026 geprüft
 
@@ -117,5 +138,7 @@ Ohne Konfiguration bietet die Seite eine E-Mail-Anfrage; sie behauptet keine erf
 - https://www.gesetze-im-internet.de/ddg/__5.html
 - https://consumer-redress.ec.europa.eu/site-relocation_en
 - https://www.strato.de/faq/mail/passwort-fuer-strato-webmail-vergessen/
+- https://www.strato.de/faq/domains/wie-kann-ich-bei-strato-meine-dns-eintraege-verwalten/
+- https://developers.cloudflare.com/ssl/edge-certificates/universal-ssl/
 
-Dies ist ein technischer Vorbereitungsstand, keine Bestätigung einer abgeschlossenen rechtlichen Prüfung oder Veröffentlichung.
+Die Pages-Veröffentlichung ist bestätigt; die eigene Domain noch nicht. Eine abgeschlossene rechtliche Prüfung wird nicht behauptet.
