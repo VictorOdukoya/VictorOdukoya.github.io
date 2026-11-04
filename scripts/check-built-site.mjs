@@ -3,7 +3,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const root = resolve('dist');
-const routes = ['index.html', 'apps/index.html', 'apps/pairloom/index.html', 'support/index.html', 'delete-account/index.html', 'privacy/index.html', 'privacy/pairloom/index.html', 'terms/index.html', 'impressum/index.html'];
+const routes = ['index.html', 'apps/index.html', 'apps/pair-journey/index.html', 'support/index.html', 'delete-account/index.html', 'privacy/index.html', 'privacy/pairloom/index.html', 'terms/index.html', 'impressum/index.html'];
 for (const route of routes) {
   const html = readFileSync(resolve(root, route), 'utf8');
   assert.doesNotMatch(html, /href="tel:|Telefon:/, `${route}: phone contact must not be published`);
@@ -14,6 +14,15 @@ for (const route of routes) {
     const target = resolve(root, `.${decodeURI(href)}`);
     assert(existsSync(target) || existsSync(resolve(target, 'index.html')), `${route}: missing local asset/page ${href}`);
   }
+}
+// Existing links must remain usable while official links move to the new URLs.
+for (const [oldPath, newPath] of [
+  ['apps/pairloom/index.html', '/apps/pair-journey/'],
+]) {
+  const html = readFileSync(resolve(root, oldPath), 'utf8');
+  assert(html.includes(`window.location.replace('${newPath}' + window.location.search + window.location.hash)`), `${oldPath}: redirect must preserve query and anchor`);
+  assert(html.includes(`content="0; url=${newPath}"`), `${oldPath}: no-script redirect missing`);
+  assert(existsSync(resolve(root, `.${newPath}`, 'index.html')), `${oldPath}: target missing`);
 }
 const cssFiles = readdirSync(resolve(root, 'assets')).filter(name => name.endsWith('.css'));
 assert(cssFiles.some(name => readFileSync(resolve(root, 'assets', name), 'utf8').includes('@font-face')), 'Self-hosted fonts missing');

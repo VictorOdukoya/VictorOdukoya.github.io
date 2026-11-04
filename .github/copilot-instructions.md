@@ -25,8 +25,8 @@ src/components/
 
 Pages use Astro's file-based routing. App-specific content nests under the parent:
 
-- `/apps/pairloom` → `pages/apps/pairloom.astro`
-- `/privacy/pairloom` → `pages/privacy/pairloom.astro`
+- `/apps/pair-journey` → `pages/apps/pair-journey.astro`
+- `/privacy/pairloom` → existing app notice; the new Pair Journey notice is maintained privately outside this public repository
 
 ## Key Commands
 
@@ -78,7 +78,7 @@ if (theme === "dark") document.documentElement.classList.add("dark");
 3. Add app card to `src/pages/apps/index.astro`
 4. Use existing components: `FeatureCard`, `PricingCard`, `FAQ`, `StoreBadge`
 
-Reference [pairloom.astro](src/pages/apps/pairloom.astro) for the complete app page structure with features, pricing comparison, and FAQ sections.
+Reference [pair-journey.astro](src/pages/apps/pair-journey.astro) for the complete app page structure with features, pricing comparison, and FAQ sections.
 
 ## Build Output
 

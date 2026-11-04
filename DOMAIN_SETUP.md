@@ -27,11 +27,11 @@ Die ursprüngliche Arbeitskopie bleibt unverändert.
 - Impressumsentwurf mit § 5 DDG; alte TMG-/RStV-/ODR-Blöcke entfernt. Keine neue Namensdarstellung mit weiteren Vornamen.
 - Website-Datenschutzhinweise für das vorgesehene Cloudflare-/STRATO-Hosting; App-Datenschutz separat.
 - Schriftarten lokal aus Fontsource-Paketen; keine Verbindung zu Google Fonts notwendig.
-- Keine erfundenen Storepreise, Free-KI-Quoten oder unbegrenzte Pro-KI-Nutzung mehr. Der gelesene Pairloom-Servercode
+- Keine erfundenen Storepreise, Free-KI-Quoten oder unbegrenzte Pro-KI-Nutzung mehr. Der gelesene Pair Journey-Servercode
   begrenzt Pro auf 300 KI-Vorgänge pro Monat; vor Veröffentlichung mit dem tatsächlich deployten Stand vergleichen.
 - Astro aktualisiert; Tailwind-3-Integration über PostCSS erhält das bestehende Design. Node 24 in CI.
 - Lint/Typprüfung, Unit-Tests für die neue URL-Logik mit 85-%-Mindestgrenzen und Prüfung des statischen Builds.
-  Die Coverage betrifft `src/lib/site.mjs`, nicht sämtliche Astro-Komponenten oder Pairloom.
+  Die Coverage betrifft `src/lib/site.mjs`, nicht sämtliche Astro-Komponenten oder Pair Journey.
 
 ## Cloudflare Pages – veröffentlicht
 
@@ -130,7 +130,7 @@ Aktivierungsstände:
   an `support@victorodukoya.com` gesendet und deren Eingang in Apple Mail bestätigt. Dies prüft noch nicht den Betrieb
   nach tatsächlicher Registry-Delegation, da zu diesem Zeitpunkt öffentlich weiter STRATO-Nameserver aktiv waren.
 
-## Pairloom-Kontolöschung
+## Pair Journey-Kontolöschung
 
 `.env.example` enthält ausschließlich die Namen zweier öffentlicher Browserwerte. Für das Hosting als Buildvariablen
 eintragen: `PUBLIC_SUPABASE_URL` und `PUBLIC_SUPABASE_PUBLISHABLE_KEY`. Kein Service-Role-/Secret-Key im Browser.

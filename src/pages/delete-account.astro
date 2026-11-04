@@ -6,25 +6,25 @@ const deletionEmail = 'support@victorodukoya.com';
 const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL ?? '';
 const supabasePublishableKey = import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? '';
 const canDeleteOnline = Boolean(supabaseUrl && supabasePublishableKey);
-const mailSubject = encodeURIComponent('Pairloom account and data deletion request');
+const mailSubject = encodeURIComponent('Pair Journey account and data deletion request');
 const mailBody = encodeURIComponent(
-  'Please delete my Pairloom account and associated server-side data.\n\n' +
-    'Email address associated with my Pairloom account: \n' +
+  'Please delete my Pair Journey account and associated server-side data.\n\n' +
+    'Email address associated with my Pair Journey account: \n' +
     'Platform (Android or iOS): \n\n' +
-    'I understand that deleting my Pairloom account does not cancel an App Store or Google Play subscription.\n',
+    'I understand that deleting my Pair Journey account does not cancel an App Store or Google Play subscription.\n',
 );
 const requestHref = `mailto:${deletionEmail}?subject=${mailSubject}&body=${mailBody}`;
 ---
 
 <PageLayout
-  title="Delete your Pairloom account — Victor Odukoya"
-  description="Delete your Pairloom account and request deletion of associated server-side data."
+  title="Delete your Pair Journey account — Victor Odukoya"
+  description="Delete your Pair Journey account and request deletion of associated server-side data."
 >
   <section class="section gradient-bg pt-32">
     <div class="container-custom">
       <PageHeader
-        title="Delete your Pairloom account"
-        subtitle="Delete your account here if you no longer have access to Pairloom."
+        title="Delete your Pair Journey account"
+        subtitle="Delete your account here if you no longer have access to Pair Journey."
         badge="Account and data deletion"
       />
 
@@ -34,7 +34,7 @@ const requestHref = `mailto:${deletionEmail}?subject=${mailSubject}&body=${mailB
             Delete your account online
           </h2>
           <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5">
-            Sign in with the same Google account you use for Pairloom. We use this sign-in only to verify that you own the
+            Sign in with the same Google account you use for Pair Journey. We use this sign-in only to verify that you own the
             account being deleted. We never ask for your Google password.
           </p>
 
@@ -45,7 +45,7 @@ const requestHref = `mailto:${deletionEmail}?subject=${mailSubject}&body=${mailB
 
             <div id="signed-in-panel" class="rounded-2xl border border-gray-200 dark:border-gray-700 p-5" hidden>
               <p class="text-gray-700 dark:text-gray-200 mb-4">
-                Signed in as <strong id="account-email"></strong>. This permanently deletes your Pairloom cloud account,
+                Signed in as <strong id="account-email"></strong>. This permanently deletes your Pair Journey cloud account,
                 cloud backup, and associated server-side quota data.
               </p>
               <label class="flex gap-3 items-start text-sm text-gray-700 dark:text-gray-300 mb-4">
@@ -53,7 +53,7 @@ const requestHref = `mailto:${deletionEmail}?subject=${mailSubject}&body=${mailB
                 <span>I understand that this cannot be undone, local data on this device is not deleted, and this does not cancel a store subscription.</span>
               </label>
               <button id="delete-account" class="btn-secondary justify-center" type="button" disabled>
-                Permanently delete Pairloom account
+                Permanently delete Pair Journey account
               </button>
               <button id="sign-out" class="link-underline mt-4" type="button">Sign out without deleting</button>
             </div>
@@ -73,8 +73,8 @@ const requestHref = `mailto:${deletionEmail}?subject=${mailSubject}&body=${mailB
             Need help signing in?
           </h2>
           <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-            If you cannot use Google sign-in, email us from the address associated with your Pairloom account. Include
-            “delete my Pairloom account” and whether you use Android or iOS. We may ask you to verify account ownership.
+            If you cannot use Google sign-in, email us from the address associated with your Pair Journey account. Include
+            “delete my Pair Journey account” and whether you use Android or iOS. We may ask you to verify account ownership.
             Do not send passwords, sign-in codes, or payment details.
           </p>
           <a class="btn-secondary inline-flex" href={requestHref}>Email a deletion request</a>
@@ -88,13 +88,13 @@ const requestHref = `mailto:${deletionEmail}?subject=${mailSubject}&body=${mailB
             What deletion means
           </h2>
           <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-2">
-            <li>Your Pairloom sign-in account, cloud backup, and associated server-side quota data are deleted.</li>
+            <li>Your Pair Journey sign-in account, cloud backup, and associated server-side quota data are deleted.</li>
             <li>Catalogs and progress stored only on your device are not deleted by removing the cloud account.</li>
-            <li>Deleting your Pairloom account does not cancel an Apple App Store or Google Play subscription. Cancel it separately in the store where you subscribed.</li>
+            <li>Deleting your Pair Journey account does not cancel an Apple App Store or Google Play subscription. Cancel it separately in the store where you subscribed.</li>
           </ul>
           <p class="text-gray-600 dark:text-gray-300 mt-5">
-            See the <a class="link-underline" href="/privacy/pairloom#data-deletion">Pairloom Privacy Policy</a>
-            or <a class="link-underline" href="/support">contact support</a> if you need help.
+            The Pair Journey privacy information is still being prepared. The <a class="link-underline" href="/privacy/pairloom#data-deletion">existing notice for the earlier app version</a> remains available.
+            <a class="link-underline" href="/support">Contact support</a> if you need help.
           </p>
         </section>
       </div>
@@ -165,13 +165,13 @@ const requestHref = `mailto:${deletionEmail}?subject=${mailSubject}&body=${mailB
         showSession(null);
         confirmCheckbox.checked = false;
         deleteButton.disabled = true;
-        setStatus('You have signed out. Your Pairloom account was not deleted.');
+        setStatus('You have signed out. Your Pair Journey account was not deleted.');
       });
 
       deleteButton.addEventListener('click', async () => {
         if (!confirmCheckbox.checked) return;
         deleteButton.disabled = true;
-        setStatus('Deleting your Pairloom account and cloud data…');
+        setStatus('Deleting your Pair Journey account and cloud data…');
         let deletionError;
         try {
           const { error } = await client.functions.invoke('delete-account', { body: {} });
@@ -187,7 +187,7 @@ const requestHref = `mailto:${deletionEmail}?subject=${mailSubject}&body=${mailB
 
         await client.auth.signOut({ scope: 'local' }).catch(() => undefined);
         signedInPanel.hidden = true;
-        setStatus('Your Pairloom account and associated server-side data have been deleted. Local data remains on your device; cancel any store subscription separately.');
+        setStatus('Your Pair Journey account and associated server-side data have been deleted. Local data remains on your device; cancel any store subscription separately.');
       });
 
       client.auth.getSession().then(({ data, error }) => {

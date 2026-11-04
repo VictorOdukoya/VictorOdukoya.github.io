@@ -27,7 +27,7 @@
 ### Goals
 
 - **Primary:** Provide legal pages (Privacy, Terms, Impressum) required for App Store/Play Store
-- **Secondary:** Showcase Pairloom and future apps professionally
+- **Secondary:** Showcase Pair Journey and future apps professionally
 - **Tertiary:** Establish personal brand as indie developer
 
 ### Target Audience
@@ -55,7 +55,7 @@ victorodukoya.dev (or github.io for now)
 │
 ├── / (Home)
 │   ├── Hero Section (Developer intro)
-│   ├── Featured App (Pairloom highlight)
+│   ├── Featured App (Pair Journey highlight)
 │   ├── About Section (Brief bio)
 │   └── Footer (Links, Copyright)
 │
@@ -63,7 +63,7 @@ victorodukoya.dev (or github.io for now)
 │   ├── App Grid/List
 │   └── Filter by platform (future)
 │
-├── /apps/pairloom (Pairloom Landing)
+├── /apps/pair-journey (Pair Journey Landing)
 │   ├── Hero with App Icon & Badges
 │   ├── Screenshot Carousel
 │   ├── Features Grid
@@ -74,7 +74,7 @@ victorodukoya.dev (or github.io for now)
 ├── /privacy (General Privacy Policy)
 │   └── Links to app-specific policies
 │
-├── /privacy/pairloom (Pairloom Privacy Policy)
+├── /privacy/pair-journey (Pair Journey Privacy Policy)
 │   └── Full GDPR-compliant policy
 │
 ├── /terms (Terms of Service)
@@ -95,9 +95,9 @@ victorodukoya.dev (or github.io for now)
 |------|-----|-------|
 | Home | `/` | Main landing |
 | Apps | `/apps` | Directory |
-| Pairloom | `/apps/pairloom` | App detail |
+| Pair Journey | `/apps/pair-journey` | App detail |
 | Privacy | `/privacy` | General |
-| Pairloom Privacy | `/privacy/pairloom` | App-specific |
+| Pair Journey Privacy | `/privacy/pair-journey` | App-specific |
 | Terms | `/terms` | All apps |
 | Support | `/support` | Contact |
 | Impressum | `/impressum` | German legal |
@@ -110,12 +110,12 @@ victorodukoya.dev (or github.io for now)
 
 **Developer Brand:** Victor Odukoya — Clean, modern, trustworthy
 
-**Pairloom Brand:** Educational, fun, engaging
+**Pair Journey Brand:** Educational, fun, engaging
 
 ### Color Palette
 
 ```css
-/* Primary Colors - Matching Pairloom */
+/* Primary Colors - Matching Pair Journey */
 --color-primary-50: #eef2ff;
 --color-primary-100: #e0e7ff;
 --color-primary-200: #c7d2fe;
@@ -242,7 +242,7 @@ victorodukoya.dev (or github.io for now)
 
 ### 4.1 Home Page (`/`)
 
-**Purpose:** Introduce Victor as developer, showcase Pairloom
+**Purpose:** Introduce Victor as developer, showcase Pair Journey
 
 **Layout:**
 ```
@@ -272,7 +272,7 @@ victorodukoya.dev (or github.io for now)
 │ │                                                         │ │
 │ │  ┌──────────────────────┬──────────────────────────┐   │ │
 │ │  │                      │                          │   │ │
-│ │  │   📱 iPhone Mockup   │  PAIRLOOM               │   │ │
+│ │  │   📱 iPhone Mockup   │  PAIR JOURNEY               │   │ │
 │ │  │   with screenshot    │                          │   │ │
 │ │  │                      │  Master any topic        │   │ │
 │ │  │                      │  through fun pair-       │   │ │
@@ -318,7 +318,7 @@ victorodukoya.dev (or github.io for now)
 
 ### 4.2 Apps Page (`/apps`)
 
-**Purpose:** List all apps (currently just Pairloom, but scalable)
+**Purpose:** List all apps (currently just Pair Journey, but scalable)
 
 **Layout:**
 ```
@@ -338,7 +338,7 @@ victorodukoya.dev (or github.io for now)
 │ ┌─────────────────────┐  ┌─────────────────────┐           │
 │ │                     │  │                     │           │
 │ │  ┌───┐              │  │  ┌───┐              │           │
-│ │  │ P │  Pairloom    │  │  │ ? │  Coming Soon │           │
+│ │  │ P │  Pair Journey    │  │  │ ? │  Coming Soon │           │
 │ │  └───┘              │  │  └───┘              │           │
 │ │                     │  │                     │           │
 │ │  Learn with pairs   │  │  Your next app      │           │
@@ -358,7 +358,7 @@ victorodukoya.dev (or github.io for now)
 
 ---
 
-### 4.3 Pairloom Page (`/apps/pairloom`)
+### 4.3 Pair Journey Page (`/apps/pair-journey`)
 
 **Purpose:** Detailed app landing page, convince users to download
 
@@ -372,7 +372,7 @@ victorodukoya.dev (or github.io for now)
 │ ┌─────────────────────────────────────────────────────────┐ │
 │ │                                                         │ │
 │ │  ┌────────┐                                             │ │
-│ │  │  ICON  │  Pairloom                                   │ │
+│ │  │  ICON  │  Pair Journey                                   │ │
 │ │  └────────┘  Learn Anything with Pairs                  │ │
 │ │                                                         │ │
 │ │  Master any topic through fun, engaging pair-matching   │ │
@@ -462,7 +462,7 @@ victorodukoya.dev (or github.io for now)
 │ │  ❓ Frequently Asked Questions                          │ │
 │ │                                                         │ │
 │ │  ┌─────────────────────────────────────────────────┐   │ │
-│ │  │ What is Pairloom?                            [+] │   │ │
+│ │  │ What is Pair Journey?                            [+] │   │ │
 │ │  └─────────────────────────────────────────────────┘   │ │
 │ │  ┌─────────────────────────────────────────────────┐   │ │
 │ │  │ Is my data private?                          [+] │   │ │
@@ -494,7 +494,7 @@ victorodukoya.dev (or github.io for now)
 
 ---
 
-### 4.4 Privacy Policy (`/privacy` & `/privacy/pairloom`)
+### 4.4 Privacy Policy (`/privacy` & `/privacy/pair-journey`)
 
 **Purpose:** Legal compliance (GDPR, CCPA, App Store requirements)
 
@@ -740,7 +740,7 @@ website/
 │   ├── apple-touch-icon.png
 │   ├── og-image.png             # Open Graph image
 │   └── images/
-│       ├── pairloom/
+│       ├── pair-journey/
 │       │   ├── icon.png
 │       │   ├── logo.svg
 │       │   └── screenshots/
@@ -778,10 +778,10 @@ website/
 │   │       └── LegalContent.astro
 │   ├── content/
 │   │   ├── apps/
-│   │   │   └── pairloom.md      # App content in Markdown
+│   │   │   └── pair-journey.md      # App content in Markdown
 │   │   ├── legal/
 │   │   │   ├── privacy.md
-│   │   │   ├── privacy-pairloom.md
+│   │   │   ├── privacy-pair-journey.md
 │   │   │   └── terms.md
 │   │   └── config.ts            # Content collections config
 │   ├── data/
@@ -796,10 +796,10 @@ website/
 │   │   ├── index.astro
 │   │   ├── apps/
 │   │   │   ├── index.astro
-│   │   │   └── pairloom.astro
+│   │   │   └── pair-journey.astro
 │   │   ├── privacy/
 │   │   │   ├── index.astro
-│   │   │   └── pairloom.astro
+│   │   │   └── pair-journey.astro
 │   │   ├── terms.astro
 │   │   ├── support.astro
 │   │   └── impressum.astro
@@ -902,7 +902,7 @@ jobs:
 ### Key Messages
 
 1. **Home:** "I build apps that make learning fun"
-2. **Pairloom:** "Master any topic through engaging pair-matching games"
+2. **Pair Journey:** "Master any topic through engaging pair-matching games"
 3. **About:** "Software developer passionate about creating impactful tools"
 
 ### Content to Prepare
@@ -911,7 +911,7 @@ jobs:
 |---------|--------|-------|
 | Hero tagline | ⬜ | Keep short, memorable |
 | About bio | ⬜ | 2-3 sentences |
-| Pairloom description | ⬜ | From App Store listing |
+| Pair Journey description | ⬜ | From App Store listing |
 | Feature descriptions | ⬜ | 4 main features |
 | FAQ content | ⬜ | 5-8 questions |
 | Privacy Policy | ⬜ | Legal template + customization |
@@ -1001,12 +1001,12 @@ jobs:
 ### Phase 2: Core Pages (Day 1-2)
 - [ ] Home page (Hero, Featured App, About)
 - [ ] Apps index page
-- [ ] Pairloom detail page (without screenshots)
+- [ ] Pair Journey detail page (without screenshots)
 - [ ] Basic styling and responsiveness
 
 ### Phase 3: Legal Pages (Day 2)
 - [ ] Privacy Policy (general)
-- [ ] Privacy Policy (Pairloom)
+- [ ] Privacy Policy (Pair Journey)
 - [ ] Terms of Service
 - [ ] Impressum (with placeholders)
 - [ ] Support page
@@ -1057,8 +1057,8 @@ Until apps are published, use:
 ## Checklist Summary
 
 ### Must Have (MVP)
-- [ ] Home page with Pairloom highlight
-- [ ] Pairloom detail page
+- [ ] Home page with Pair Journey highlight
+- [ ] Pair Journey detail page
 - [ ] Privacy Policy
 - [ ] Terms of Service
 - [ ] Impressum

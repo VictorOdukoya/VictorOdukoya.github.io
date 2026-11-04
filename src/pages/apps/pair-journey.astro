@@ -1,0 +1,40 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import StoreBadge from '../../components/apps/StoreBadge.astro';
+---
+
+<PageLayout
+  title="Pair Journey — Learn with pairs"
+  description="Pair Journey is a learning app in development built around matching pairs."
+>
+  <section class="gradient-bg relative overflow-hidden pt-32">
+    <div class="absolute top-20 left-10 w-64 h-64 bg-primary-500/10 dark:bg-primary-500/5 rounded-full blur-3xl"></div>
+    <div class="container-custom relative py-12 sm:py-16 lg:py-20">
+      <a href="/apps" class="link-underline text-sm">← All Apps</a>
+      <div class="max-w-3xl mx-auto text-center mt-12">
+        <span class="badge-accent mb-6">In development</span>
+        <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-primary-100 to-accent-100 dark:from-primary-900/50 dark:to-accent-900/50 rounded-3xl flex items-center justify-center text-5xl shadow-xl">🎯</div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-gray-900 dark:text-white mb-4">Pair Journey</h1>
+        <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 mb-4">Learn with <span class="gradient-text font-semibold">pairs</span></p>
+        <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-8">
+          Pair Journey is a learning app in development that uses matching games to explore topics and practise connections.
+          Release details, availability and pricing are still being worked out.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <StoreBadge platform="ios" comingSoon />
+          <StoreBadge platform="android" comingSoon />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section bg-white dark:bg-gray-950 scroll-mt-24">
+    <div class="container-custom max-w-2xl">
+      <h2 class="text-2xl sm:text-3xl font-display font-bold text-gray-900 dark:text-white text-center mb-8">Questions about Pair Journey?</h2>
+      <div class="card-glass p-8 text-center">
+        <p class="text-gray-600 dark:text-gray-400 mb-4">We will share more information as the app approaches release.</p>
+        <a href="/support" class="btn-secondary inline-flex">Contact support</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

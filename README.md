@@ -44,9 +44,9 @@ website/
 |------|------|-------------|
 | Home | `/` | Landing page with featured app |
 | Apps | `/apps` | App directory |
-| Pairloom | `/apps/pairloom` | Pairloom app detail page |
+| Pair Journey | `/apps/pair-journey` | Pair Journey app detail page |
 | Privacy | `/privacy` | General privacy policy |
-| Privacy (Pairloom) | `/privacy/pairloom` | Pairloom-specific privacy |
+| Privacy (earlier app version) | `/privacy/pairloom` | Existing notice; Pair Journey notice is being prepared |
 | App information | `/terms` | Pre-release availability and purchase information |
 | Support | `/support` | Contact and FAQ |
 | Impressum | `/impressum` | German legal notice |
@@ -97,3 +97,5 @@ Edit `tailwind.config.mjs` to change the color palette.
 ## 📄 License
 
 © 2026 Victor Odukoya. All rights reserved.
+
+The previous app URL redirects to the Pair Journey page, preserving query parameters and section anchors. The existing privacy URL stays available while the new notice is prepared; its contents require review.
