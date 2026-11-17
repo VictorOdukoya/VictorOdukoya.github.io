@@ -7,7 +7,7 @@ const faqItems = [
   {
     question: 'How do I reset my password?',
     answer:
-      'Since we use Google Sign-In, there is no separate password for our apps. To secure your account, manage your Google account security at myaccount.google.com.',
+      'Pair Journey supports Apple or Google sign-in where available. There is no separate Pair Journey password; secure the Apple or Google account you use to sign in.',
   },
   {
     question: 'How do I restore my purchases?',
@@ -27,7 +27,7 @@ const faqItems = [
   {
     question: 'How do I delete my account and data?',
     answer:
-      'In the app, go to Settings → Account → Delete Account. This will remove all your data from our servers. Local data can be cleared by uninstalling the app.',
+      'In Pair Journey, go to Settings → Account → Delete Account. If you no longer have access to the app, use the public account deletion request page.',
   },
   {
     question: 'The app is crashing. What should I do?',
@@ -70,7 +70,7 @@ const supportInfo = [
             <p class="text-gray-600 dark:text-gray-400 mb-6">
               Send me an email and I'll respond as soon as possible.
             </p>
-            <a href="mailto:support@victorodukoya.dev" class="btn-gradient">
+            <a href="mailto:support@victorodukoya.com" class="btn-gradient">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
               </svg>
@@ -89,11 +89,11 @@ const supportInfo = [
             <p class="text-gray-600 dark:text-gray-400 mb-6">
               Check out the FAQ section on each app page for instant answers to common questions.
             </p>
-            <a href="/apps/pairloom#faq" class="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 rounded-full text-sm font-medium hover:bg-amber-200 dark:hover:bg-amber-900/50 transition-colors">
+            <a href="/apps/pair-journey#faq" class="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 rounded-full text-sm font-medium hover:bg-amber-200 dark:hover:bg-amber-900/50 transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
               </svg>
-              View Pairloom FAQ
+              View Pair Journey FAQ
             </a>
           </div>
         </div>
@@ -132,12 +132,16 @@ const supportInfo = [
           <FAQ items={faqItems} />
         </div>
 
+        <p class="text-center mt-6">
+          <a href="/delete-account" class="link-underline">Request deletion of your Pair Journey account without the app</a>
+        </p>
+
         <div class="mt-12 reveal stagger-2">
           <div class="card-glass p-8 text-center">
             <p class="text-gray-600 dark:text-gray-400 mb-4">
               Didn't find what you're looking for?
             </p>
-            <a href="mailto:support@victorodukoya.dev" class="btn-secondary inline-flex">
+            <a href="mailto:support@victorodukoya.com" class="btn-secondary inline-flex">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
               </svg>

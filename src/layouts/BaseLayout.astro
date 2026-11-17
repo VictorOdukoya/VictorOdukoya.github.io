@@ -16,7 +16,7 @@ const {
   canonicalUrl,
 } = Astro.props;
 
-const siteUrl = Astro.site?.toString() || 'https://victorodukoya.dev';
+const siteUrl = Astro.site?.toString() || 'https://victorodukoya.com';
 const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 const fullCanonicalUrl = canonicalUrl || Astro.url.toString();
 ---

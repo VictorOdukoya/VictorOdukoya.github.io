@@ -1,9 +1,11 @@
 # Victor Odukoya Developer Website — Implementation Plan
 
 **Project:** Personal developer website with app showcase  
-**Tech Stack:** Astro 5 + TailwindCSS 4 + TypeScript  
-**Target:** GitHub Pages deployment  
+**Tech Stack:** Astro 5 + Tailwind CSS 3 + TypeScript
+**Hosting:** Cloudflare Pages for `victorodukoya.com`; GitHub Pages mirror from `master/docs`
 **Created:** January 16, 2026
+
+**Current release state — November 17, 2026:** The website presents Pair Journey and its planned offer (free local learning with ads; Pro planned at €3.99/month in Germany with 150 AI requests per UTC month; no annual launch plan). The website is pre-release and public. Current routes are `/apps/pair-journey` and `/privacy/pair-journey`; retired app routes and prototype content were removed, with no replacement redirects. Privacy and terms pages describe planned service behavior; keep them aligned with the final app configuration before store release. The local static build succeeded. Release tests remain scheduled for the final app verification phase. The outdated EU ODR-platform link was removed under [Regulation (EU) 2024/3228](https://eur-lex.europa.eu/eli/reg/2024/3228/oj/eng).
 
 ---
 
@@ -27,7 +29,7 @@
 ### Goals
 
 - **Primary:** Provide legal pages (Privacy, Terms, Impressum) required for App Store/Play Store
-- **Secondary:** Showcase Pairloom and future apps professionally
+- **Secondary:** Showcase Pair Journey and future apps professionally
 - **Tertiary:** Establish personal brand as indie developer
 
 ### Target Audience
@@ -51,11 +53,11 @@
 ### Site Map
 
 ```
-victorodukoya.dev (or github.io for now)
+victorodukoya.com
 │
 ├── / (Home)
 │   ├── Hero Section (Developer intro)
-│   ├── Featured App (Pairloom highlight)
+│   ├── Featured App (Pair Journey highlight)
 │   ├── About Section (Brief bio)
 │   └── Footer (Links, Copyright)
 │
@@ -63,7 +65,7 @@ victorodukoya.dev (or github.io for now)
 │   ├── App Grid/List
 │   └── Filter by platform (future)
 │
-├── /apps/pairloom (Pairloom Landing)
+├── /apps/pair-journey (Pair Journey Landing)
 │   ├── Hero with App Icon & Badges
 │   ├── Screenshot Carousel
 │   ├── Features Grid
@@ -74,7 +76,7 @@ victorodukoya.dev (or github.io for now)
 ├── /privacy (General Privacy Policy)
 │   └── Links to app-specific policies
 │
-├── /privacy/pairloom (Pairloom Privacy Policy)
+├── /privacy/pair-journey (Pair Journey Privacy Policy)
 │   └── Full GDPR-compliant policy
 │
 ├── /terms (Terms of Service)
@@ -95,9 +97,9 @@ victorodukoya.dev (or github.io for now)
 |------|-----|-------|
 | Home | `/` | Main landing |
 | Apps | `/apps` | Directory |
-| Pairloom | `/apps/pairloom` | App detail |
+| Pair Journey | `/apps/pair-journey` | App detail |
 | Privacy | `/privacy` | General |
-| Pairloom Privacy | `/privacy/pairloom` | App-specific |
+| Pair Journey Privacy | `/privacy/pair-journey` | App-specific |
 | Terms | `/terms` | All apps |
 | Support | `/support` | Contact |
 | Impressum | `/impressum` | German legal |
@@ -110,12 +112,12 @@ victorodukoya.dev (or github.io for now)
 
 **Developer Brand:** Victor Odukoya — Clean, modern, trustworthy
 
-**Pairloom Brand:** Educational, fun, engaging
+**Pair Journey Brand:** Educational, fun, engaging
 
 ### Color Palette
 
 ```css
-/* Primary Colors - Matching Pairloom */
+/* Primary Colors - Matching Pair Journey */
 --color-primary-50: #eef2ff;
 --color-primary-100: #e0e7ff;
 --color-primary-200: #c7d2fe;
@@ -242,7 +244,7 @@ victorodukoya.dev (or github.io for now)
 
 ### 4.1 Home Page (`/`)
 
-**Purpose:** Introduce Victor as developer, showcase Pairloom
+**Purpose:** Introduce Victor as developer, showcase Pair Journey
 
 **Layout:**
 ```
@@ -272,7 +274,7 @@ victorodukoya.dev (or github.io for now)
 │ │                                                         │ │
 │ │  ┌──────────────────────┬──────────────────────────┐   │ │
 │ │  │                      │                          │   │ │
-│ │  │   📱 iPhone Mockup   │  PAIRLOOM               │   │ │
+│ │  │   📱 iPhone Mockup   │  PAIR JOURNEY               │   │ │
 │ │  │   with screenshot    │                          │   │ │
 │ │  │                      │  Master any topic        │   │ │
 │ │  │                      │  through fun pair-       │   │ │
@@ -318,7 +320,7 @@ victorodukoya.dev (or github.io for now)
 
 ### 4.2 Apps Page (`/apps`)
 
-**Purpose:** List all apps (currently just Pairloom, but scalable)
+**Purpose:** List all apps (currently just Pair Journey, but scalable)
 
 **Layout:**
 ```
@@ -338,7 +340,7 @@ victorodukoya.dev (or github.io for now)
 │ ┌─────────────────────┐  ┌─────────────────────┐           │
 │ │                     │  │                     │           │
 │ │  ┌───┐              │  │  ┌───┐              │           │
-│ │  │ P │  Pairloom    │  │  │ ? │  Coming Soon │           │
+│ │  │ P │  Pair Journey    │  │  │ ? │  Coming Soon │           │
 │ │  └───┘              │  │  └───┘              │           │
 │ │                     │  │                     │           │
 │ │  Learn with pairs   │  │  Your next app      │           │
@@ -358,7 +360,7 @@ victorodukoya.dev (or github.io for now)
 
 ---
 
-### 4.3 Pairloom Page (`/apps/pairloom`)
+### 4.3 Pair Journey Page (`/apps/pair-journey`)
 
 **Purpose:** Detailed app landing page, convince users to download
 
@@ -372,7 +374,7 @@ victorodukoya.dev (or github.io for now)
 │ ┌─────────────────────────────────────────────────────────┐ │
 │ │                                                         │ │
 │ │  ┌────────┐                                             │ │
-│ │  │  ICON  │  Pairloom                                   │ │
+│ │  │  ICON  │  Pair Journey                                   │ │
 │ │  └────────┘  Learn Anything with Pairs                  │ │
 │ │                                                         │ │
 │ │  Master any topic through fun, engaging pair-matching   │ │
@@ -441,14 +443,14 @@ victorodukoya.dev (or github.io for now)
 │ │  │  • All game modes   │  │                     │      │ │
 │ │  │  • Unlimited        │  │  Everything in      │      │ │
 │ │  │    catalogs         │  │  Free, plus:        │      │ │
-│ │  │  • 3 AI gen/day     │  │                     │      │ │
-│ │  │  • Ad-supported     │  │  • Unlimited AI     │      │ │
+│ │  │  • No AI in Free    │  │                     │      │ │
+│ │  │  • Ad-supported     │  │  • 150 AI requests/mo│      │ │
 │ │  │                     │  │  • Cloud Sync       │      │ │
 │ │  │                     │  │  • No Ads           │      │ │
 │ │  │       $0            │  │                     │      │ │
-│ │  │                     │  │  $4.99/mo           │      │ │
-│ │  │                     │  │  or $29.99/year     │      │ │
-│ │  │                     │  │  (save 50%)         │      │ │
+│ │  │                     │  │  €3.99/mo           │      │ │
+│ │  │                     │  │  no annual plan     │      │ │
+│ │  │                     │  │  (planned)          │      │ │
 │ │  │                     │  │                     │      │ │
 │ │  └─────────────────────┘  └─────────────────────┘      │ │
 │ │                                                         │ │
@@ -462,7 +464,7 @@ victorodukoya.dev (or github.io for now)
 │ │  ❓ Frequently Asked Questions                          │ │
 │ │                                                         │ │
 │ │  ┌─────────────────────────────────────────────────┐   │ │
-│ │  │ What is Pairloom?                            [+] │   │ │
+│ │  │ What is Pair Journey?                            [+] │   │ │
 │ │  └─────────────────────────────────────────────────┘   │ │
 │ │  ┌─────────────────────────────────────────────────┐   │ │
 │ │  │ Is my data private?                          [+] │   │ │
@@ -494,7 +496,7 @@ victorodukoya.dev (or github.io for now)
 
 ---
 
-### 4.4 Privacy Policy (`/privacy` & `/privacy/pairloom`)
+### 4.4 Privacy Policy (`/privacy` & `/privacy/pair-journey`)
 
 **Purpose:** Legal compliance (GDPR, CCPA, App Store requirements)
 
@@ -505,9 +507,9 @@ victorodukoya.dev (or github.io for now)
    - Company/developer info
    
 2. Information We Collect
-   - Account information (email, name via Google Sign-In)
-   - Usage data (gameplay stats, preferences)
-   - Device information (for analytics, crash reporting)
+   - Account identifiers and profile details returned by Apple or Google sign-in
+   - Feature data shared when sign-in, AI, advertising, purchases, or cloud backup is used
+   - Technical or diagnostic information only where an enabled service collects it
    
 3. How We Use Your Information
    - Provide and improve services
@@ -518,11 +520,11 @@ victorodukoya.dev (or github.io for now)
    - Supabase (database, authentication, storage)
    - RevenueCat (subscription management)
    - Google AdMob (advertising for free users)
-   - Google Gemini AI (catalog generation)
+   - OpenAI GPT-6 Luna Fast (planned AI provider; hosted setup and retention not confirmed)
    
 5. Data Storage and Security
    - Where data is stored (Supabase/AWS)
-   - Encryption practices
+   - Cloud backup is not end-to-end encrypted; provider retention remains to be verified
    
 6. Your Rights
    - Access your data
@@ -530,9 +532,9 @@ victorodukoya.dev (or github.io for now)
    - Export your data
    - Opt-out of marketing
    
-7. Children's Privacy
-   - 13+ age requirement
-   - COPPA compliance
+7. Age and Audience
+   - Initial release intended for adults aged 18 and over
+   - No in-app age self-declaration; store settings remain to be confirmed
    
 8. International Users
    - GDPR rights for EU users
@@ -548,6 +550,8 @@ victorodukoya.dev (or github.io for now)
 ---
 
 ### 4.5 Terms of Service (`/terms`)
+
+**Current planned offer (not yet live):** Free learning without AI; Pro planned at €3.99/month in Germany with 150 AI requests per UTC month; no annual plan at launch.
 
 **Structure:**
 ```
@@ -593,7 +597,7 @@ victorodukoya.dev (or github.io for now)
 │ │  │ Email               │  │ Response Time       │      │ │
 │ │  │                     │  │                     │      │ │
 │ │  │ support@            │  │ Usually within      │      │ │
-│ │  │ victorodukoya.dev   │  │ 24-48 hours         │      │ │
+│ │  │ victorodukoya.com  │  │ 24-48 hours         │      │ │
 │ │  │                     │  │                     │      │ │
 │ │  │ [Send Email]        │  │                     │      │ │
 │ │  └─────────────────────┘  └─────────────────────┘      │ │
@@ -620,13 +624,13 @@ victorodukoya.dev (or github.io for now)
 
 ### 4.7 Impressum (`/impressum`)
 
-**Purpose:** German legal requirement (TMG §5, MDStV §6)
+**Purpose:** German legal notice. Check the current applicability of DDG § 5 and MStV § 18 before publication.
 
 **Required Information:**
 ```
 IMPRESSUM
 
-Angaben gemäß § 5 TMG
+Angaben gemäß § 5 DDG
 
 Victor Odukoya
 Softwareentwicklung
@@ -643,16 +647,12 @@ Umsatzsteuer-ID:
 Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
 [Wenn vorhanden, sonst weglassen]
 
-Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
+Verantwortlich für journalistisch-redaktionelle Inhalte nach § 18 Abs. 2 MStV, soweit einschlägig:
 Victor Odukoya
 [Adresse wie oben]
 
-Streitschlichtung:
-Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
-https://ec.europa.eu/consumers/odr/
-
-Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
-Verbraucherschlichtungsstelle teilzunehmen.
+Verbraucherstreitbeilegung:
+[Angaben vor Veröffentlichung anhand der für den Anbieter geltenden Pflichten prüfen]
 
 Haftung für Inhalte:
 [Standard disclaimer text]
@@ -733,14 +733,14 @@ Dark mode:
 website/
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml           # GitHub Pages deployment
+│       └── check.yml            # Repository checks
 ├── public/
 │   ├── favicon.ico
 │   ├── favicon.svg
 │   ├── apple-touch-icon.png
 │   ├── og-image.png             # Open Graph image
 │   └── images/
-│       ├── pairloom/
+│       ├── pair-journey/
 │       │   ├── icon.png
 │       │   ├── logo.svg
 │       │   └── screenshots/
@@ -778,10 +778,10 @@ website/
 │   │       └── LegalContent.astro
 │   ├── content/
 │   │   ├── apps/
-│   │   │   └── pairloom.md      # App content in Markdown
+│   │   │   └── pair-journey.md      # App content in Markdown
 │   │   ├── legal/
 │   │   │   ├── privacy.md
-│   │   │   ├── privacy-pairloom.md
+│   │   │   ├── privacy-pair-journey.md
 │   │   │   └── terms.md
 │   │   └── config.ts            # Content collections config
 │   ├── data/
@@ -796,10 +796,10 @@ website/
 │   │   ├── index.astro
 │   │   ├── apps/
 │   │   │   ├── index.astro
-│   │   │   └── pairloom.astro
+│   │   │   └── pair-journey.astro
 │   │   ├── privacy/
 │   │   │   ├── index.astro
-│   │   │   └── pairloom.astro
+│   │   │   └── pair-journey.astro
 │   │   ├── terms.astro
 │   │   ├── support.astro
 │   │   └── impressum.astro
@@ -836,8 +836,8 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://yourusername.github.io', // Update for production
-  base: '/', // Or '/repo-name' for project pages
+  site: 'https://victorodukoya.com',
+  base: '/',
   integrations: [tailwind()],
   output: 'static',
   build: {
@@ -846,47 +846,11 @@ export default defineConfig({
 });
 ```
 
-### GitHub Actions Deployment
+### Publication
 
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/deploy-pages@v4
-        id: deployment
-```
+- `master` builds the GitHub Pages mirror from the generated `docs/` folder.
+- `codex/website-production` is the production source branch for the Cloudflare Pages project `victorodukoya-website` and the custom domain.
+- Keep both branches on the same source snapshot when publishing website changes.
 
 ---
 
@@ -897,12 +861,12 @@ jobs:
 - **Professional** but approachable
 - **Clear** and concise
 - **Friendly** without being overly casual
-- **Confident** but humble (first app, passionate about it)
+- **Confident** but humble, with a focus on useful learning tools
 
 ### Key Messages
 
 1. **Home:** "I build apps that make learning fun"
-2. **Pairloom:** "Master any topic through engaging pair-matching games"
+2. **Pair Journey:** "Master any topic through engaging pair-matching games"
 3. **About:** "Software developer passionate about creating impactful tools"
 
 ### Content to Prepare
@@ -911,12 +875,12 @@ jobs:
 |---------|--------|-------|
 | Hero tagline | ⬜ | Keep short, memorable |
 | About bio | ⬜ | 2-3 sentences |
-| Pairloom description | ⬜ | From App Store listing |
+| Pair Journey description | ⬜ | From App Store listing |
 | Feature descriptions | ⬜ | 4 main features |
 | FAQ content | ⬜ | 5-8 questions |
-| Privacy Policy | ⬜ | Legal template + customization |
-| Terms of Service | ⬜ | Legal template + customization |
-| Impressum | ⬜ | Your business info (placeholders) |
+| Privacy Policy | ✅ | Pre-release policy; update against final provider, consent, and retention configuration before store release |
+| Terms of Service | ✅ | Pre-release terms; update against final products and store terms before store release |
+| Impressum | ✅ | Business details are populated; no personal mobile number is shown |
 
 ---
 
@@ -1001,14 +965,14 @@ jobs:
 ### Phase 2: Core Pages (Day 1-2)
 - [ ] Home page (Hero, Featured App, About)
 - [ ] Apps index page
-- [ ] Pairloom detail page (without screenshots)
+- [ ] Pair Journey detail page (without screenshots)
 - [ ] Basic styling and responsiveness
 
 ### Phase 3: Legal Pages (Day 2)
 - [ ] Privacy Policy (general)
-- [ ] Privacy Policy (Pairloom)
+- [ ] Privacy Policy (Pair Journey)
 - [ ] Terms of Service
-- [ ] Impressum (with placeholders)
+- [ ] Impressum (draft prepared; legal review remains)
 - [ ] Support page
 
 ### Phase 4: Polish (Day 2-3)
@@ -1019,15 +983,15 @@ jobs:
 - [ ] Mobile responsiveness testing
 
 ### Phase 5: Deployment (Day 3)
-- [ ] GitHub Actions workflow
-- [ ] Test deployment
-- [ ] Final review
+- [x] Cloudflare Pages and GitHub Pages publication paths documented
+- [x] Retired app paths and prototype content removed from the deployable site
+- [ ] Verify the new deployment at the custom domain
 
 ### Phase 6: Post-Launch (Later)
 - [ ] Add real screenshots
 - [ ] Add App Store/Play Store links
-- [ ] Fill Impressum with real data
-- [ ] Domain setup (custom domain)
+- [x] Fill Impressum with business details
+- [x] Connect custom domain
 - [ ] Analytics (optional, privacy-friendly)
 
 ---
@@ -1056,16 +1020,13 @@ Until apps are published, use:
 
 ## Checklist Summary
 
-### Must Have (MVP)
-- [ ] Home page with Pairloom highlight
-- [ ] Pairloom detail page
-- [ ] Privacy Policy
-- [ ] Terms of Service
-- [ ] Impressum
-- [ ] Support/Contact page
-- [ ] Dark/Light mode
-- [ ] Mobile responsive
-- [ ] GitHub Pages deployment
+### Website state
+- [x] Home page with Pair Journey highlight
+- [x] Pair Journey detail page
+- [x] Privacy, terms, Impressum, support, and account-deletion pages
+- [x] Dark/Light mode and responsive layout
+- [x] Cloudflare Pages and GitHub Pages deployment sources aligned
+- [ ] Recheck public pages after deployment
 
 ### Nice to Have (Post-MVP)
 - [ ] Screenshot carousel with real images
@@ -1076,4 +1037,4 @@ Until apps are published, use:
 
 ---
 
-*Last updated: January 16, 2026*
+*Last updated: November 17, 2026*

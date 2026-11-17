@@ -5,8 +5,9 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
 <LegalLayout
   title="Privacy Policy — Victor Odukoya"
   description="Privacy Policy for Victor Odukoya's apps and services."
-  lastUpdated="January 16, 2026"
+  lastUpdated="November 17, 2026"
 >
+  <p><strong>Pre-release notice:</strong> Pair Journey is not yet available in the app stores. This page describes the planned launch features and will be updated before release to match the services and settings in the published app.</p>
   <p class="lead">
     Your privacy is important to us. This Privacy Policy explains how Victor Odukoya
     ("we", "us", or "our") collects, uses, and protects your information when you use our
@@ -18,7 +19,7 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
   <h3>1.1 Information You Provide</h3>
   <p>When you use our apps, you may provide us with:</p>
   <ul>
-    <li><strong>Account Information:</strong> Email address and name when signing in with Google</li>
+    <li><strong>Account Information:</strong> Account identifiers and, where provided, email address and name when signing in with Apple or Google</li>
     <li><strong>User Content:</strong> Catalogs, word pairs, and other content you create</li>
     <li><strong>Support Requests:</strong> Information you provide when contacting support</li>
   </ul>
@@ -26,9 +27,8 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
   <h3>1.2 Automatically Collected Information</h3>
   <p>We may automatically collect:</p>
   <ul>
-    <li><strong>Usage Data:</strong> Gameplay statistics, feature usage, and app interactions</li>
-    <li><strong>Device Information:</strong> Device type, operating system, and app version</li>
-    <li><strong>Crash Reports:</strong> Technical information to help us fix issues</li>
+    <li><strong>Feature data:</strong> Data needed to provide a feature you use, such as account sign-in, cloud backup, AI generation, purchases, or advertising</li>
+    <li><strong>Technical data:</strong> Device, diagnostic, and crash information only where the app or an enabled provider collects it; the exact release inventory is still being verified</li>
   </ul>
 
   <h2>2. How We Use Your Information</h2>
@@ -43,7 +43,7 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
   </ul>
 
   <h2>3. Third-Party Services</h2>
-  <p>Our apps use the following third-party services:</p>
+  <p>The planned Pair Journey setup includes the following third-party services. Their final configuration and data flows must be verified before release:</p>
 
   <table>
     <thead>
@@ -66,29 +66,22 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
       </tr>
       <tr>
         <td>Google AdMob</td>
-        <td>Advertising (free users only)</td>
+        <td>Planned advertising for free users; identifiers and consent behavior depend on final configuration</td>
         <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td>
       </tr>
       <tr>
-        <td>Google Gemini AI</td>
+        <td>OpenAI (planned for Pair Journey)</td>
         <td>AI-powered content generation</td>
-        <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td>
+        <td><a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">Link</a></td>
       </tr>
     </tbody>
   </table>
 
   <h2>4. Data Storage and Security</h2>
   <p>
-    Your data is stored locally on your device by default. If you choose to use cloud sync
-    features, your data is stored securely on servers provided by Supabase (AWS infrastructure).
+    Learning data is stored locally by default. If you enable cloud backup, a copy is stored in private account storage on Supabase. This backup is not end-to-end encrypted. The production provider configuration and exact data-retention periods are still being confirmed.
   </p>
-  <p>We implement appropriate security measures including:</p>
-  <ul>
-    <li>Encryption of data in transit (HTTPS/TLS)</li>
-    <li>Encryption of data at rest</li>
-    <li>Secure authentication practices</li>
-    <li>Regular security reviews</li>
-  </ul>
+  <p>Technical and organizational safeguards depend on the service and are being finalized for the release setup. Do not treat this draft as confirmation of completed security reviews.</p>
 
   <h2>5. Your Rights</h2>
   <p>You have the right to:</p>
@@ -97,15 +90,14 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
     <li><strong>Correction:</strong> Update or correct your information</li>
     <li><strong>Deletion:</strong> Request deletion of your account and data</li>
     <li><strong>Export:</strong> Export your data in a portable format</li>
-    <li><strong>Opt-out:</strong> Disable analytics and personalized ads</li>
+    <li><strong>Privacy choices:</strong> Exercise applicable rights and manage consent choices provided in the app or by a service</li>
   </ul>
   <p>To exercise these rights, contact us at the email below.</p>
 
   <h2>6. Children's Privacy</h2>
   <p>
-    Our apps are not intended for children under 13 years of age. We do not knowingly collect
-    personal information from children under 13. If you believe we have collected information
-    from a child under 13, please contact us immediately.
+    Pair Journey is currently planned for adults aged 18 and over. The app will not use an in-app age self-declaration
+    dialog. Store age ratings and access settings remain to be finalized; the intended audience is not age verification.
   </p>
 
   <h2>7. International Users</h2>
@@ -125,17 +117,12 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
   <ul>
     <li>Know what personal information we collect</li>
     <li>Request deletion of your data</li>
-    <li>Opt-out of the sale of personal information (we do not sell your data)</li>
+    <li>Ask about the handling of personal information and exercise rights available under applicable law</li>
     <li>Non-discrimination for exercising your rights</li>
   </ul>
 
   <h2>8. Data Retention</h2>
-  <p>We retain your data for as long as you use our apps. If you delete your account:</p>
-  <ul>
-    <li>Your data is deleted from our servers within 30 days</li>
-    <li>Anonymized analytics data may be retained for up to 2 years</li>
-    <li>Backup copies are deleted within 90 days</li>
-  </ul>
+  <p>Specific retention periods for account data, provider logs, analytics, and backups are not confirmed in this draft. They must be documented from the deployed services before release. Use in-app or web account deletion to request removal of account-linked data; statutory records and provider backup cycles may require separate treatment.</p>
 
   <h2>9. Changes to This Policy</h2>
   <p>
@@ -147,14 +134,14 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
   <h2>10. App-Specific Policies</h2>
   <p>For app-specific privacy information, see:</p>
   <ul>
-    <li><a href="/privacy/pairloom">Pairloom Privacy Policy</a></li>
+    <li><a href="/privacy/pair-journey">Pair Journey Privacy Policy</a></li>
   </ul>
 
   <h2>11. Contact Us</h2>
   <p>If you have questions about this Privacy Policy, contact us at:</p>
   <p>
-    <strong>Email:</strong> privacy@victorodukoya.dev<br />
-    <strong>Address:</strong> [Your address will be added here]
+    <strong>Email:</strong> support@victorodukoya.com<br />
+    <strong>Postal address:</strong> See the <a href="/impressum">Impressum</a>.
   </p>
 
   <hr />
