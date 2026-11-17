@@ -1,101 +1,38 @@
 # Victor Odukoya — Developer Website
 
-Personal website and app showcase built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com).
+Personal developer website and app information pages, built with Astro and Tailwind CSS.
 
-Current domain and hosting preparation: [DOMAIN_SETUP.md](./DOMAIN_SETUP.md). Node 24, static output `dist/`.
+## Local development
 
-## 🚀 Quick Start
+Requires Node.js 24.
 
-```bash
-# Install dependencies
+```sh
 npm ci
-
-# Start development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
 ```
 
-## 📁 Project Structure
+## Build and release
 
-```
-website/
-├── public/              # Static assets (favicon, robots.txt)
-├── src/
-│   ├── components/      # Reusable UI components
-│   │   ├── apps/        # App-related components
-│   │   ├── common/      # Shared components (Header, Footer)
-│   │   └── home/        # Homepage components
-│   ├── layouts/         # Page layouts
-│   ├── pages/           # File-based routing
-│   └── styles/          # Global CSS
-├── astro.config.mjs     # Astro configuration
-├── tailwind.config.mjs  # Tailwind configuration
-└── package.json
-```
+- Cloudflare Pages project: `victorodukoya-website`
+- Production branch: `codex/website-production`
+- Build output: `dist/`
 
-## 🌐 Pages
+Cloudflare runs linting, tests, the static build, and generated-site checks before publishing. Configuration and release notes are in [DOMAIN_SETUP.md](./DOMAIN_SETUP.md).
 
-| Page | Path | Description |
-|------|------|-------------|
-| Home | `/` | Landing page with featured app |
-| Apps | `/apps` | App directory |
-| Pair Journey | `/apps/pair-journey` | Pair Journey app detail page |
-| Privacy | `/privacy` | General privacy policy |
-| Privacy (earlier app version) | `/privacy/pairloom` | Existing notice; Pair Journey notice is being prepared |
-| App information | `/terms` | Pre-release availability and purchase information |
-| Support | `/support` | Contact and FAQ |
-| Impressum | `/impressum` | German legal notice |
+## Pages
 
-## 🎨 Features
+- `/` — developer home
+- `/apps/` — app directory
+- `/apps/pair-journey/` — Pair Journey information
+- `/privacy/` — general privacy information
+- `/privacy/pair-journey/` — Pair Journey privacy policy
+- `/terms/` — pre-release terms and purchase information
+- `/support/` — support contact
+- `/delete-account/` — account and data deletion
+- `/impressum/` — legal notice
 
-- ✅ Dark/Light mode with system preference detection
-- ✅ Fully responsive (mobile-first)
-- ✅ SEO optimized with Open Graph tags
-- ✅ Accessible (WCAG 2.1 guidelines)
-- ✅ Fast (static site generation)
-- Static build for Cloudflare Pages
+## Adding an app
 
-## 🚢 Deployment
-
-Cloudflare Pages uses `codex/website-production`, build output `dist/`, and Node 24.
-The build command runs lint, tests, the static build and generated-page checks; see [DOMAIN_SETUP.md](./DOMAIN_SETUP.md).
-The retained GitHub Pages workflow is a separate legacy/manual deployment path, not the Cloudflare pipeline.
-
-## ✏️ Customization
-
-### Update Personal Information
-
-1. **Footer links:** Edit `src/components/common/Footer.astro`
-2. **Header navigation:** Edit `src/components/common/Header.astro`
-3. **About section:** Edit `src/components/home/AboutSection.astro`
-4. **Impressum:** Edit `src/pages/impressum.astro` (publish only explicitly approved contact details)
-
-### Add New App
-
-1. Add app to the list in `src/pages/apps/index.astro`
-2. Create detail page: `src/pages/apps/[app-name].astro`
-3. Add app-specific privacy policy if needed
-
-### Update Colors
-
-Edit `tailwind.config.mjs` to change the color palette.
-
-## 📝 TODO Before Launch
-
-- [ ] Replace placeholder screenshots with real ones
-- [ ] Update store badge links when apps are published
-- [x] Public business information approved; telephone number excluded at the owner's request
-- [ ] Add real profile photo (optional)
-- [ ] Update social media links in Footer
-- [ ] Connect the custom domain and validate HTTPS and business e-mail
-
-## 📄 License
+Add the app to `src/pages/apps/index.astro`, create its detail page under `src/pages/apps/`, and add its privacy information under `src/pages/privacy/` before release.
 
 © 2026 Victor Odukoya. All rights reserved.
-
-The previous app URL redirects to the Pair Journey page, preserving query parameters and section anchors. The existing privacy URL stays available while the new notice is prepared; its contents require review.
