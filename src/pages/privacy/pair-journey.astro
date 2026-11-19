@@ -5,7 +5,7 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
 <LegalLayout
   title="Pair Journey Privacy Policy — Victor Odukoya"
   description="Privacy Policy for Pair Journey - Learn Anything with Pairs."
-  lastUpdated="November 17, 2026"
+  lastUpdated="November 19, 2026"
 >
   <p><strong>Pre-release notice:</strong> Pair Journey is not yet available in the app stores. This page describes the planned launch features and will be updated before release to match the services and settings in the published app.</p>
 
@@ -43,9 +43,12 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
   <p>When you use AI to generate catalogs:</p>
   <ul>
     <li>The selected topic, description, language, and any source content needed for the requested action are sent through our server to the configured AI provider.</li>
-    <li>OpenAI GPT-6 Luna Fast is the planned provider. The hosted provider configuration and retention settings are not yet confirmed.</li>
+    <li>In the current test version, Pair Journey asks for permission before sending content to OpenAI. The app remembers your decision for your account on this device. You can withdraw permission in Settings under Privacy at any time.</li>
+    <li>OpenAI may process the topic, instructions and any cards or text needed for your request outside the European Economic Area (EEA). Contact us for information about applicable transfer safeguards. The production processing region and retention settings still need to be confirmed before launch.</li>
     <li>Generated content is returned to the app and stored locally; it is included in cloud backup only if you enable that feature.</li>
   </ul>
+
+  <p lang="de">Wenn du die KI nutzt, kann OpenAI dein Thema, deine Anweisungen und die für die Aufgabe benötigten Lernkarten oder Texte außerhalb des Europäischen Wirtschaftsraums (EWR) verarbeiten. Auskunft zu den geltenden Schutzmaßnahmen erhältst du über den Datenschutzkontakt am Ende dieser Seite.</p>
 
   <h2>3. Data Storage</h2>
 
@@ -175,7 +178,7 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
         <td>Device ID, ad interaction data</td>
       </tr>
       <tr>
-        <td>OpenAI (planned)</td>
+        <td>OpenAI (test version)</td>
         <td>Content generation</td>
         <td>User prompts and content needed for the requested AI operation; retention settings remain to be verified</td>
       </tr>
