@@ -33,7 +33,7 @@ const requestHref = `mailto:${deletionEmail}?subject=${mailSubject}&body=${mailB
           <h2 id="web-deletion-request" class="text-xl font-display font-semibold text-gray-900 dark:text-white mb-3">
             Delete your account online
           </h2>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5">
+          <p hidden={!canDeleteOnline} class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5">
             Sign in with the same Google account you use for Pair Journey. We use this sign-in only to verify that you own the
             account being deleted. We never ask for your Google password.
           </p>
@@ -61,7 +61,7 @@ const requestHref = `mailto:${deletionEmail}?subject=${mailSubject}&body=${mailB
 
           <div id="delete-unconfigured" class="grid gap-4" hidden={canDeleteOnline}>
             <p class="text-amber-800 dark:text-amber-200 rounded-xl bg-amber-100/70 dark:bg-amber-900/30 p-4">
-              Online sign-in is not configured yet. You can still email a deletion request below.
+              Use the email request below to delete your account without the app.
             </p>
           </div>
 
@@ -70,10 +70,10 @@ const requestHref = `mailto:${deletionEmail}?subject=${mailSubject}&body=${mailB
 
         <section class="card-glass p-6 sm:p-8" aria-labelledby="email-deletion-request">
           <h2 id="email-deletion-request" class="text-xl font-display font-semibold text-gray-900 dark:text-white mb-3">
-            Need help signing in?
+            Request deletion by email
           </h2>
           <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-            If you cannot use Google sign-in, email us from the address associated with your Pair Journey account. Include
+            For Apple sign-in, email-code accounts or a Google account you can no longer access, use the email request below. Give the email address associated with Pair Journey, including an Apple relay address if you used Hide My Email. Include
             “delete my Pair Journey account” and whether you use Android or iOS. We may ask you to verify account ownership.
             Do not send passwords, sign-in codes, or payment details.
           </p>
@@ -88,12 +88,12 @@ const requestHref = `mailto:${deletionEmail}?subject=${mailSubject}&body=${mailB
             What deletion means
           </h2>
           <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-2">
-            <li>Your Pair Journey sign-in account, cloud backup, and associated server-side quota data are deleted.</li>
+            <li>Successful account deletion removes your sign-in account, cloud backup, associated server-side quotas and AI content reports from the active service.</li>
             <li>Catalogs and progress stored only on your device are not deleted by removing the cloud account.</li>
             <li>Deleting your Pair Journey account does not cancel an Apple App Store or Google Play subscription. Cancel it separately in the store where you subscribed.</li>
           </ul>
           <p class="text-gray-600 dark:text-gray-300 mt-5">
-            See the <a class="link-underline" href="/privacy/pair-journey#data-deletion">Pair Journey privacy policy</a> for details about data handling and deletion.
+            To delete only the cloud backup, keep your account and follow the instructions in the <a class="link-underline" href="/privacy/pair-journey/#data-deletion">Pair Journey privacy policy</a> for details about data handling and deletion.
             <a class="link-underline" href="/support">Contact support</a> if you need help.
           </p>
         </section>

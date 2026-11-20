@@ -2,215 +2,49 @@
 import LegalLayout from '../../layouts/LegalLayout.astro';
 ---
 
-<LegalLayout
-  title="Pair Journey Privacy Policy — Victor Odukoya"
-  description="Privacy Policy for Pair Journey - Learn Anything with Pairs."
-  lastUpdated="November 20, 2026"
->
-  <p><strong>Pre-release notice:</strong> Pair Journey is not yet available in the app stores. This page describes the planned launch features and will be updated before release to match the services and settings in the published app.</p>
+<LegalLayout title="Pair Journey Privacy Policy — Victor Odukoya" description="How Pair Journey handles learning data, sign-in, purchases, AI requests and deletion." lastUpdated="November 20, 2026">
+  <p>You can learn in Pair Journey without creating an account. This notice covers the native test versions and the online services used by the app. Pair Journey is intended for adults aged 18 and over.</p>
+  <p>The controller is Victor Junior Olufunto Agbolade Odukoya, Pappelweg 4, 53177 Bonn, Germany. For privacy requests, write to <a href="mailto:support@victorodukoya.com">support@victorodukoya.com</a>.</p>
 
-  <p class="lead">
-    This Privacy Policy specifically covers the Pair Journey app. Please also review our
-    <a href="/privacy">General Privacy Policy</a> for information that applies to all our
-    apps and services.
-  </p>
+  <h2>Learning on your device</h2>
+  <p>Your decks, card texts, groups, mistakes, round history, progress and preferences are stored on your device. Practice and streak reminders use the device’s notification system. Opening a stored deck or playing a round offline does not send its contents to us. Device backups are subject to your operating system’s settings.</p>
+  <p>If you choose Google, YouTube or ChatGPT on a learning card, Pair Journey includes both sides of that card and its subject, if present, in the link. The selected provider receives that query when the link opens and handles it under its own privacy policy. This action is separate from generating a deck with OpenAI.</p>
 
-  <h2>1. About Pair Journey</h2>
-  <p>
-    Pair Journey is a learning app that helps you master any topic through pair-matching games.
-    You can create custom catalogs of word pairs, use AI to generate content, and track your
-    learning progress.
-  </p>
+  <h2>Signing in and backing up</h2>
+  <p>Supabase manages accounts and sessions. Google or Apple sign-in supplies an account identifier and may supply an email address and name. Google may supply a profile-picture URL. Google’s sign-in service also processes technical information, including IP-derived region, identifiers and SDK usage, for authentication, security and service operation. Apple’s Hide My Email address works as your account email. Where an Apple authorization credential is available, our server stores it encrypted for revocation. The app keeps session information on your device so you stay signed in.</p>
+  <p>If you choose an email code, Supabase uses Resend to deliver it. Resend processes your email address, the message containing the code, and delivery information such as time and delivery status. Never send support your code or password.</p>
+  <p>If you use Pro cloud backup, Supabase stores a private snapshot under your account ID. It includes decks, groups, settings, learning states, achievements and activity history, including rounds and mistakes. Automatic backup can update this snapshot when enabled. A successful new backup replaces the previous cloud snapshot. The connection is encrypted in transit. The server can read the snapshot. Signing out keeps your local learning data on the device.</p>
 
-  <h2>2. Data We Collect in Pair Journey</h2>
+  <h2>Generating or editing learning material with AI</h2>
+  <p>Before your first AI request, Pair Journey asks for permission to send the material needed for that action to OpenAI through our server. A new deck uses your topic, instructions and language. Editing, expanding or preparing a lesson may also send the deck title, subject, selected terms, answers, explanations or examples. Avoid entering confidential or personal details. Results return to your device and can be included in a cloud backup.</p>
+  <p>Our server checks your account, Pro entitlement and monthly usage. It keeps account-linked request and quota records. The OpenAI request contains the learning material and generation instructions. Pair Journey excludes your sign-in credentials, account ID and billing ID from that request. It disables storage for later retrieval via the Responses API. OpenAI’s standard API abuse-monitoring logs can retain request or response content for up to 30 days, or longer where legally required. <a href="https://platform.openai.com/docs/guides/your-data">OpenAI API data controls</a></p>
+  <p>You can withdraw permission in Settings → Privacy. Withdrawal stops future AI requests until you consent again. OpenAI may process submitted material outside the European Economic Area (EEA).</p>
+  <p lang="de">Bei der KI-Erstellung erhält OpenAI das Thema und deine Vorgaben. Beim Bearbeiten können die benötigten Kartentexte, Erklärungen und Beispiele hinzukommen. Die Verarbeitung kann außerhalb des EWR stattfinden. Unter Einstellungen → Datenschutz kannst du die Einwilligung jederzeit für die Zukunft widerrufen.</p>
 
-  <h3>2.1 User Content</h3>
+  <h2 id="ai-content-reports">Reporting AI-generated content</h2>
+  <p>Before sending a report, you can see the excerpt it contains. Supabase stores that excerpt, the deck title and identifier, any selected card identifier, your reason and optional comment, app version, account ID and receipt time. Victor Odukoya reviews reports to investigate errors or inappropriate material. Successful account deletion also removes the account’s reports from the active database.</p>
+  <p lang="de">Vor dem Absenden siehst du den gemeldeten Ausschnitt. Supabase speichert ihn mit Deckname und Deck-ID, gegebenenfalls der Karten-ID, Meldegrund, optionalem Kommentar, App-Version, Konto-ID und Eingangszeitpunkt. Victor Odukoya prüft die Meldung. Bei erfolgreicher Kontolöschung werden die zugehörigen Meldungen aus der aktiven Datenbank entfernt.</p>
+
+  <h2>Purchases</h2>
+  <p>Apple or Google handles payment for Pro. RevenueCat processes the app user ID, store transaction and subscription history, product, store and entitlement status to validate purchases, restore access and provide subscription reporting. When you sign in, the subscription is associated with your Pair Journey account. Pair Journey does not receive your full card number. The store keeps its own transaction records.</p>
+
+  <h2>Advertising and consent choices</h2>
+  <p>The free version uses Google’s User Messaging Platform to determine whether privacy choices must be shown. This involves network information such as your IP address, which can indicate an approximate region, interaction with the form and technical performance data. Where available, you can change your choice in the app’s privacy settings. Pro is ad-free.</p>
+  <p>Ad delivery is disabled in the current store candidates. Builds used to test ads request non-personalized ads. When Google Mobile Ads serves ads, Google describes processing identifiers, approximate location inferred from IP, ad interactions and diagnostic information for delivery, measurement and fraud prevention. The final advertising configuration will be reflected here before ad delivery is enabled for release. <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from partner apps</a></p>
+
+  <h2>Where data goes and how long it is kept</h2>
+  <p>Our Supabase production project has its primary region in Frankfurt, Germany. Service operations and support can involve other locations. The sending domain is configured for Ireland. Resend stores email and delivery logs in the United States and describes a standard 30-day retention period for email and log data on its Free plan. Google, Apple, OpenAI and RevenueCat may also process information outside the EEA. Resend identifies the EU Standard Contractual Clauses among its transfer safeguards. The providers publish their transfer terms for <a href="https://resend.com/legal/dpa">Resend</a>, <a href="https://supabase.com/legal/dpa">Supabase</a>, <a href="https://openai.com/policies/data-processing-addendum/">OpenAI</a> and <a href="https://www.revenuecat.com/dpa/">RevenueCat</a>. You can ask us which safeguards apply to a particular transfer and how to obtain a copy. <a href="https://resend.com/security/gdpr">Resend’s processing and retention information</a></p>
+  <p>Your local data stays until you remove it, subject to device backups. The current cloud snapshot stays until replaced or deleted. The account, linked reports and associated quota records are removed from the active service on successful account deletion. A monthly quota reset is separate from record deletion. Database recovery copies rotate separately and can temporarily contain earlier database records. Supabase database backups contain storage metadata, not the contents of the cloud snapshot. We keep support correspondence while needed to resolve a request, document its handling or meet applicable legal duties.</p>
+
+  <h2 id="data-deletion">Deleting a backup, deleting an account or obtaining a copy</h2>
   <ul>
-    <li><strong>Catalogs:</strong> Custom catalogs you create, including names, descriptions, and pairs</li>
-    <li><strong>Progress Data:</strong> XP, levels, streaks, achievements, and mastery tracking</li>
-    <li><strong>Settings:</strong> App preferences, theme choices, and notification settings</li>
-    <li><strong>Groups:</strong> Organizational groups for your catalogs</li>
+    <li><strong>Delete only the cloud backup.</strong> Open Settings → Sync → Delete Cloud Data. Turn off automatic backup if you want the cloud copy to stay empty. You keep your account and local decks. If the control is unavailable, email <a href="mailto:support@victorodukoya.com?subject=Delete%20my%20Pair%20Journey%20backup">a backup-only deletion request</a>.</li>
+    <li><strong>Delete your account.</strong> While signed in, open Settings → Sync → Delete account, or <a href="/delete-account/">request deletion on the web</a>. This removes the active cloud account, its backup, associated quotas and content reports. Devices retain local learning data. Removing the app is a separate action.</li>
+    <li><strong>Purchases and subscriptions.</strong> Cancel any ongoing subscription separately in the store where you bought it. The in-app account deletion does not itself delete a RevenueCat customer record or the store’s receipts. Contact support about subscription-data erasure.</li>
+    <li><strong>Access or portability.</strong> Email support to request a copy of the personal data we hold. We may ask you to verify account ownership. Data stored only on your device is accessible on that device.</li>
   </ul>
 
-  <h3>2.2 Gameplay Data</h3>
-  <ul>
-    <li>Session statistics (pairs solved, time, accuracy)</li>
-    <li>Game mode preferences</li>
-    <li>Difficulty adaptation metrics</li>
-  </ul>
-
-  <h3>2.3 AI Generation Data</h3>
-  <p>When you use AI to generate catalogs:</p>
-  <ul>
-    <li>The selected topic, description, language, and any source content needed for the requested action are sent through our server to the configured AI provider.</li>
-    <li>In the current test version, Pair Journey asks for permission before sending content to OpenAI. The app remembers your decision for your account on this device. You can withdraw permission in Settings under “AI data sharing” at any time.</li>
-    <li>OpenAI may process the topic, instructions and any cards or text needed for your request outside the European Economic Area (EEA). Contact us for information about applicable transfer safeguards. The production processing region and retention settings still need to be confirmed before launch.</li>
-    <li>Generated content is returned to the app and stored locally; it is included in cloud backup only if you enable that feature.</li>
-  </ul>
-
-  <p lang="de">Wenn du die KI nutzt, kann OpenAI dein Thema, deine Anweisungen und die für die Aufgabe benötigten Lernkarten oder Texte außerhalb des Europäischen Wirtschaftsraums (EWR) verarbeiten. Auskunft zu den geltenden Schutzmaßnahmen erhältst du über den Datenschutzkontakt am Ende dieser Seite.</p>
-
-  <h3 id="ai-content-reports">2.4 Reporting AI-generated content</h3>
-  <p>
-    If you report a generated deck or card, the app shows you the excerpt before you send it.
-    The report includes the excerpt, the deck title and identifier, the card identifier if selected,
-    your reason, any optional comments, the app version, your Pair Journey account identifier and the time received.
-    Supabase stores the report privately. Victor Odukoya reviews it to investigate errors and inappropriate content.
-    Deleting your Pair Journey account also removes its reports from the active database.
-  </p>
-  <p lang="de">Wenn du einen KI-Inhalt meldest, siehst du den Ausschnitt vor dem Absenden. Supabase speichert ihn zusammen mit Deckname und Deck-ID, gegebenenfalls der Karten-ID, Meldegrund, optionalem Kommentar, App-Version, Konto-ID und Eingangszeitpunkt. Victor Odukoya prüft die Meldung auf Fehler und ungeeignete Inhalte. Wenn du dein Konto löschst, werden auch seine Meldungen aus der aktiven Datenbank entfernt.</p>
-
-  <h2>3. Data Storage</h2>
-
-  <h3>3.1 Local Storage (Default)</h3>
-  <p>
-    Catalogs, progress, settings, and gameplay data are stored locally by default. Using account sign-in, AI generation,
-    advertising, purchases, or cloud backup may send the data needed for that feature to the relevant service. Exact
-    collection and transfer details must be checked against the release build before this draft is published.
-  </p>
-
-  <h3>3.2 Cloud Sync (Pro Feature)</h3>
-  <p>If you enable cloud sync:</p>
-  <ul>
-    <li>A backup of your catalogs, pairs, progress, statistics, and settings is uploaded to your private account storage on Supabase. It is not end-to-end encrypted.</li>
-    <li>Data is associated with your account. Sign-in methods include Apple and Google where supported by the platform.</li>
-    <li>You can restore your data on any device</li>
-    <li>Canceling Pro does not itself delete the account or cloud backup. Use the app’s cloud-data deletion or account-deletion controls to request deletion.</li>
-  </ul>
-
-  <h2>4. Advertisements</h2>
-  <p>
-    Advertising is planned for the free version through Google AdMob. Depending on the final SDK
-    configuration and consent choices, the ad service may process device identifiers, technical
-    information, and ad interaction data. Whether personalized ads are enabled has not yet been verified.
-  </p>
-  <p>Planned options:</p>
-  <ul>
-    <li>Manage consent choices where required by the applicable region</li>
-    <li>Upgrade to Pro to remove all advertisements</li>
-    <li>Manage ad preferences through your device settings</li>
-  </ul>
-  <p>The exact consent flow, regional settings, and SDK behavior must be verified against the release build before this policy is finalized.</p>
-
-  <h2>5. In-App Purchases</h2>
-  <p>
-    Pair Journey Pro subscriptions are processed through the App Store (iOS) or Google Play
-    (Android). We use RevenueCat to manage subscriptions.
-  </p>
-  <p>We receive:</p>
-  <ul>
-    <li>Subscription status and product purchased</li>
-    <li>Pseudonymous subscriber identifiers</li>
-  </ul>
-  <p>Payment details are processed by Apple or Google; Pair Journey does not receive the user’s full payment-card number.</p>
-
-  <h2>6. Notifications</h2>
-  <p>Pair Journey may send local notifications for:</p>
-  <ul>
-    <li>Daily streak reminders (if enabled)</li>
-    <li>Learning goal reminders (if configured)</li>
-    <li>Achievement celebrations</li>
-  </ul>
-  <p>
-    You can manage notification settings within the app or through your device settings.
-    Notifications are generated locally and do not require internet.
-  </p>
-
-  <h2>7. Offline Functionality</h2>
-  <p>
-    Learning from catalogs stored on your device works offline. AI generation, sign-in, purchases, advertising, and cloud
-    backup or sync use an internet connection.
-  </p>
-  <p>Features requiring internet:</p>
-  <ul>
-    <li>AI-powered catalog generation</li>
-    <li>Advertising and purchase verification</li>
-    <li>Cloud backup and sync</li>
-    <li>Account sign-in/sign-out</li>
-    <li>Subscription verification</li>
-  </ul>
-
-  <h2>8. Data Export and Deletion</h2>
-
-  <h3>8.1 Export Your Data</h3>
-  <p>
-    You can export all your Pair Journey data (catalogs, progress, settings) from the app
-    settings. Data is exported in JSON format.
-  </p>
-
-  <h3 id="data-deletion">8.2 Delete Your Data</h3>
-  <p>To delete your Pair Journey data:</p>
-  <ul>
-    <li><strong>Local data:</strong> Uninstall the app or use "Clear Data" in settings</li>
-    <li><strong>Cloud account and data:</strong> Use Settings → Account → Delete Account in Pair Journey, or <a href="/delete-account">request deletion on the web</a> if you no longer have access to the app.</li>
-  </ul>
-  <p>Deleting your account does not cancel an App Store or Google Play subscription; cancel it separately through the store where you subscribed. Provider-side backup and log retention periods must be confirmed before release and added here.</p>
-
-  <h2>9. Retention</h2>
-  <p>Local data remains on your device until you remove it or uninstall the app, subject to operating-system backup behavior. Cloud backup can be removed using the app’s deletion controls or account deletion. Provider-side processing logs, backups, and legally required records may have separate retention periods; these periods remain to be confirmed before release.</p>
-
-  <h2>10. Age Restrictions</h2>
-  <p>
-    Pair Journey is intended for adults aged 18 and over for its initial release. The app will not ask users to confirm
-    their age in an in-app self-declaration dialog. Store age ratings and access settings have not yet been finalized.
-    This intended audience is not an age verification measure.
-  </p>
-
-  <h2>11. Third-Party Integrations</h2>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Service</th>
-        <th>Purpose</th>
-        <th>Data Shared</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Apple and Google sign-in</td>
-        <td>Authentication</td>
-        <td>Account identifiers and, where provided by the sign-in service, email and profile information</td>
-      </tr>
-      <tr>
-        <td>Supabase</td>
-        <td>Cloud sync, auth</td>
-        <td>Account data, synced content</td>
-      </tr>
-      <tr>
-        <td>RevenueCat</td>
-        <td>Subscriptions</td>
-        <td>Pseudonymous subscriber identifier, product and subscription status</td>
-      </tr>
-      <tr>
-        <td>Google AdMob</td>
-        <td>Advertising</td>
-        <td>Device ID, ad interaction data</td>
-      </tr>
-      <tr>
-        <td>OpenAI (test version)</td>
-        <td>Content generation</td>
-        <td>User prompts and content needed for the requested AI operation; retention settings remain to be verified</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>12. Changes to This Policy</h2>
-  <p>
-    We may update this policy as Pair Journey evolves. Significant changes will be communicated
-    through the app. The "Last updated" date indicates the most recent revision.
-  </p>
-
-  <h2>13. Contact</h2>
-  <p>For Pair Journey-specific privacy questions:</p>
-  <p>
-    <strong>Email:</strong> support@victorodukoya.com<br />
-    <strong>Subject:</strong> Pair Journey Privacy Inquiry
-  </p>
-
-  <hr />
-
-  <p>
-    <a href="/privacy">← Back to General Privacy Policy</a>
-  </p>
+  <h2>Your rights and the legal bases we use in the EEA</h2>
+  <p>We process the data needed to supply the account, backup and subscription features you request to perform our contract (GDPR Article 6(1)(b)). We rely on your consent for sending material to OpenAI (Article 6(1)(a)). For security, fraud prevention, investigating content reports and resolving support issues, we rely on our legitimate interests in protecting users and operating the service (Article 6(1)(f)). When the law requires us to keep records or handle a rights request, we process the necessary information to meet that obligation (Article 6(1)(c)). Where device access or advertising requires consent, you can manage that choice in the privacy options. Declining an optional feature still allows local learning.</p>
+  <p>Depending on the circumstances, you can request access, correction, deletion, restriction or portability, object to processing based on legitimate interests and withdraw consent for the future. You can also complain to a data protection authority, including the authority where you live or work. Contact <a href="mailto:support@victorodukoya.com">support@victorodukoya.com</a> to exercise your rights.</p>
 </LegalLayout>
