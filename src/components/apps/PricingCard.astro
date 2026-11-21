@@ -1,8 +1,6 @@
 ---
 interface Props {
   name: string;
-  price: string;
-  period?: string;
   description: string;
   features: string[];
   highlighted?: boolean;
@@ -10,7 +8,7 @@ interface Props {
   index?: number;
 }
 
-const { name, price, period, description, features, highlighted = false, badge, index = 0 } = Astro.props;
+const { name, description, features, highlighted = false, badge, index = 0 } = Astro.props;
 ---
 
 <div
@@ -29,27 +27,17 @@ const { name, price, period, description, features, highlighted = false, badge, 
 
   <div class="text-center mb-8">
     <h3 class:list={[
-      "text-xl font-display font-bold mb-2",
+      "text-3xl font-display font-bold mb-2",
       highlighted ? 'text-white dark:text-gray-900' : 'text-gray-900 dark:text-white'
     ]}>
       {name}
     </h3>
     <p class:list={[
-      "text-sm mb-6",
+      "text-sm",
       highlighted ? 'text-gray-300 dark:text-gray-600' : 'text-gray-600 dark:text-gray-400'
     ]}>
       {description}
     </p>
-    <div class="flex items-baseline justify-center gap-1">
-      <span class:list={[
-        "text-5xl font-display font-bold",
-        highlighted ? 'text-white dark:text-gray-900' : 'text-gray-900 dark:text-white'
-      ]}>{price}</span>
-      {period && <span class:list={[
-        "text-sm",
-        highlighted ? 'text-gray-400 dark:text-gray-500' : 'text-gray-500 dark:text-gray-400'
-      ]}>/{period}</span>}
-    </div>
   </div>
 
   <!-- Divider -->

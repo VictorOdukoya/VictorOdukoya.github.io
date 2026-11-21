@@ -47,7 +47,7 @@ const features = [
 const freeFeatures = [
   'All four game modes',
   'Unlimited custom catalogs',
-  'One AI deck with 30 pairs per free account',
+  'One free 30-pair AI deck per account where Pro is available',
   'Full progress tracking',
   'Local data storage',
   'Ad-supported',
@@ -84,7 +84,7 @@ const faqItems = [
   {
     question: 'How does AI catalog generation work?',
     answer:
-      'Each free account can try one AI deck with 30 pairs. Pro includes up to 150 AI requests per paid subscription month. Each AI action, such as creating, expanding, revising, or generating a lesson, counts as one request.',
+      'Where Pro is available, each free account can try one AI deck with 30 pairs. Pro includes up to 150 AI requests per paid subscription month. Each AI action, such as creating, expanding, revising, or generating a lesson, counts as one request.',
   },
   {
     question: 'How do I cancel my subscription?',
@@ -255,26 +255,20 @@ const faqItems = [
         <h2 class="text-2xl sm:text-3xl font-display font-bold text-gray-900 dark:text-white mb-3">
           Simple, Fair <span class="gradient-text">Pricing</span>
         </h2>
-        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          You can try one AI deck with a free account. Pro includes monthly AI generation, cloud backup and ad-free learning.
-        </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
         <div class="reveal stagger-1">
           <PricingCard
             name="Free"
-            price="$0"
-            description="Perfect for getting started"
+            description="No subscription required."
             features={freeFeatures}
           />
         </div>
         <div class="reveal stagger-2">
           <PricingCard
             name="Pro"
-            price="€3.99"
-            period="month"
-            description="Planned price in Germany; store prices may vary by country"
+            description="Monthly subscription. The App Store or Google Play shows the price for your store region before you subscribe."
             features={proFeatures}
             highlighted
             badge="Recommended"
@@ -282,9 +276,6 @@ const faqItems = [
         </div>
       </div>
 
-      <p class="text-center text-gray-500 dark:text-gray-500 text-sm mt-8 reveal stagger-3">
-        Planned launch offer: monthly subscription only. No annual plan is planned for launch.
-      </p>
     </div>
   </section>
 
