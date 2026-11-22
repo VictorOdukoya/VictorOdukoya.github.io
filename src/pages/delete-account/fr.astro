@@ -1,0 +1,21 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+
+const address = 'support@victorodukoya.com';
+const subject = encodeURIComponent('Suppression de mon compte Pair Journey');
+const body = encodeURIComponent('Je demande la suppression de mon compte Pair Journey et des données associées sur le serveur.\n\nAdresse courriel du compte :\nPlateforme (Android ou iOS) :\n');
+---
+
+<LegalLayout lang="fr" title="Supprimer votre compte Pair Journey" description="Demander en français la suppression du compte Pair Journey et des renseignements associés.">
+  <nav aria-label="Langue"><a href="/delete-account/" lang="en">English</a></nav>
+  <h2>Depuis l’application</h2>
+  <p>Connectez-vous, ouvrez Réglages → Synchronisation, puis choisissez « Supprimer le compte ».</p>
+
+  <h2>Sans accès à l’application</h2>
+  <p>Écrivez au support avec l’adresse courriel associée à votre compte Pair Journey, y compris l’adresse relais Apple le cas échéant, et indiquez votre plateforme. Nous pouvons vous demander une preuve que vous êtes titulaire du compte. Gardez vos mots de passe, codes et renseignements de paiement confidentiels.</p>
+  <p><a href={`mailto:${address}?subject=${subject}&body=${body}`}>Envoyer une demande de suppression</a> ou écrire à <a href={`mailto:${address}`}>{address}</a>.</p>
+
+  <h2>Effets de la suppression</h2>
+  <p>Une suppression réussie retire le compte, la sauvegarde en ligne, les réservations de demandes d’IA, les compteurs, les signalements et le profil RevenueCat associé. Les données enregistrées exclusivement sur l’appareil restent locales. Pour éviter le renouvellement de Pro, résiliez votre abonnement dans l’App Store ou Google Play.</p>
+  <p><a href="/privacy/pair-journey/fr/#suppression">Consulter la politique de confidentialité</a></p>
+</LegalLayout>

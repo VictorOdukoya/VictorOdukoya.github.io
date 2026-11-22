@@ -1,0 +1,39 @@
+---
+import LegalLayout from '../../../layouts/LegalLayout.astro';
+
+const appleFrance = 'https://www.apple.com/legal/internet-services/itunes/fr/terms.html';
+const appleCanada = 'https://www.apple.com/ca/fr/legal/internet-services/itunes/cafr/terms.html';
+const playFrance = 'https://play.google.com/intl/fr_fr/about/play-terms/';
+const playCanada = 'https://play.google.com/intl/fr_ca/about/play-terms/';
+---
+
+<LegalLayout lang="fr" title="Conditions d’utilisation de Pair Journey" description="Conditions de Pair Journey et de l’abonnement Pro en France et au Québec.">
+  <nav aria-label="Langue"><a href="/terms/pair-journey/#en" lang="en">English</a> · <a href="/terms/pair-journey/#de" lang="de">Deutsch</a></nav>
+  <p>Pair Journey est un jeu d’apprentissage destiné aux adultes de 18 ans et plus. Le service est fourni par Victor Junior Olufunto Agbolade Odukoya, Pappelweg 4, 53177 Bonn, Allemagne. Pour toute question ou réclamation liée à l’application, écrivez à <a href="mailto:support@victorodukoya.com">support@victorodukoya.com</a>.</p>
+
+  <h2>Apprentissage et sauvegarde</h2>
+  <p>Vous pouvez apprendre et créer des cartes gratuitement sur votre appareil, sans compte. Des annonces peuvent s’afficher dans la version gratuite. Vous conservez vos droits sur vos contenus. Utilisez les cartes, textes ou autres contenus que vous avez le droit d’utiliser. Lorsque vous demandez une sauvegarde ou un traitement par l’IA, nous traitons le contenu nécessaire à cette opération.</p>
+  <p>Vos cartes et vos progrès sont enregistrés sur l’appareil. La sauvegarde en ligne est facultative et comprise dans Pro. Elle nécessite une connexion Internet et un compte Pair Journey. La restauration peut remplacer les données locales par celles de la sauvegarde choisie. Voyez la <a href="/privacy/pair-journey/fr/">politique de confidentialité</a>.</p>
+
+  <h2 id="pro">Abonnement Pair Journey Pro</h2>
+  <p>Pro est facturé chaque mois et se renouvelle automatiquement jusqu’à sa résiliation. Il comprend l’utilisation sans publicité, la sauvegarde en ligne et jusqu’à 150 générations par IA par compte et par mois d’abonnement payé. Le premier quota commence à l’achat. Chaque renouvellement mensuel confirmé ouvre un nouveau quota. Si vous résiliez, le quota restant est utilisable jusqu’à la fin de la période payée. Restaurer un achat ne renouvelle pas le quota.</p>
+  <p>Lorsque Pro est proposé dans la boutique de votre compte, un compte gratuit admissible peut essayer une fois un paquet de 30 paires généré par IA, sans souscrire à l’abonnement. L’achat et l’IA nécessitent une connexion Internet et un compte Pair Journey. L’application vous demande votre accord avant le premier envoi de contenu à OpenAI. Vérifiez le contenu généré avant de l’utiliser.</p>
+  <p>Avant confirmation, l’App Store ou Google Play affiche le prix dans votre devise, les taxes applicables, la période de facturation et, le cas échéant, les conditions de l’offre. Consultez le nom du vendeur dans le dialogue de paiement et sur votre reçu. La boutique encaisse le prix et gère le renouvellement. Pour iOS, la licence affichée dans l’App Store s’applique, ou la <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">licence standard d’Apple</a> en l’absence de licence spécifique.</p>
+
+  <h2 id="resiliation">Résiliation et restauration</h2>
+  <p>Pour arrêter le renouvellement, sélectionnez Pair Journey dans les abonnements du <a href="https://apps.apple.com/account/subscriptions">compte Apple</a> ou de <a href="https://play.google.com/store/account/subscriptions?hl=fr">Google Play</a>, puis résiliez avant le renouvellement. La boutique vous indique la date de fin de l’accès payé. La désinstallation de l’application et la suppression du compte Pair Journey ne résilient pas l’abonnement. Pour rétablir un abonnement actif après une réinstallation, utilisez vos comptes Pair Journey et App Store ou Google Play d’origine, puis sélectionnez « Restaurer les achats » dans l’application.</p>
+
+  <h2 id="france">France · rétractation et remboursement</h2>
+  <p>Si le droit de rétractation s’applique à votre achat à distance, vous pouvez l’exercer sans motif dans le délai légal de 14 jours. La résiliation arrête les renouvellements à venir. La rétractation concerne le contrat déjà conclu. Le délai, les exceptions liées notamment à l’exécution immédiate du contrat et les modalités applicables figurent dans les conditions d’achat de votre boutique et dans le <a href="https://www.legifrance.gouv.fr/codes/id/LEGISCTA000032226844/">Code de la consommation</a>.</p>
+  <ul>
+    <li><strong>App Store.</strong> Dans l’historique d’achats du compte Apple utilisé, choisissez la commande et l’option d’annulation de la transaction si elle est disponible. Les <a href={appleFrance}>conditions Apple pour la France</a> donnent aussi le destinataire et le modèle de rétractation. Vous pouvez <a href="https://reportaproblem.apple.com/">signaler un achat à Apple</a>.</li>
+    <li><strong>Google Play.</strong> Connectez-vous avec le compte de l’achat et ouvrez l’<a href="https://play.google.com/store/account/orderhistory?hl=fr">historique des commandes</a> ou le <a href="https://support.google.com/googleplay/contact/withdrawal_form?hl=fr">formulaire de rétractation Google Play</a>. Les <a href={playFrance}>conditions Google Play pour la France</a> donnent aussi le destinataire et les modalités de demande.</li>
+  </ul>
+  <p>Vous conservez les garanties légales applicables aux contenus et services numériques, notamment la mise en conformité et les mises à jour requises. En cas de problème avec l’application, écrivez au contact indiqué ci-dessus en précisant la commande et le problème rencontré.</p>
+
+  <h2 id="quebec">Québec · annulation et remboursement</h2>
+  <p>Le prix est affiché en dollars canadiens dans la boutique canadienne. Les conditions de paiement et les voies de remboursement figurent dans les <a href={appleCanada}>conditions Apple pour le Canada</a> et les <a href={playCanada}>conditions Google Play pour le Canada</a>. Conservez le reçu et la confirmation de commande. Pour un problème de facturation, utilisez le service de la boutique qui a traité l’achat.</p>
+  <p>La Loi sur la protection du consommateur du Québec peut vous permettre d’annuler un contrat à distance, notamment si les renseignements obligatoires ou le contrat ne vous ont pas été transmis conformément à la loi. Les délais dépendent du motif. Adressez l’avis d’annulation au commerçant identifié sur la confirmation de l’achat. L’<a href="https://www.opc.gouv.qc.ca/consommateur/sujet/achat/internet/annulation/">Office de la protection du consommateur</a> explique les motifs, les délais et la marche à suivre, y compris en cas de non-remboursement.</p>
+
+  <p>Les droits impératifs de votre lieu de résidence continuent de s’appliquer.</p>
+</LegalLayout>

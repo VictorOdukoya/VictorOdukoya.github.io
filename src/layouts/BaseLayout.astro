@@ -7,6 +7,7 @@ interface Props {
   description?: string;
   ogImage?: string;
   canonicalUrl?: string;
+  lang?: string;
 }
 
 const {
@@ -14,6 +15,7 @@ const {
   description = 'Victor Odukoya — Software developer building apps that make learning fun.',
   ogImage = '/og-image.png',
   canonicalUrl,
+  lang = 'en',
 } = Astro.props;
 
 const siteUrl = Astro.site?.toString() || 'https://victorodukoya.com';
@@ -22,7 +24,7 @@ const fullCanonicalUrl = canonicalUrl || Astro.url.toString();
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
