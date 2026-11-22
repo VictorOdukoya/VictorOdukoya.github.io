@@ -11,6 +11,7 @@ interface Props {
   ogImage?: string;
   canonicalUrl?: string;
   noindex?: boolean;
+  lang?: string;
 }
 
 const {
@@ -19,13 +20,14 @@ const {
   ogImage = '/favicon.svg',
   canonicalUrl,
   noindex = false,
+  lang = 'en',
 } = Astro.props;
 
 const { image: fullOgImage, canonical: fullCanonicalUrl } = metadataUrls(Astro.url.pathname, ogImage, canonicalUrl);
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
