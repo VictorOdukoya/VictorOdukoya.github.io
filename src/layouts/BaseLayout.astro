@@ -81,9 +81,6 @@ const fullCanonicalUrl = canonicalUrl || Astro.url.toString();
     <ViewTransitions />
   </head>
   <body class="min-h-screen flex flex-col">
-    <!-- Cursor glow effect (desktop only) -->
-    <div class="cursor-glow hidden lg:block"></div>
-    
     <slot />
 
     <!-- Theme event listeners (can run after page loads) -->
@@ -174,32 +171,14 @@ const fullCanonicalUrl = canonicalUrl || Astro.url.toString();
         });
       }
 
-      // Cursor glow effect
-      function setupCursorGlow() {
-        const glow = document.querySelector('.cursor-glow') as HTMLElement | null;
-        if (!glow) return;
-        
-        document.addEventListener('mousemove', (e) => {
-          glow.style.left = e.clientX + 'px';
-          glow.style.top = e.clientY + 'px';
-          glow.style.opacity = '1';
-        });
-        
-        document.addEventListener('mouseleave', () => {
-          glow.style.opacity = '0';
-        });
-      }
-
       // Run on initial load
       setupRevealAnimations();
       setupTiltEffect();
-      setupCursorGlow();
 
       // Re-run after View Transitions navigation
       document.addEventListener('astro:after-swap', () => {
         setupRevealAnimations();
         setupTiltEffect();
-        setupCursorGlow();
       });
     </script>
   </body>
